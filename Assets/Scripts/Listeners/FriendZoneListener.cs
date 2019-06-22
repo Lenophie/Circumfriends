@@ -1,7 +1,8 @@
 using Constants;
+using Controllers;
 using UnityEngine;
 
-namespace Controllers {
+namespace Listeners {
     public class FriendZoneListener : MonoBehaviour {
         [SerializeField] private FriendZones zone = default;
         [SerializeField] private MeController meController = default;
