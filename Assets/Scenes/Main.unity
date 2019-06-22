@@ -131,7 +131,7 @@ GameObject:
   - component: {fileID: 78836353}
   - component: {fileID: 78836351}
   - component: {fileID: 78836352}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: FriendFace
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -333,7 +333,7 @@ GameObject:
   m_Component:
   - component: {fileID: 285393438}
   - component: {fileID: 285393439}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Trail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -468,7 +468,8 @@ GameObject:
   m_Component:
   - component: {fileID: 362187907}
   - component: {fileID: 362187908}
-  m_Layer: 0
+  - component: {fileID: 362187909}
+  m_Layer: 10
   m_Name: NoGoZone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -515,6 +516,19 @@ PolygonCollider2D:
   m_Points:
     m_Paths:
     - []
+--- !u!114 &362187909
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 362187906}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79d990a7db2d472e94a426966026c8f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  zone: 0
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -857,7 +871,7 @@ GameObject:
   - component: {fileID: 680053964}
   - component: {fileID: 680053965}
   - component: {fileID: 680053966}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Me
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -926,7 +940,7 @@ GameObject:
   m_Component:
   - component: {fileID: 935790557}
   - component: {fileID: 935790558}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -973,7 +987,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1283485222}
   - component: {fileID: 1283485223}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1020,7 +1034,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1326252278}
   - component: {fileID: 1326252279}
-  m_Layer: 0
+  - component: {fileID: 1326252280}
+  m_Layer: 12
   m_Name: ComfortZone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1066,6 +1081,19 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths: []
+--- !u!114 &1326252280
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1326252277}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79d990a7db2d472e94a426966026c8f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  zone: 2
 --- !u!1 &1335135644
 GameObject:
   m_ObjectHideFlags: 0
@@ -1110,7 +1138,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1374524290}
   - component: {fileID: 1374524291}
-  m_Layer: 0
+  - component: {fileID: 1374524292}
+  m_Layer: 13
   m_Name: DistantZone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1156,6 +1185,19 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths: []
+--- !u!114 &1374524292
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1374524289}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79d990a7db2d472e94a426966026c8f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  zone: 3
 --- !u!1 &1489544546
 GameObject:
   m_ObjectHideFlags: 0
@@ -1167,7 +1209,7 @@ GameObject:
   - component: {fileID: 1489544547}
   - component: {fileID: 1489544549}
   - component: {fileID: 1489544548}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1267,7 +1309,7 @@ GameObject:
   - component: {fileID: 1994215984}
   - component: {fileID: 1994215986}
   - component: {fileID: 1994215985}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1490,7 +1532,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2034220880}
   - component: {fileID: 2034220881}
-  m_Layer: 0
+  - component: {fileID: 2034220882}
+  m_Layer: 11
   m_Name: DiscomfortZone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1536,3 +1579,16 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths: []
+--- !u!114 &2034220882
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2034220879}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79d990a7db2d472e94a426966026c8f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  zone: 1
