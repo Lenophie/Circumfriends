@@ -130,6 +130,7 @@ GameObject:
   m_Component:
   - component: {fileID: 78836353}
   - component: {fileID: 78836351}
+  - component: {fileID: 78836352}
   m_Layer: 0
   m_Name: FriendFace
   m_TagString: Untagged
@@ -158,6 +159,20 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &78836352
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 78836350}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f19e60ba02884544089d10a6f0525419, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  friendRigidbody: {fileID: 78836351}
+  meRigidbody: {fileID: 680053965}
 --- !u!4 &78836353
 Transform:
   m_ObjectHideFlags: 0
@@ -210,7 +225,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0.9433962, g: 0.5206479, b: 0.94300234, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -268,7 +283,7 @@ GameObject:
   - component: {fileID: 680053964}
   - component: {fileID: 680053965}
   m_Layer: 0
-  m_Name: Player
+  m_Name: Me
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
