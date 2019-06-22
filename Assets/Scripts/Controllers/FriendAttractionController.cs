@@ -9,7 +9,7 @@ namespace Controllers {
         public FriendAttractionController(Rigidbody2D friendRigidbody, Rigidbody2D meRigidbody) {
             this.friendRigidbody = friendRigidbody;
             this.meRigidbody = meRigidbody;
-            attractionModifier = 0.5f;
+            attractionModifier = 10f;
         }
 
         public void AttractMe() {
