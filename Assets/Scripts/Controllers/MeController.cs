@@ -1,3 +1,4 @@
+using Inputs;
 using UnityEngine;
 
 namespace Controllers {
@@ -5,6 +6,7 @@ namespace Controllers {
         [SerializeField] private Rigidbody2D friendRigidbody = default;
         [SerializeField] private Rigidbody2D meRigidbody = default;
         private MeRotationController meRotationController;
+        private PlayerInputs playerInputs;
 
         private void Start() {
             meRotationController = new MeRotationController(friendRigidbody, meRigidbody);
@@ -12,6 +14,11 @@ namespace Controllers {
 
         private void Update() {
             meRotationController.UpdateRotation();
+        }
+
+        public void SetPlayerInputs(PlayerInputs playerInputs) {
+            this.playerInputs = playerInputs;
+            Debug.Log(this.playerInputs.Resist);
         }
     }
 }
