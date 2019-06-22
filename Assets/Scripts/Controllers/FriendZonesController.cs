@@ -1,5 +1,5 @@
-﻿using UnityEngine;
-using UnityEngine.Serialization;
+﻿using Constants;
+using UnityEngine;
 
 namespace Controllers {
     public class FriendZonesController : MonoBehaviour {
@@ -19,13 +19,6 @@ namespace Controllers {
         private float discomfortZoneRadius;
         private float comfortZoneRadius;
         private float distantZoneRadius;
-
-        private enum Zones {
-            NoGo,
-            Discomfort,
-            Comfort,
-            Distant
-        }
         private void Start() {
             points = 200;
             noGoZoneRadius = 2f;
@@ -33,16 +26,16 @@ namespace Controllers {
             comfortZoneRadius = 5f;
             distantZoneRadius = 10f;
 
-            BuildZone(Zones.NoGo);
-            BuildZone(Zones.Discomfort);
-            BuildZone(Zones.Comfort);
-            BuildZone(Zones.Distant);
+            BuildZone(FriendZones.NoGo);
+            BuildZone(FriendZones.Discomfort);
+            BuildZone(FriendZones.Comfort);
+            BuildZone(FriendZones.Distant);
         }
 
-        private Vector3[] CalculateZonePositions(Zones zone) {
-            float radius = zone == Zones.NoGo ? noGoZoneRadius :
-                zone == Zones.Discomfort ? discomfortZoneRadius :
-                zone == Zones.Comfort ? comfortZoneRadius : distantZoneRadius;
+        private Vector3[] CalculateZonePositions(FriendZones zone) {
+            float radius = zone == FriendZones.NoGo ? noGoZoneRadius :
+                zone == FriendZones.Discomfort ? discomfortZoneRadius :
+                zone == FriendZones.Comfort ? comfortZoneRadius : distantZoneRadius;
 
             Vector3[] positions = new Vector3[points];
 
@@ -54,14 +47,14 @@ namespace Controllers {
             return positions;
         }
 
-        private void BuildZone(Zones zone) {
+        private void BuildZone(FriendZones zone) {
             Vector3[] positions = CalculateZonePositions(zone);
-            LineRenderer lineRenderer = zone == Zones.NoGo ? noGoDiscomfortLimitRenderer :
-                zone == Zones.Discomfort ? discomfortComfortLimitRenderer :
-                zone == Zones.Comfort ? comfortDistantLimitRenderer : null;
-            PolygonCollider2D zoneCollider = zone == Zones.NoGo ? noGoZoneCollider :
-                zone == Zones.Discomfort ? discomfortZoneCollider :
-                zone == Zones.Comfort ? comfortZoneCollider : distantZoneCollider;
+            LineRenderer lineRenderer = zone == FriendZones.NoGo ? noGoDiscomfortLimitRenderer :
+                zone == FriendZones.Discomfort ? discomfortComfortLimitRenderer :
+                zone == FriendZones.Comfort ? comfortDistantLimitRenderer : null;
+            PolygonCollider2D zoneCollider = zone == FriendZones.NoGo ? noGoZoneCollider :
+                zone == FriendZones.Discomfort ? discomfortZoneCollider :
+                zone == FriendZones.Comfort ? comfortZoneCollider : distantZoneCollider;
 
             if (lineRenderer) {
                 lineRenderer.positionCount = points;
