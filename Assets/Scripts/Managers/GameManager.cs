@@ -4,8 +4,8 @@ using UnityEngine;
 
 namespace Managers {
     public class GameManager : MonoBehaviour {
-        [SerializeField] private MeController meController;
-        [SerializeField] private ModifiersCollector modifiersCollector;
+        [SerializeField] private MeController meController = default;
+        [SerializeField] private ModifiersCollector modifiersCollector = default;
         private InputManager inputManager;
 
         private void Start() {
