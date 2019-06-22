@@ -15,7 +15,7 @@ namespace Controllers {
 
         public void AttractMe() {
             meRigidbody.AddForce(
-                (friendRigidbody.position - meRigidbody.position) * attractionModifier * Time.deltaTime);
+                attractionModifier * Time.deltaTime * (friendRigidbody.position - meRigidbody.position).normalized);
         }
     }
 }

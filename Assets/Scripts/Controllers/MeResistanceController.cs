@@ -14,8 +14,8 @@ namespace Controllers {
         }
 
         public void UpdateResistance(float resistanceInput) {
-            meRigidbody.AddForce((meRigidbody.position - friendRigidbody.position) * resistanceInput * Time.deltaTime *
-                                 resistanceModifier);
+            meRigidbody.AddForce(resistanceInput * Time.deltaTime * resistanceModifier *
+                                 (meRigidbody.position - friendRigidbody.position).normalized);
         }
     }
 }

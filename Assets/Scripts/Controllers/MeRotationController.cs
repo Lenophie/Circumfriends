@@ -16,9 +16,10 @@ namespace Controllers {
         }
 
         public void UpdateRotation() {
-            Vector2 rotationDirection = Vector2.Perpendicular(friendRigidbody.position - meRigidbody.position);
+            Vector2 rotationDirection =
+                Vector2.Perpendicular(friendRigidbody.position - meRigidbody.position).normalized;
             if (!isRotationClockwise) rotationDirection = -rotationDirection;
-            meRigidbody.MovePosition(meRigidbody.position + rotationSpeed * Time.deltaTime * rotationDirection);
+            meRigidbody.AddForce(rotationSpeed * Time.deltaTime * rotationDirection);
         }
     }
 }

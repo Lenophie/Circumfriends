@@ -306,7 +306,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   meController: {fileID: 680053966}
   modifiersCollector:
-    meRotation: 0.9
+    meRotation: 100
     meResistance: 1400
     friendAttraction: 700
 --- !u!4 &219227593
@@ -909,7 +909,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0
+  m_LinearDrag: 0.5
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
