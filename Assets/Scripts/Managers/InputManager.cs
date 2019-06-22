@@ -1,13 +1,14 @@
-using System;
 using Controllers;
 using Inputs;
-using UnityEngine;
 
 namespace Managers {
-    public class InputManager : MonoBehaviour {
-        [SerializeField] private MeController meController = default;
+    public class InputManager {
+        private readonly MeController meController;
 
-        private void Update() {
+        public InputManager(MeController meController) {
+            this.meController = meController;
+        }
+        public void UpdateInputs() {
             PlayerInputs playerInputs = new PlayerInputs();
             meController.SetPlayerInputs(playerInputs);
         }
