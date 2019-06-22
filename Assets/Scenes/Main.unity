@@ -529,6 +529,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   zone: 0
+  meController: {fileID: 680053966}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -1094,6 +1095,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   zone: 2
+  meController: {fileID: 680053966}
 --- !u!1 &1335135644
 GameObject:
   m_ObjectHideFlags: 0
@@ -1198,6 +1200,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   zone: 3
+  meController: {fileID: 680053966}
 --- !u!1 &1489544546
 GameObject:
   m_ObjectHideFlags: 0
@@ -1592,3 +1595,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   zone: 1
+  meController: {fileID: 680053966}
