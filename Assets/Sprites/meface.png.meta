@@ -1,16 +1,16 @@
 fileFormatVersion: 2
-guid: 883a44326e69cf04aad4587c3a7b49b8
+guid: c0a95aade3a49fa408f04491b54dd6cd
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3294221827047425699
-    second: friendface_0
+      213: 9032037511258799126
+    second: meface_0
   - first:
-      213: 3045146674696373608
-    second: friendface_1
+      213: -4987367592654822663
+    second: meface_1
   - first:
-      213: 6414475392116427167
-    second: friendface_2
+      213: 94011281835270728
+    second: meface_2
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -69,7 +69,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 2
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 128
+    maxTextureSize: 64
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -80,7 +80,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
   - serializedVersion: 2
     buildTarget: Standalone
-    maxTextureSize: 128
+    maxTextureSize: 64
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -93,13 +93,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: friendface_0
+      name: meface_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 40
-        height: 38
+        width: 12
+        height: 11
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -107,20 +107,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b556635d653d5e14baad1833c8f916ef
-      internalID: -3294221827047425699
+      spriteID: 2a950575f49e9994a93b17c2e0a1c81e
+      internalID: 9032037511258799126
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: friendface_1
+      name: meface_1
       rect:
         serializedVersion: 2
-        x: 40
+        x: 12
         y: 0
-        width: 40
-        height: 38
+        width: 12
+        height: 11
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,20 +128,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 621f1f8e39ff46c448aa469ad8a2fccc
-      internalID: 3045146674696373608
+      spriteID: 5ff3e506f4aa5e04fb98419ee0182c81
+      internalID: -4987367592654822663
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: friendface_2
+      name: meface_2
       rect:
         serializedVersion: 2
-        x: 80
+        x: 24
         y: 0
-        width: 40
-        height: 38
+        width: 12
+        height: 11
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -149,8 +149,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 897d8389b5b2ce54087f12126313048a
-      internalID: 6414475392116427167
+      spriteID: 87c15672c5828cd4394602ef5fa82d63
+      internalID: 94011281835270728
       vertices: []
       indices: 
       edges: []
@@ -158,7 +158,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 2418b89cbbdb59f4ea725724479a51d3
+    spriteID: e4003fd500c32e14fae9a2b1d078551e
     internalID: 0
     vertices: []
     indices: 
