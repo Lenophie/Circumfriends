@@ -6,23 +6,17 @@ namespace Meshes {
      * Generates the triangles of a mesh given its vertices
      * Courtesy of http://wiki.unity3d.com/index.php/Triangulator
      */
-    public class Triangulator
+    public static class Triangulator
     {
-        private readonly List<Vector2> mPoints;
-
-        public Triangulator (IEnumerable<Vector2> points) {
-            mPoints = new List<Vector2>(points);
-        }
-
-        public int[] Triangulate() {
+        public static int[] Triangulate(List<Vector2> points) {
             List<int> indices = new List<int>();
 
-            int n = mPoints.Count;
+            int n = points.Count;
             if (n < 3)
                 return indices.ToArray();
 
             int[] V = new int[n];
-            if (Area() > 0) {
+            if (Area(points) > 0) {
                 for (int v = 0; v < n; v++)
                     V[v] = v;
             }
@@ -47,7 +41,7 @@ namespace Meshes {
                 if (nv <= w)
                     w = 0;
 
-                if (Snip(u, v, w, nv, V)) {
+                if (Snip(points, u, v, w, nv, V)) {
                     int s, t;
                     int a = V[u];
                     int b = V[v];
@@ -66,28 +60,28 @@ namespace Meshes {
             return indices.ToArray();
         }
 
-        private float Area () {
-            int n = mPoints.Count;
+        private static float Area (List<Vector2> points) {
+            int n = points.Count;
             float a = 0.0f;
             for (int p = n - 1, q = 0; q < n; p = q++) {
-                Vector2 pval = mPoints[p];
-                Vector2 qval = mPoints[q];
+                Vector2 pval = points[p];
+                Vector2 qval = points[q];
                 a += pval.x * qval.y - qval.x * pval.y;
             }
             return (a * 0.5f);
         }
 
-        private bool Snip (int u, int v, int w, int n, IReadOnlyList<int> V) {
+        private static bool Snip (List<Vector2> points, int u, int v, int w, int n, IReadOnlyList<int> V) {
             int p;
-            Vector2 a = mPoints[V[u]];
-            Vector2 b = mPoints[V[v]];
-            Vector2 c = mPoints[V[w]];
+            Vector2 a = points[V[u]];
+            Vector2 b = points[V[v]];
+            Vector2 c = points[V[w]];
             if (Mathf.Epsilon > (((b.x - a.x) * (c.y - a.y)) - ((b.y - a.y) * (c.x - a.x))))
                 return false;
             for (p = 0; p < n; p++) {
                 if ((p == u) || (p == v) || (p == w))
                     continue;
-                Vector2 P = mPoints[V[p]];
+                Vector2 P = points[V[p]];
                 if (InsideTriangle(a, b, c, P))
                     return false;
             }

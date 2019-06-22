@@ -1,4 +1,5 @@
-﻿using Constants;
+﻿using System.Collections.Generic;
+using Constants;
 using Meshes;
 using UnityEngine;
 
@@ -66,14 +67,13 @@ namespace Controllers {
                 lineRenderer.SetPositions(positions);
             }
 
-            Vector2[] positions2D = new Vector2[points];
-            for (int i = 0; i < points; i++) positions2D[i] = positions[i];
-            zoneCollider.points = positions2D;
+            List<Vector2> positions2D = new List<Vector2>();
+            for (int i = 0; i < points; i++) positions2D.Add(positions[i]);
+            zoneCollider.points = positions2D.ToArray();
 
             if (zone == FriendZones.NoGo) {
                 Mesh mesh = new Mesh {vertices = positions};
-                Triangulator triangulator = new Triangulator(positions2D);
-                int[] triangles = triangulator.Triangulate();
+                int[] triangles = Triangulator.Triangulate(positions2D);
                 mesh.triangles = triangles;
                 noGoZoneMeshFilter.mesh = mesh;
             }
