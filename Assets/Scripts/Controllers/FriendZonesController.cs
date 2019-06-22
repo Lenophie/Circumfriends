@@ -1,4 +1,5 @@
 ﻿using Constants;
+using Meshes;
 using UnityEngine;
 
 namespace Controllers {
@@ -14,11 +15,15 @@ namespace Controllers {
         [SerializeField] private PolygonCollider2D comfortZoneCollider = default;
         [SerializeField] private PolygonCollider2D distantZoneCollider = default;
 
+        [Header("Meshes")]
+        [SerializeField] private MeshFilter noGoZoneMeshFilter = default;
+
         private int points;
         private float noGoZoneRadius;
         private float discomfortZoneRadius;
         private float comfortZoneRadius;
         private float distantZoneRadius;
+
         private void Start() {
             points = 200;
             noGoZoneRadius = 2f;
@@ -64,6 +69,14 @@ namespace Controllers {
             Vector2[] positions2D = new Vector2[points];
             for (int i = 0; i < points; i++) positions2D[i] = positions[i];
             zoneCollider.points = positions2D;
+
+            if (zone == FriendZones.NoGo) {
+                Mesh mesh = new Mesh {vertices = positions};
+                Triangulator triangulator = new Triangulator(positions2D);
+                int[] triangles = triangulator.Triangulate();
+                mesh.triangles = triangles;
+                noGoZoneMeshFilter.mesh = mesh;
+            }
         }
     }
 }
