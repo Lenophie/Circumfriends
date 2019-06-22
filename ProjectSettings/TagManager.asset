@@ -41,3 +41,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Friend
+    uniqueID: 1317513793
+    locked: 0
+  - name: Me
+    uniqueID: 2513212307
+    locked: 0
