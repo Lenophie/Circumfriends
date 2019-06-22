@@ -14,10 +14,10 @@ namespace Controllers {
             meRotationController = new MeRotationController(friendRigidbody, meRigidbody);
             meResistanceController = new MeResistanceController(friendRigidbody, meRigidbody);
             MeFriendZonesHandler = new MeFriendZonesHandler();
+            meRigidbody.velocity = meRotationController.GetInitialRotation();
         }
 
         private void Update() {
-            meRotationController.UpdateRotation();
             meResistanceController.UpdateResistance(playerInputs.Resist);
             MeFriendZonesHandler.DetermineCurrentFriendZone();
         }

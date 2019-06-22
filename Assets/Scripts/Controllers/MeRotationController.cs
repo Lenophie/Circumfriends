@@ -15,11 +15,11 @@ namespace Controllers {
             isRotationClockwise = true;
         }
 
-        public void UpdateRotation() {
+        public Vector2 GetInitialRotation() {
             Vector2 rotationDirection =
                 Vector2.Perpendicular(friendRigidbody.position - meRigidbody.position).normalized;
             if (!isRotationClockwise) rotationDirection = -rotationDirection;
-            meRigidbody.AddForce(rotationSpeed * Time.deltaTime * rotationDirection);
+            return rotationSpeed * rotationDirection;
         }
     }
 }
