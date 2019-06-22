@@ -9,11 +9,12 @@ namespace Controllers {
         public FriendAttractionController(Rigidbody2D friendRigidbody, Rigidbody2D meRigidbody) {
             this.friendRigidbody = friendRigidbody;
             this.meRigidbody = meRigidbody;
-            attractionModifier = 10f;
+            attractionModifier = 700f;
         }
 
         public void AttractMe() {
-            meRigidbody.AddForce((friendRigidbody.position - meRigidbody.position) * attractionModifier);
+            meRigidbody.AddForce(
+                (friendRigidbody.position - meRigidbody.position) * attractionModifier * Time.deltaTime);
         }
     }
 }

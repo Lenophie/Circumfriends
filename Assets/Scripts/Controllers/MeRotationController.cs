@@ -10,7 +10,7 @@ namespace Controllers {
         public MeRotationController(Rigidbody2D friendRigidbody, Rigidbody2D meRigidbody) {
             this.friendRigidbody = friendRigidbody;
             this.meRigidbody = meRigidbody;
-            rotationSpeed = 0.7f;
+            rotationSpeed = 0.9f;
             isRotationClockwise = true;
         }
 
