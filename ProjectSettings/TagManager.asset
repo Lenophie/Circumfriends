@@ -13,12 +13,12 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Friend
+  - Me
+  - NoGoZone
+  - DiscomfortZone
+  - ComfortZone
+  - DistantZone
   - 
   - 
   - 
@@ -40,6 +40,9 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Background
+    uniqueID: 464083677
     locked: 0
   - name: Friend
     uniqueID: 1317513793
