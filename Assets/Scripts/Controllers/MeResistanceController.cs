@@ -1,3 +1,4 @@
+using Constants;
 using UnityEngine;
 
 namespace Controllers {
@@ -9,7 +10,7 @@ namespace Controllers {
         public MeResistanceController(Rigidbody2D friendRigidbody, Rigidbody2D meRigidbody) {
             this.friendRigidbody = friendRigidbody;
             this.meRigidbody = meRigidbody;
-            resistanceModifier = 1400f;
+            resistanceModifier = Modifiers.MeResistance;
         }
 
         public void UpdateResistance(float resistanceInput) {

@@ -1,3 +1,4 @@
+using Constants;
 using UnityEngine;
 
 namespace Controllers {
@@ -10,7 +11,7 @@ namespace Controllers {
         public MeRotationController(Rigidbody2D friendRigidbody, Rigidbody2D meRigidbody) {
             this.friendRigidbody = friendRigidbody;
             this.meRigidbody = meRigidbody;
-            rotationSpeed = 0.9f;
+            rotationSpeed = Modifiers.MeRotation;
             isRotationClockwise = true;
         }
 

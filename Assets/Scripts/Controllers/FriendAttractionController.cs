@@ -1,3 +1,4 @@
+using Constants;
 using UnityEngine;
 
 namespace Controllers {
@@ -9,7 +10,7 @@ namespace Controllers {
         public FriendAttractionController(Rigidbody2D friendRigidbody, Rigidbody2D meRigidbody) {
             this.friendRigidbody = friendRigidbody;
             this.meRigidbody = meRigidbody;
-            attractionModifier = 700f;
+            attractionModifier = Modifiers.FriendAttraction;
         }
 
         public void AttractMe() {
