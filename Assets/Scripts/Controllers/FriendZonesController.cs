@@ -18,12 +18,19 @@ namespace Controllers {
 
         [Header("Meshes")]
         [SerializeField] private MeshFilter noGoZoneMeshFilter = default;
+        [SerializeField] private MeshFilter discomfortZoneMeshFilter = default;
+        [SerializeField] private MeshFilter comfortZoneMeshFilter = default;
+        [SerializeField] private MeshFilter distantZoneMeshFilter = default;
 
         private int points;
         private float noGoZoneRadius;
         private float discomfortZoneRadius;
         private float comfortZoneRadius;
         private float distantZoneRadius;
+
+        private Vector3[] noGoZonePositions;
+        private Vector3[] discomfortZonePositions;
+        private Vector3[] comfortZonePositions;
 
         private void Start() {
             points = 200;
@@ -32,6 +39,7 @@ namespace Controllers {
             comfortZoneRadius = 5f;
             distantZoneRadius = 10f;
 
+            // Order is important, as the previous positions are used for the next zone's mesh
             BuildZone(FriendZones.NoGo);
             BuildZone(FriendZones.Discomfort);
             BuildZone(FriendZones.Comfort);
@@ -54,28 +62,94 @@ namespace Controllers {
         }
 
         private void BuildZone(FriendZones zone) {
-            Vector3[] positions = CalculateZonePositions(zone);
-            LineRenderer lineRenderer = zone == FriendZones.NoGo ? noGoDiscomfortLimitRenderer :
-                zone == FriendZones.Discomfort ? discomfortComfortLimitRenderer :
-                zone == FriendZones.Comfort ? comfortDistantLimitRenderer : null;
-            PolygonCollider2D zoneCollider = zone == FriendZones.NoGo ? noGoZoneCollider :
-                zone == FriendZones.Discomfort ? discomfortZoneCollider :
-                zone == FriendZones.Comfort ? comfortZoneCollider : distantZoneCollider;
+            Vector3[] zonePositions = CalculateZonePositions(zone);
+
+            LineRenderer lineRenderer;
+            PolygonCollider2D zoneCollider;
+            MeshFilter zoneMeshFilter;
+
+            switch (zone) {
+                case FriendZones.NoGo:
+                    lineRenderer = noGoDiscomfortLimitRenderer;
+                    zoneCollider = noGoZoneCollider;
+                    zoneMeshFilter = noGoZoneMeshFilter;
+                    break;
+                case FriendZones.Discomfort:
+                    lineRenderer = discomfortComfortLimitRenderer;
+                    zoneCollider = discomfortZoneCollider;
+                    zoneMeshFilter = discomfortZoneMeshFilter;
+                    break;
+                case FriendZones.Comfort:
+                    lineRenderer = comfortDistantLimitRenderer;
+                    zoneCollider = comfortZoneCollider;
+                    zoneMeshFilter = comfortZoneMeshFilter;
+                    break;
+                case FriendZones.Distant:
+                    lineRenderer = null;
+                    zoneCollider = distantZoneCollider;
+                    zoneMeshFilter = distantZoneMeshFilter;
+                    break;
+                default:
+                    lineRenderer = null;
+                    zoneCollider = null;
+                    zoneMeshFilter = null;
+                    break;
+            }
 
             if (lineRenderer) {
                 lineRenderer.positionCount = points;
-                lineRenderer.SetPositions(positions);
+                lineRenderer.SetPositions(zonePositions);
             }
 
-            List<Vector2> positions2D = new List<Vector2>();
-            for (int i = 0; i < points; i++) positions2D.Add(positions[i]);
-            zoneCollider.points = positions2D.ToArray();
+            List<Vector2> zonePositions2D = new List<Vector2>();
+            for (int i = 0; i < points; i++) zonePositions2D.Add(zonePositions[i]);
+            if (zoneCollider) zoneCollider.points = zonePositions2D.ToArray();
+
+            switch (zone) {
+                case FriendZones.NoGo:
+                    noGoZonePositions = zonePositions;
+                    break;
+                case FriendZones.Discomfort:
+                    discomfortZonePositions = zonePositions;
+                    break;
+                case FriendZones.Comfort:
+                    comfortZonePositions = zonePositions;
+                    break;
+                case FriendZones.Distant:
+                    break;
+            }
 
             if (zone == FriendZones.NoGo) {
-                Mesh mesh = new Mesh {vertices = positions};
-                int[] triangles = Triangulator.Triangulate(positions2D);
+                Mesh mesh = new Mesh {vertices = zonePositions};
+                int[] triangles = Triangulator.TriangulateConcave(zonePositions2D);
                 mesh.triangles = triangles;
-                noGoZoneMeshFilter.mesh = mesh;
+                if (zoneMeshFilter) zoneMeshFilter.mesh = mesh;
+            } else {
+                Vector3[] previousZonePositions;
+                switch (zone) {
+                    case FriendZones.Discomfort:
+                        previousZonePositions = noGoZonePositions;
+                        break;
+                    case FriendZones.Comfort:
+                        previousZonePositions = discomfortZonePositions;
+                        break;
+                    case FriendZones.Distant:
+                        previousZonePositions = comfortZonePositions;
+                        break;
+                    default:
+                        previousZonePositions = new Vector3[0];
+                        break;
+                }
+
+                Vector3[] meshPositions = new Vector3[2 * points];
+                for (int i = 0; i < points; i++) {
+                    meshPositions[i] = previousZonePositions[i];
+                    meshPositions[points + i] = zonePositions[i];
+                }
+
+                Mesh mesh = new Mesh {vertices = meshPositions, triangles = Triangulator.TriangulateRing(points)};
+                if (zoneMeshFilter) zoneMeshFilter.mesh = mesh;
+
             }
         }
     }

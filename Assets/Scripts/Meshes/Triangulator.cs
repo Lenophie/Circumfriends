@@ -2,13 +2,43 @@ using System.Collections.Generic;
 using UnityEngine;
 
 namespace Meshes {
-    /**
-     * Generates the triangles of a mesh given its vertices
-     * Courtesy of http://wiki.unity3d.com/index.php/Triangulator
-     */
     public static class Triangulator
     {
-        public static int[] Triangulate(List<Vector2> points) {
+        /**
+         * Returns mesh triangles for a 2D ring given the number of vertices of the inner circle
+         * This method makes the following assumptions :
+         * * The inner and outer circles have the same number of vertices
+         * * The vertices supplied to the mesh are ordered in clockwise order with all the inner circle's vertices first and then the outer circle's vertices
+         */
+        public static int[] TriangulateRing(int numberOfVertices) {
+            int[] triangles = new int[3 * 2 * numberOfVertices];
+            for (int i = 0; i < numberOfVertices - 1; i++) {
+                triangles[6 * i] = i;
+                triangles[6 * i + 1] = numberOfVertices + i;
+                triangles[6 * i + 2] = numberOfVertices + i + 1;
+
+                triangles[6 * i + 3] = i;
+                triangles[6 * i + 4] = numberOfVertices + i + 1;
+                triangles[6 * i + 5] = i + 1;
+            }
+
+            int j = numberOfVertices - 1;
+            triangles[6 * j] = j;
+            triangles[6 * j + 1] = numberOfVertices + j;
+            triangles[6 * j + 2] = numberOfVertices;
+
+            triangles[6 * j + 3] = j;
+            triangles[6 * j + 4] = numberOfVertices;
+            triangles[6 * j + 5] = 0;
+
+            return triangles;
+        }
+
+        /**
+         * Generates the triangles for a concave mesh without holes given its vertices
+         * Courtesy of http://wiki.unity3d.com/index.php/Triangulator
+         */
+        public static int[] TriangulateConcave(List<Vector2> points) {
             List<int> indices = new List<int>();
 
             int n = points.Count;
