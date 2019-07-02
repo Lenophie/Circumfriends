@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using Constants;
 using FriendZones;
 using FriendZones.FriendZoneShapes;
@@ -56,12 +56,12 @@ namespace Controllers {
             friendZone.FriendZoneShape.CalculateZoneOuterVertices();
 
             if (friendZone.LineRenderer) {
-                friendZone.LineRenderer.positionCount = friendZone.FriendZoneShape.NumberOfVertices;
+                friendZone.LineRenderer.positionCount = FriendZonesConstants.NumberOfOuterVerticesPerFriendzone;
                 friendZone.LineRenderer.SetPositions(friendZone.FriendZoneShape.OuterVertices);
             }
 
             List<Vector2> zonePositions2D = new List<Vector2>();
-            for (int i = 0; i < friendZone.FriendZoneShape.NumberOfVertices; i++)
+            for (int i = 0; i < FriendZonesConstants.NumberOfOuterVerticesPerFriendzone; i++)
                 zonePositions2D.Add(friendZone.FriendZoneShape.OuterVertices[i]);
             if (friendZone.Collider) friendZone.Collider.points = zonePositions2D.ToArray();
 
@@ -87,16 +87,16 @@ namespace Controllers {
                         break;
                 }
 
-                Vector3[] meshPositions = new Vector3[2 * friendZone.FriendZoneShape.NumberOfVertices];
-                for (int i = 0; i < friendZone.FriendZoneShape.NumberOfVertices; i++) {
+                Vector3[] meshPositions = new Vector3[2 * FriendZonesConstants.NumberOfOuterVerticesPerFriendzone];
+                for (int i = 0; i < FriendZonesConstants.NumberOfOuterVerticesPerFriendzone; i++) {
                     meshPositions[i] = previousZonePositions[i];
-                    meshPositions[friendZone.FriendZoneShape.NumberOfVertices + i] =
+                    meshPositions[FriendZonesConstants.NumberOfOuterVerticesPerFriendzone + i] =
                         friendZone.FriendZoneShape.OuterVertices[i];
                 }
 
                 Mesh mesh = new Mesh {
                     vertices = meshPositions,
-                    triangles = Triangulator.TriangulateRing(friendZone.FriendZoneShape.NumberOfVertices)
+                    triangles = Triangulator.TriangulateRing(FriendZonesConstants.NumberOfOuterVerticesPerFriendzone)
                 };
                 if (friendZone.MeshFilter) friendZone.MeshFilter.mesh = mesh;
 
