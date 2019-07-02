@@ -28,19 +28,19 @@ namespace Controllers {
             friendZones = new QuadZonesTuple<FriendZone>(
                 new FriendZone(
                     FriendZonesEnum.NoGo,
-                    new CircularFriendZoneShape(2f),
+                    new WavyFriendZoneShape(2f, 0.01f, 20f),
                     friendZonesCollectors.NoGo),
                 new FriendZone(
                     FriendZonesEnum.Discomfort,
-                    new CircularFriendZoneShape(4f),
+                    new WavyFriendZoneShape(4f, 0.01f, 20f),
                     friendZonesCollectors.Discomfort),
                 new FriendZone(
                     FriendZonesEnum.Comfort,
-                    new CircularFriendZoneShape(5f),
+                    new WavyFriendZoneShape(5f, 0.01f, 20f),
                     friendZonesCollectors.Comfort),
                 new FriendZone(
                     FriendZonesEnum.Distant,
-                    new WavyFriendZoneShape(10f, 0.1f, 20f),
+                    new WavyFriendZoneShape(10f, 0.01f, 20f),
                     friendZonesCollectors.Distant)
             );
         }
@@ -57,7 +57,8 @@ namespace Controllers {
 
             if (friendZone.LineRenderer) {
                 friendZone.LineRenderer.positionCount = FriendZonesConstants.NumberOfOuterVerticesPerFriendzone;
-                friendZone.LineRenderer.SetPositions(friendZone.FriendZoneShape.OuterVertices);
+                friendZone.LineRenderer.SetPositions(
+                    Noisifier.NoisifySmoothVectors(friendZone.FriendZoneShape.OuterVertices, 4));
             }
 
             List<Vector2> zonePositions2D = new List<Vector2>();

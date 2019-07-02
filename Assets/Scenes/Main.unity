@@ -394,9 +394,10 @@ MonoBehaviour:
   meController: {fileID: 680053966}
   friendZonesController: {fileID: 97741058}
   friendZonesConstantsCollector:
-    NumberOfOuterVerticesPerFriendzone: 250
+    numberOfOuterVerticesPerFriendzone: 250
+    maxLineNoiseAmplitude: 0.01
   modifiersCollector:
-    meRotation: 7.5
+    meRotation: 3
     meResistance: 800
     friendAttraction: 700
 --- !u!4 &219227593

@@ -3,6 +3,7 @@ using System;
 namespace Constants {
     [Serializable]
     public class FriendZonesConstantsCollector {
-        public int NumberOfOuterVerticesPerFriendzone;
+        public int numberOfOuterVerticesPerFriendzone;
+        public float maxLineNoiseAmplitude;
     }
 }
