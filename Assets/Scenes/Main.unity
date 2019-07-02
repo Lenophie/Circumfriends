@@ -393,6 +393,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   meController: {fileID: 680053966}
   friendZonesController: {fileID: 97741058}
+  friendZonesConstantsCollector:
+    NumberOfOuterVerticesPerFriendzone: 250
   modifiersCollector:
     meRotation: 7.5
     meResistance: 800

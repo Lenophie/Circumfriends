@@ -9,6 +9,7 @@ namespace Managers {
         [SerializeField] private FriendZonesController friendZonesController = default;
 
         [Header("Collectors")]
+        [SerializeField] private FriendZonesConstantsCollector friendZonesConstantsCollector = default;
         [SerializeField] private ModifiersCollector modifiersCollector = default;
 
         private InputManager inputManager;
@@ -16,6 +17,7 @@ namespace Managers {
         private void Start() {
             inputManager = new InputManager(meController);
             Modifiers.SetConstants(modifiersCollector);
+            FriendZonesConstants.SetConstants(friendZonesConstantsCollector);
             friendZonesController.InitializeFriendZones();
         }
 
