@@ -20,5 +20,9 @@ namespace FriendZones.FriendZoneShapes {
 
             OuterVertices = positions;
         }
+
+        public void TransitionToNewCharacteristics(FriendZoneShapeConfig friendZoneShapeConfig) {
+            radius = friendZoneShapeConfig.Radius;
+        }
     }
 }
