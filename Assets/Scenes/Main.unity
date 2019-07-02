@@ -236,17 +236,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbe9e1a281232e0469937efa19525825, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  noGoDiscomfortLimitRenderer: {fileID: 529792790}
-  discomfortComfortLimitRenderer: {fileID: 662261289}
-  comfortDistantLimitRenderer: {fileID: 2032829011}
-  noGoZoneCollider: {fileID: 362187908}
-  discomfortZoneCollider: {fileID: 2034220881}
-  comfortZoneCollider: {fileID: 1326252279}
-  distantZoneCollider: {fileID: 1374524291}
-  noGoZoneMeshFilter: {fileID: 1613362500}
-  discomfortZoneMeshFilter: {fileID: 685528552}
-  comfortZoneMeshFilter: {fileID: 149445833}
-  distantZoneMeshFilter: {fileID: 1954489032}
+  noGoFriendZoneCollector:
+    lineRenderer: {fileID: 529792790}
+    collider: {fileID: 362187908}
+    meshFilter: {fileID: 1613362500}
+  discomfortFriendZoneCollector:
+    lineRenderer: {fileID: 662261289}
+    collider: {fileID: 2034220881}
+    meshFilter: {fileID: 685528552}
+  comfortFriendZoneCollector:
+    lineRenderer: {fileID: 2032829011}
+    collider: {fileID: 1326252279}
+    meshFilter: {fileID: 149445833}
+  distantFriendZoneCollector:
+    lineRenderer: {fileID: 0}
+    collider: {fileID: 1374524291}
+    meshFilter: {fileID: 1954489032}
 --- !u!1 &149445830
 GameObject:
   m_ObjectHideFlags: 0
@@ -387,6 +392,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   meController: {fileID: 680053966}
+  friendZonesController: {fileID: 97741058}
   modifiersCollector:
     meRotation: 7.5
     meResistance: 800

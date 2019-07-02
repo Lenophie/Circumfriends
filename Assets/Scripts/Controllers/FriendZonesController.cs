@@ -1,144 +1,104 @@
 ﻿using System.Collections.Generic;
 using Constants;
+using FriendZones;
 using FriendZoneShapes;
+using Helpers;
 using Meshes;
 using UnityEngine;
 
 namespace Controllers {
     public class FriendZonesController : MonoBehaviour {
-        [Header("Limit Renderers")]
-        [SerializeField] private LineRenderer noGoDiscomfortLimitRenderer = default;
-        [SerializeField] private LineRenderer discomfortComfortLimitRenderer = default;
-        [SerializeField] private LineRenderer comfortDistantLimitRenderer = default;
+        private QuadZonesTuple<FriendZone> friendZones;
 
-        [Header("Colliders")]
-        [SerializeField] private PolygonCollider2D noGoZoneCollider = default;
-        [SerializeField] private PolygonCollider2D discomfortZoneCollider = default;
-        [SerializeField] private PolygonCollider2D comfortZoneCollider = default;
-        [SerializeField] private PolygonCollider2D distantZoneCollider = default;
+        [SerializeField] private FriendZoneCollector noGoFriendZoneCollector = default;
+        [SerializeField] private FriendZoneCollector discomfortFriendZoneCollector = default;
+        [SerializeField] private FriendZoneCollector comfortFriendZoneCollector = default;
+        [SerializeField] private FriendZoneCollector distantFriendZoneCollector = default;
 
-        [Header("Meshes")]
-        [SerializeField] private MeshFilter noGoZoneMeshFilter = default;
-        [SerializeField] private MeshFilter discomfortZoneMeshFilter = default;
-        [SerializeField] private MeshFilter comfortZoneMeshFilter = default;
-        [SerializeField] private MeshFilter distantZoneMeshFilter = default;
+        public void InitializeFriendZones() {
+            // Regroup friendzone collectors
+            QuadZonesTuple<FriendZoneCollector> friendZonesCollectors =
+                new QuadZonesTuple<FriendZoneCollector>(
+                    noGoFriendZoneCollector,
+                    discomfortFriendZoneCollector,
+                    comfortFriendZoneCollector,
+                    distantFriendZoneCollector);
 
-        private float noGoZoneRadius;
-        private float discomfortZoneRadius;
-        private float comfortZoneRadius;
-        private float distantZoneRadius;
-
-        private Vector3[] noGoZoneOuterVertices;
-        private Vector3[] discomfortZoneOuterVertices;
-        private Vector3[] comfortZoneOuterVertices;
-
-        private void Start() {
-            noGoZoneRadius = 2f;
-            discomfortZoneRadius = 4f;
-            comfortZoneRadius = 5f;
-            distantZoneRadius = 10f;
-
-            // Order is important, as the previous positions are used for the next zone's mesh
-            BuildZone(FriendZonesEnum.NoGo);
-            BuildZone(FriendZonesEnum.Discomfort);
-            BuildZone(FriendZonesEnum.Comfort);
-            BuildZone(FriendZonesEnum.Distant);
+            // Initialize friendzones with collectors' info
+            friendZones = new QuadZonesTuple<FriendZone>(
+                new FriendZone(
+                    FriendZonesEnum.NoGo,
+                    new CircularFriendZoneShape(2f),
+                    friendZonesCollectors.NoGo),
+                new FriendZone(
+                    FriendZonesEnum.Discomfort,
+                    new CircularFriendZoneShape(4f),
+                    friendZonesCollectors.Discomfort),
+                new FriendZone(
+                    FriendZonesEnum.Comfort,
+                    new CircularFriendZoneShape(5f),
+                    friendZonesCollectors.Comfort),
+                new FriendZone(
+                    FriendZonesEnum.Distant,
+                    new CircularFriendZoneShape(10f),
+                    friendZonesCollectors.Distant)
+            );
         }
 
-        private void BuildZone(FriendZonesEnum zoneEnum) {
-            float radius = zoneEnum == FriendZonesEnum.NoGo ? noGoZoneRadius :
-                zoneEnum == FriendZonesEnum.Discomfort ? discomfortZoneRadius :
-                zoneEnum == FriendZonesEnum.Comfort ? comfortZoneRadius : distantZoneRadius;
-            IFriendZoneShape zoneShape = new CircularFriendZoneShape(radius);
+        private void Update() {
+            BuildZone(friendZones.NoGo);
+            BuildZone(friendZones.Discomfort);
+            BuildZone(friendZones.Comfort);
+            BuildZone(friendZones.Distant);
+        }
 
-            Vector3[] zoneOuterVertices = zoneShape.CalculateZoneOuterVertices();
+        private void BuildZone(FriendZone friendZone) {
+            friendZone.FriendZoneShape.CalculateZoneOuterVertices();
 
-            LineRenderer zoneLineRenderer;
-            PolygonCollider2D zoneCollider;
-            MeshFilter zoneMeshFilter;
-
-            switch (zoneEnum) {
-                case FriendZonesEnum.NoGo:
-                    zoneLineRenderer = noGoDiscomfortLimitRenderer;
-                    zoneCollider = noGoZoneCollider;
-                    zoneMeshFilter = noGoZoneMeshFilter;
-                    break;
-                case FriendZonesEnum.Discomfort:
-                    zoneLineRenderer = discomfortComfortLimitRenderer;
-                    zoneCollider = discomfortZoneCollider;
-                    zoneMeshFilter = discomfortZoneMeshFilter;
-                    break;
-                case FriendZonesEnum.Comfort:
-                    zoneLineRenderer = comfortDistantLimitRenderer;
-                    zoneCollider = comfortZoneCollider;
-                    zoneMeshFilter = comfortZoneMeshFilter;
-                    break;
-                case FriendZonesEnum.Distant:
-                    zoneLineRenderer = null;
-                    zoneCollider = distantZoneCollider;
-                    zoneMeshFilter = distantZoneMeshFilter;
-                    break;
-                default:
-                    zoneLineRenderer = null;
-                    zoneCollider = null;
-                    zoneMeshFilter = null;
-                    break;
-            }
-
-            if (zoneLineRenderer) {
-                zoneLineRenderer.positionCount = zoneShape.NumberOfVertices;
-                zoneLineRenderer.SetPositions(zoneOuterVertices);
+            if (friendZone.LineRenderer) {
+                friendZone.LineRenderer.positionCount = friendZone.FriendZoneShape.NumberOfVertices;
+                friendZone.LineRenderer.SetPositions(friendZone.FriendZoneShape.OuterVertices);
             }
 
             List<Vector2> zonePositions2D = new List<Vector2>();
-            for (int i = 0; i < zoneShape.NumberOfVertices; i++) zonePositions2D.Add(zoneOuterVertices[i]);
-            if (zoneCollider) zoneCollider.points = zonePositions2D.ToArray();
+            for (int i = 0; i < friendZone.FriendZoneShape.NumberOfVertices; i++)
+                zonePositions2D.Add(friendZone.FriendZoneShape.OuterVertices[i]);
+            if (friendZone.Collider) friendZone.Collider.points = zonePositions2D.ToArray();
 
-            switch (zoneEnum) {
-                case FriendZonesEnum.NoGo:
-                    noGoZoneOuterVertices = zoneOuterVertices;
-                    break;
-                case FriendZonesEnum.Discomfort:
-                    discomfortZoneOuterVertices = zoneOuterVertices;
-                    break;
-                case FriendZonesEnum.Comfort:
-                    comfortZoneOuterVertices = zoneOuterVertices;
-                    break;
-                case FriendZonesEnum.Distant:
-                    break;
-            }
-
-            if (zoneEnum == FriendZonesEnum.NoGo) {
-                Mesh mesh = new Mesh {vertices = zoneOuterVertices};
+            if (friendZone.FriendZoneEnum == FriendZonesEnum.NoGo) {
+                Mesh mesh = new Mesh {vertices = friendZone.FriendZoneShape.OuterVertices};
                 int[] triangles = Triangulator.TriangulateConcave(zonePositions2D);
                 mesh.triangles = triangles;
-                if (zoneMeshFilter) zoneMeshFilter.mesh = mesh;
+                if (friendZone.MeshFilter) friendZone.MeshFilter.mesh = mesh;
             } else {
                 Vector3[] previousZonePositions;
-                switch (zoneEnum) {
+                switch (friendZone.FriendZoneEnum) {
                     case FriendZonesEnum.Discomfort:
-                        previousZonePositions = noGoZoneOuterVertices;
+                        previousZonePositions = friendZones.NoGo.FriendZoneShape.OuterVertices;
                         break;
                     case FriendZonesEnum.Comfort:
-                        previousZonePositions = discomfortZoneOuterVertices;
+                        previousZonePositions = friendZones.Discomfort.FriendZoneShape.OuterVertices;
                         break;
                     case FriendZonesEnum.Distant:
-                        previousZonePositions = comfortZoneOuterVertices;
+                        previousZonePositions = friendZones.Comfort.FriendZoneShape.OuterVertices;
                         break;
                     default:
                         previousZonePositions = new Vector3[0];
                         break;
                 }
 
-                Vector3[] meshPositions = new Vector3[2 * zoneShape.NumberOfVertices];
-                for (int i = 0; i < zoneShape.NumberOfVertices; i++) {
+                Vector3[] meshPositions = new Vector3[2 * friendZone.FriendZoneShape.NumberOfVertices];
+                for (int i = 0; i < friendZone.FriendZoneShape.NumberOfVertices; i++) {
                     meshPositions[i] = previousZonePositions[i];
-                    meshPositions[zoneShape.NumberOfVertices + i] = zoneOuterVertices[i];
+                    meshPositions[friendZone.FriendZoneShape.NumberOfVertices + i] =
+                        friendZone.FriendZoneShape.OuterVertices[i];
                 }
 
-                Mesh mesh = new Mesh
-                    {vertices = meshPositions, triangles = Triangulator.TriangulateRing(zoneShape.NumberOfVertices)};
-                if (zoneMeshFilter) zoneMeshFilter.mesh = mesh;
+                Mesh mesh = new Mesh {
+                    vertices = meshPositions,
+                    triangles = Triangulator.TriangulateRing(friendZone.FriendZoneShape.NumberOfVertices)
+                };
+                if (friendZone.MeshFilter) friendZone.MeshFilter.mesh = mesh;
 
             }
         }
