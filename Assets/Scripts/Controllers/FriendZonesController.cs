@@ -28,7 +28,7 @@ namespace Controllers {
             FriendZones = new QuadZonesTuple<FriendZone>(
                 new FriendZone(
                     FriendZonesEnum.NoGo,
-                    new CircularFriendZoneShape(2f),
+                    new WavyFriendZoneShape(2f, 0f, 0f, 0f),
                     friendZonesCollectors.NoGo),
                 new FriendZone(
                     FriendZonesEnum.Discomfort,
