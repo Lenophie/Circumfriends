@@ -1,5 +1,5 @@
 namespace Constants {
-    public enum FriendZones {
+    public enum FriendZonesEnum {
         NoGo,
         Discomfort,
         Comfort,

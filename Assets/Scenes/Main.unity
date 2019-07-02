@@ -610,7 +610,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79d990a7db2d472e94a426966026c8f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  zone: 0
+  zoneEnum: 0
   meController: {fileID: 680053966}
 --- !u!1 &519420028
 GameObject:
@@ -1253,7 +1253,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79d990a7db2d472e94a426966026c8f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  zone: 2
+  zoneEnum: 2
   meController: {fileID: 680053966}
 --- !u!1 &1335135644
 GameObject:
@@ -1358,7 +1358,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79d990a7db2d472e94a426966026c8f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  zone: 3
+  zoneEnum: 3
   meController: {fileID: 680053966}
 --- !u!1 &1489544546
 GameObject:
@@ -1941,5 +1941,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79d990a7db2d472e94a426966026c8f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  zone: 1
+  zoneEnum: 1
   meController: {fileID: 680053966}

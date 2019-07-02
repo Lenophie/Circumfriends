@@ -3,38 +3,38 @@ using UnityEngine;
 
 namespace Controllers {
     public class MeFriendZonesHandler {
-        public FriendZones? CurrentFriendZone { get; private set; }
+        public FriendZonesEnum? CurrentFriendZoneEnum { get; private set; }
         private bool isMeInNoGoZone;
         private bool isMeInDiscomfortZone;
         private bool isMeInComfortZone;
         private bool isMeInDistantZone;
 
         public MeFriendZonesHandler() {
-            CurrentFriendZone = null;
+            CurrentFriendZoneEnum = null;
             isMeInNoGoZone = false;
             isMeInDiscomfortZone = false;
             isMeInComfortZone = false;
             isMeInDistantZone = false;
         }
 
-        public void NotifyMeEnteringZone(FriendZones zone) {
-            switch (zone) {
-                case FriendZones.NoGo:
+        public void NotifyMeEnteringZone(FriendZonesEnum zoneEnum) {
+            switch (zoneEnum) {
+                case FriendZonesEnum.NoGo:
                     isMeInNoGoZone = true;
                     isMeInDiscomfortZone = true;
                     isMeInComfortZone = true;
                     isMeInDistantZone = true;
                     break;
-                case FriendZones.Discomfort:
+                case FriendZonesEnum.Discomfort:
                     isMeInDiscomfortZone = true;
                     isMeInComfortZone = true;
                     isMeInDistantZone = true;
                     break;
-                case FriendZones.Comfort:
+                case FriendZonesEnum.Comfort:
                     isMeInComfortZone = true;
                     isMeInDistantZone = true;
                     break;
-                case FriendZones.Distant:
+                case FriendZonesEnum.Distant:
                     isMeInDistantZone = true;
                     break;
                 default:
@@ -43,21 +43,21 @@ namespace Controllers {
             }
         }
 
-        public void NotifyMeExitingZone(FriendZones zone) {
-            switch (zone) {
-                case FriendZones.NoGo:
+        public void NotifyMeExitingZone(FriendZonesEnum zoneEnum) {
+            switch (zoneEnum) {
+                case FriendZonesEnum.NoGo:
                     isMeInNoGoZone = false;
                     break;
-                case FriendZones.Discomfort:
+                case FriendZonesEnum.Discomfort:
                     isMeInNoGoZone = false;
                     isMeInDiscomfortZone = false;
                     break;
-                case FriendZones.Comfort:
+                case FriendZonesEnum.Comfort:
                     isMeInNoGoZone = false;
                     isMeInDiscomfortZone = false;
                     isMeInComfortZone = false;
                     break;
-                case FriendZones.Distant:
+                case FriendZonesEnum.Distant:
                     isMeInNoGoZone = false;
                     isMeInDiscomfortZone = false;
                     isMeInComfortZone = false;
@@ -70,11 +70,11 @@ namespace Controllers {
         }
 
         public void DetermineCurrentFriendZone() {
-            if (isMeInNoGoZone) CurrentFriendZone = FriendZones.NoGo;
-            else if (isMeInDiscomfortZone) CurrentFriendZone = FriendZones.Discomfort;
-            else if (isMeInComfortZone) CurrentFriendZone = FriendZones.Comfort;
-            else if (isMeInDistantZone) CurrentFriendZone = FriendZones.Distant;
-            else CurrentFriendZone = null;
+            if (isMeInNoGoZone) CurrentFriendZoneEnum = FriendZonesEnum.NoGo;
+            else if (isMeInDiscomfortZone) CurrentFriendZoneEnum = FriendZonesEnum.Discomfort;
+            else if (isMeInComfortZone) CurrentFriendZoneEnum = FriendZonesEnum.Comfort;
+            else if (isMeInDistantZone) CurrentFriendZoneEnum = FriendZonesEnum.Distant;
+            else CurrentFriendZoneEnum = null;
         }
     }
 }

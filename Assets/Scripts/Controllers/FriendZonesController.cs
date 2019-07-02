@@ -39,16 +39,16 @@ namespace Controllers {
             distantZoneRadius = 10f;
 
             // Order is important, as the previous positions are used for the next zone's mesh
-            BuildZone(FriendZones.NoGo);
-            BuildZone(FriendZones.Discomfort);
-            BuildZone(FriendZones.Comfort);
-            BuildZone(FriendZones.Distant);
+            BuildZone(FriendZonesEnum.NoGo);
+            BuildZone(FriendZonesEnum.Discomfort);
+            BuildZone(FriendZonesEnum.Comfort);
+            BuildZone(FriendZonesEnum.Distant);
         }
 
-        private void BuildZone(FriendZones zone) {
-            float radius = zone == FriendZones.NoGo ? noGoZoneRadius :
-                zone == FriendZones.Discomfort ? discomfortZoneRadius :
-                zone == FriendZones.Comfort ? comfortZoneRadius : distantZoneRadius;
+        private void BuildZone(FriendZonesEnum zoneEnum) {
+            float radius = zoneEnum == FriendZonesEnum.NoGo ? noGoZoneRadius :
+                zoneEnum == FriendZonesEnum.Discomfort ? discomfortZoneRadius :
+                zoneEnum == FriendZonesEnum.Comfort ? comfortZoneRadius : distantZoneRadius;
             IFriendZoneShape zoneShape = new CircularFriendZoneShape(radius);
 
             Vector3[] zoneOuterVertices = zoneShape.CalculateZoneOuterVertices();
@@ -57,23 +57,23 @@ namespace Controllers {
             PolygonCollider2D zoneCollider;
             MeshFilter zoneMeshFilter;
 
-            switch (zone) {
-                case FriendZones.NoGo:
+            switch (zoneEnum) {
+                case FriendZonesEnum.NoGo:
                     zoneLineRenderer = noGoDiscomfortLimitRenderer;
                     zoneCollider = noGoZoneCollider;
                     zoneMeshFilter = noGoZoneMeshFilter;
                     break;
-                case FriendZones.Discomfort:
+                case FriendZonesEnum.Discomfort:
                     zoneLineRenderer = discomfortComfortLimitRenderer;
                     zoneCollider = discomfortZoneCollider;
                     zoneMeshFilter = discomfortZoneMeshFilter;
                     break;
-                case FriendZones.Comfort:
+                case FriendZonesEnum.Comfort:
                     zoneLineRenderer = comfortDistantLimitRenderer;
                     zoneCollider = comfortZoneCollider;
                     zoneMeshFilter = comfortZoneMeshFilter;
                     break;
-                case FriendZones.Distant:
+                case FriendZonesEnum.Distant:
                     zoneLineRenderer = null;
                     zoneCollider = distantZoneCollider;
                     zoneMeshFilter = distantZoneMeshFilter;
@@ -94,35 +94,35 @@ namespace Controllers {
             for (int i = 0; i < zoneShape.NumberOfVertices; i++) zonePositions2D.Add(zoneOuterVertices[i]);
             if (zoneCollider) zoneCollider.points = zonePositions2D.ToArray();
 
-            switch (zone) {
-                case FriendZones.NoGo:
+            switch (zoneEnum) {
+                case FriendZonesEnum.NoGo:
                     noGoZoneOuterVertices = zoneOuterVertices;
                     break;
-                case FriendZones.Discomfort:
+                case FriendZonesEnum.Discomfort:
                     discomfortZoneOuterVertices = zoneOuterVertices;
                     break;
-                case FriendZones.Comfort:
+                case FriendZonesEnum.Comfort:
                     comfortZoneOuterVertices = zoneOuterVertices;
                     break;
-                case FriendZones.Distant:
+                case FriendZonesEnum.Distant:
                     break;
             }
 
-            if (zone == FriendZones.NoGo) {
+            if (zoneEnum == FriendZonesEnum.NoGo) {
                 Mesh mesh = new Mesh {vertices = zoneOuterVertices};
                 int[] triangles = Triangulator.TriangulateConcave(zonePositions2D);
                 mesh.triangles = triangles;
                 if (zoneMeshFilter) zoneMeshFilter.mesh = mesh;
             } else {
                 Vector3[] previousZonePositions;
-                switch (zone) {
-                    case FriendZones.Discomfort:
+                switch (zoneEnum) {
+                    case FriendZonesEnum.Discomfort:
                         previousZonePositions = noGoZoneOuterVertices;
                         break;
-                    case FriendZones.Comfort:
+                    case FriendZonesEnum.Comfort:
                         previousZonePositions = discomfortZoneOuterVertices;
                         break;
-                    case FriendZones.Distant:
+                    case FriendZonesEnum.Distant:
                         previousZonePositions = comfortZoneOuterVertices;
                         break;
                     default:
