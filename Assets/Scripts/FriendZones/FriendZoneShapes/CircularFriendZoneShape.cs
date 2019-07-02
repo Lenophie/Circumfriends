@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace FriendZoneShapes {
+namespace FriendZones.FriendZoneShapes {
     public class CircularFriendZoneShape : IFriendZoneShape {
         public int NumberOfVertices { get; }
         public Vector3[] OuterVertices { get; private set; }

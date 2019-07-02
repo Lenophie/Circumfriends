@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using Constants;
 using FriendZones;
-using FriendZoneShapes;
+using FriendZones.FriendZoneShapes;
 using Helpers;
 using Meshes;
 using UnityEngine;

@@ -1,5 +1,5 @@
 using Constants;
-using FriendZoneShapes;
+using FriendZones.FriendZoneShapes;
 using UnityEngine;
 
 namespace FriendZones {
