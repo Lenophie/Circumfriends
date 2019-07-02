@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Constants;
 using FriendZones;
 using FriendZones.FriendZoneShapes;
@@ -40,7 +40,7 @@ namespace Controllers {
                     friendZonesCollectors.Comfort),
                 new FriendZone(
                     FriendZonesEnum.Distant,
-                    new CircularFriendZoneShape(10f),
+                    new WavyFriendZoneShape(10f, 0.1f, 20f),
                     friendZonesCollectors.Distant)
             );
         }
