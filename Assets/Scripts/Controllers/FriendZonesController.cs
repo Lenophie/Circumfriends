@@ -8,7 +8,7 @@ using UnityEngine;
 
 namespace Controllers {
     public class FriendZonesController : MonoBehaviour {
-        private QuadZonesTuple<FriendZone> friendZones;
+        public QuadZonesTuple<FriendZone> FriendZones { get; private set; }
 
         [SerializeField] private FriendZoneCollector noGoFriendZoneCollector = default;
         [SerializeField] private FriendZoneCollector discomfortFriendZoneCollector = default;
@@ -25,7 +25,7 @@ namespace Controllers {
                     distantFriendZoneCollector);
 
             // Initialize friendzones with collectors' info
-            friendZones = new QuadZonesTuple<FriendZone>(
+            FriendZones = new QuadZonesTuple<FriendZone>(
                 new FriendZone(
                     FriendZonesEnum.NoGo,
                     new CircularFriendZoneShape(2f),
@@ -46,10 +46,10 @@ namespace Controllers {
         }
 
         private void Update() {
-            BuildZone(friendZones.NoGo);
-            BuildZone(friendZones.Discomfort);
-            BuildZone(friendZones.Comfort);
-            BuildZone(friendZones.Distant);
+            BuildZone(FriendZones.NoGo);
+            BuildZone(FriendZones.Discomfort);
+            BuildZone(FriendZones.Comfort);
+            BuildZone(FriendZones.Distant);
         }
 
         private void BuildZone(FriendZone friendZone) {
@@ -75,13 +75,13 @@ namespace Controllers {
                 Vector3[] previousZonePositions;
                 switch (friendZone.FriendZoneEnum) {
                     case FriendZonesEnum.Discomfort:
-                        previousZonePositions = friendZones.NoGo.FriendZoneShape.OuterVertices;
+                        previousZonePositions = FriendZones.NoGo.FriendZoneShape.OuterVertices;
                         break;
                     case FriendZonesEnum.Comfort:
-                        previousZonePositions = friendZones.Discomfort.FriendZoneShape.OuterVertices;
+                        previousZonePositions = FriendZones.Discomfort.FriendZoneShape.OuterVertices;
                         break;
                     case FriendZonesEnum.Distant:
-                        previousZonePositions = friendZones.Comfort.FriendZoneShape.OuterVertices;
+                        previousZonePositions = FriendZones.Comfort.FriendZoneShape.OuterVertices;
                         break;
                     default:
                         previousZonePositions = new Vector3[0];
