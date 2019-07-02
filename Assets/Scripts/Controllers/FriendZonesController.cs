@@ -28,19 +28,19 @@ namespace Controllers {
             friendZones = new QuadZonesTuple<FriendZone>(
                 new FriendZone(
                     FriendZonesEnum.NoGo,
-                    new WavyFriendZoneShape(2f, 0.01f, 20f),
+                    new CircularFriendZoneShape(2f),
                     friendZonesCollectors.NoGo),
                 new FriendZone(
                     FriendZonesEnum.Discomfort,
-                    new WavyFriendZoneShape(4f, 0.01f, 20f),
+                    new WavyFriendZoneShape(4f, 0.01f, 20f, Mathf.Deg2Rad * 45f, true, false, 3f),
                     friendZonesCollectors.Discomfort),
                 new FriendZone(
                     FriendZonesEnum.Comfort,
-                    new WavyFriendZoneShape(5f, 0.01f, 20f),
+                    new WavyFriendZoneShape(5f, 0.01f, 20f, Mathf.Deg2Rad * 90f, true, true, 2f),
                     friendZonesCollectors.Comfort),
                 new FriendZone(
                     FriendZonesEnum.Distant,
-                    new WavyFriendZoneShape(10f, 0.01f, 20f),
+                    new WavyFriendZoneShape(10f, 0.01f, 20f, Mathf.Deg2Rad * 125f),
                     friendZonesCollectors.Distant)
             );
         }
