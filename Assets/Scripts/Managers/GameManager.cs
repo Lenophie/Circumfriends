@@ -1,6 +1,7 @@
 using System.Collections;
 using Constants;
 using Controllers;
+using Dialogues;
 using FriendZones.FriendZoneShapes;
 using UnityEngine;
 
@@ -15,6 +16,8 @@ namespace Managers {
         [SerializeField] private ModifiersCollector modifiersCollector = default;
 
         private InputManager inputManager;
+        [Header("Dialogue")]
+        [SerializeField] private DialogueGraph dialogueGraph;
 
         private void Start() {
             inputManager = new InputManager(meController);
@@ -22,6 +25,7 @@ namespace Managers {
             FriendZonesConstants.SetConstants(friendZonesConstantsCollector);
             friendZonesController.InitializeFriendZones();
             StartCoroutine(TransitionTester());
+            DialogueTester();
         }
 
         private IEnumerator TransitionTester() { // TODO: Remove this
@@ -34,6 +38,13 @@ namespace Managers {
             yield return new WaitForSeconds(2f);
             friendZonesController.FriendZones.Comfort.FriendZoneShape.TransitionToNewCharacteristics(new FriendZoneShapeConfig(
                 4f, 0.05f, 20f));
+        }
+
+        private void DialogueTester() { // TODO: remove this
+            dialogueGraph.Restart();
+            Debug.Log(dialogueGraph.currentChatNode.text);
+            dialogueGraph.PickAnswerToCurrentChatNode(0);
+            Debug.Log(dialogueGraph.currentChatNode.text);
         }
 
         private void Update() {
