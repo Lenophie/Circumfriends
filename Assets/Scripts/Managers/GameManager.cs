@@ -1,8 +1,6 @@
-using System.Collections;
 using Constants;
 using Controllers;
 using Dialogues;
-using FriendZones.FriendZoneShapes;
 using UnityEngine;
 
 namespace Managers {
