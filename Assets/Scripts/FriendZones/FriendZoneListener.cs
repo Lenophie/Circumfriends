@@ -2,7 +2,7 @@ using Constants;
 using Controllers;
 using UnityEngine;
 
-namespace Listeners {
+namespace FriendZones {
     public class FriendZoneListener : MonoBehaviour {
         [SerializeField] private FriendZonesEnum zoneEnum = default;
         [SerializeField] private MeController meController = default;
