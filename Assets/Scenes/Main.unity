@@ -399,7 +399,7 @@ MonoBehaviour:
   meController: {fileID: 680053966}
   friendZonesController: {fileID: 97741058}
   friendZonesConstantsCollector:
-    numberOfOuterVerticesPerFriendzone: 250
+    numberOfOuterVerticesPerFriendzone: 200
     maxLineNoiseAmplitude: 0.01
     noGoZoneOut: {r: 0.99215686, g: 0.12093557, b: 0, a: 0.7058824}
     noGoZoneIn: {r: 0.9716981, g: 0.38048333, b: 0.2979263, a: 0.7058824}
