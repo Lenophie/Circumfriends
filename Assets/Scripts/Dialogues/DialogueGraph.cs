@@ -8,12 +8,12 @@ namespace Dialogues {
     [CreateAssetMenu(menuName = "Dialogue/Graph")]
     public class DialogueGraph : NodeGraph {
         [HideInInspector] public ChatNode currentChatNode;
-        private GameManager gameManager;
+        public GameManager GameManager { get; private set; }
 
         public void Restart(GameManager gameManager) {
             //Find the first DialogueNode without any inputs. This is the starting node.
             currentChatNode = nodes.Find(x => x is ChatNode && x.Inputs.All(y => !y.IsConnected)) as ChatNode;
-            this.gameManager = gameManager;
+            GameManager = gameManager;
         }
 
         public void PickAnswerToCurrentChatNode(int index) {
@@ -21,7 +21,7 @@ namespace Dialogues {
         }
 
         public void HandleEvent(DialogueEventsEnum dialogueEventsEnum, DialogueEvent dialogueEvent) {
-            gameManager.HandleDialogueEvent(dialogueEventsEnum, dialogueEvent);
+            GameManager.HandleDialogueEvent(dialogueEventsEnum, dialogueEvent);
         }
     }
 }
