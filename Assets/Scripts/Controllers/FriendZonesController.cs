@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using Constants;
+using Dialogues;
 using FriendZones;
 using FriendZones.FriendZoneShapes;
 using Helpers;
@@ -103,6 +104,13 @@ namespace Controllers {
                 };
                 if (friendZone.MeshFilter) friendZone.MeshFilter.mesh = mesh;
             }
+        }
+
+        public void HandleFriendZoneShapeModificationEvent(
+            FriendZoneShapeModificationEvent friendZoneShapeModificationEvent) {
+            FriendZone friendZoneToModify = EnumToFriendZone(friendZoneShapeModificationEvent.friendZonesEnum);
+            friendZoneToModify.FriendZoneShape.TransitionToNewCharacteristics(friendZoneShapeModificationEvent
+                .friendZoneShapeConfig);
         }
 
         private void HandleCurrentMeFriendZone() {

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Chat
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: -312, y: 88}
+  position: {x: -696, y: 8}
   ports:
     keys:
     - answers
@@ -57,7 +57,7 @@ MonoBehaviour:
   m_Name: Friend Zone Shape Modification Event
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: -312, y: -408}
+  position: {x: -696, y: -424}
   ports:
     keys:
     - input
@@ -76,11 +76,48 @@ MonoBehaviour:
       _dynamic: 0
   input: {fileID: 0}
   friendZoneShapeModificationEvent:
-    friendZonesEnum: 0
+    friendZonesEnum: 2
     friendZoneShapeConfig:
-      Radius: 0
-      Amplitude: 0
-      NumberOfPeriods: 0
+      radius: 6
+      amplitude: 0.1
+      numberOfPeriods: 3
+--- !u!114 &-1474830415723262154
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31cda0d1d52a4d9ebdf267ada68986df, type: 3}
+  m_Name: Friend Zone Shape Modification Event
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -360, y: -440}
+  ports:
+    keys:
+    - input
+    values:
+    - _fieldName: input
+      _node: {fileID: -1474830415723262154}
+      _typeQualifiedName: Dialogues.DialogueNode, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: answers 0
+        node: {fileID: 3661615002311679937}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  input: {fileID: 0}
+  friendZoneShapeModificationEvent:
+    friendZonesEnum: 1
+    friendZoneShapeConfig:
+      radius: 3
+      amplitude: 0.05
+      numberOfPeriods: 8
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -98,7 +135,10 @@ MonoBehaviour:
   - {fileID: 3661615002311679937}
   - {fileID: -5726179105378063464}
   - {fileID: -3595495340288085226}
-  currentChatNode: {fileID: 0}
+  - {fileID: -1474830415723262154}
+  - {fileID: 5530910402934492334}
+  - {fileID: 3290766107148829683}
+  currentChatNode: {fileID: 3661615002311679937}
 --- !u!114 &3071523827260635736
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -112,13 +152,14 @@ MonoBehaviour:
   m_Name: Chat
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: -680, y: -72}
+  position: {x: -1144, y: -312}
   ports:
     keys:
     - answers
     - input
     - answers 0
     - answers 1
+    - answers 2
     values:
     - _fieldName: answers
       _node: {fileID: 3071523827260635736}
@@ -168,11 +209,59 @@ MonoBehaviour:
       _connectionType: 0
       _typeConstraint: 0
       _dynamic: 1
+    - _fieldName: answers 2
+      _node: {fileID: 3071523827260635736}
+      _typeQualifiedName: System.Collections.Generic.List`1[[System.String, mscorlib,
+        Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]], mscorlib,
+        Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 1
   input: {fileID: 0}
   text: first line
   answers:
   - test0
   - test1
+  - test1
+--- !u!114 &3290766107148829683
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31cda0d1d52a4d9ebdf267ada68986df, type: 3}
+  m_Name: Friend Zone Shape Modification Event
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -72, y: -440}
+  ports:
+    keys:
+    - input
+    values:
+    - _fieldName: input
+      _node: {fileID: 3290766107148829683}
+      _typeQualifiedName: Dialogues.DialogueNode, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: answers 0
+        node: {fileID: 5530910402934492334}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  input: {fileID: 0}
+  friendZoneShapeModificationEvent:
+    friendZonesEnum: 2
+    friendZoneShapeConfig:
+      radius: 4
+      amplitude: 0.05
+      numberOfPeriods: 20
 --- !u!114 &3661615002311679937
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -186,11 +275,12 @@ MonoBehaviour:
   m_Name: Chat
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: -312, y: -216}
+  position: {x: -696, y: -232}
   ports:
     keys:
     - answers
     - input
+    - answers 0
     values:
     - _fieldName: answers
       _node: {fileID: 3661615002311679937}
@@ -214,6 +304,82 @@ MonoBehaviour:
       _connectionType: 0
       _typeConstraint: 0
       _dynamic: 0
+    - _fieldName: answers 0
+      _node: {fileID: 3661615002311679937}
+      _typeQualifiedName: System.Collections.Generic.List`1[[System.String, mscorlib,
+        Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]], mscorlib,
+        Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: input
+        node: {fileID: -1474830415723262154}
+        reroutePoints: []
+      - fieldName: input
+        node: {fileID: 5530910402934492334}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 1
   input: {fileID: 0}
   text: answer to test0
-  answers: []
+  answers:
+  - test0
+--- !u!114 &5530910402934492334
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad1a3c87a51942ec802fe1f00f7956c0, type: 3}
+  m_Name: Chat
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -360, y: -232}
+  ports:
+    keys:
+    - answers
+    - input
+    - answers 0
+    values:
+    - _fieldName: answers
+      _node: {fileID: 5530910402934492334}
+      _typeQualifiedName: System.Collections.Generic.List`1[[System.String, mscorlib,
+        Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]], mscorlib,
+        Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: input
+      _node: {fileID: 5530910402934492334}
+      _typeQualifiedName: Dialogues.DialogueNode, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: answers 0
+        node: {fileID: 3661615002311679937}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: answers 0
+      _node: {fileID: 5530910402934492334}
+      _typeQualifiedName: System.Collections.Generic.List`1[[System.String, mscorlib,
+        Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]], mscorlib,
+        Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: input
+        node: {fileID: 3290766107148829683}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 1
+  input: {fileID: 0}
+  text: answer to test0
+  answers:
+  - test0
