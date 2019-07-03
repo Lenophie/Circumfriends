@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-8777746976439780226
+--- !u!114 &-5726179105378063464
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -13,14 +13,14 @@ MonoBehaviour:
   m_Name: Chat
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 104, y: -232}
+  position: {x: -312, y: 88}
   ports:
     keys:
     - answers
     - input
     values:
     - _fieldName: answers
-      _node: {fileID: -8777746976439780226}
+      _node: {fileID: -5726179105378063464}
       _typeQualifiedName: System.Collections.Generic.List`1[[System.String, mscorlib,
         Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]], mscorlib,
         Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
@@ -30,64 +30,57 @@ MonoBehaviour:
       _typeConstraint: 0
       _dynamic: 0
     - _fieldName: input
-      _node: {fileID: -8777746976439780226}
-      _typeQualifiedName: Dialogues.DialogueNode, Assembly-CSharp, Version=0.0.0.0,
-        Culture=neutral, PublicKeyToken=null
-      connections:
-      - fieldName: answers 0
-        node: {fileID: 5675771077747614253}
-        reroutePoints: []
-      _direction: 0
-      _connectionType: 0
-      _typeConstraint: 0
-      _dynamic: 0
-  input: {fileID: 0}
-  text: Dial1
-  answers: []
---- !u!114 &-2928290155018576620
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ad1a3c87a51942ec802fe1f00f7956c0, type: 3}
-  m_Name: Chat
-  m_EditorClassIdentifier: 
-  graph: {fileID: 11400000}
-  position: {x: 104, y: 56}
-  ports:
-    keys:
-    - answers
-    - input
-    values:
-    - _fieldName: answers
-      _node: {fileID: -2928290155018576620}
-      _typeQualifiedName: System.Collections.Generic.List`1[[System.String, mscorlib,
-        Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]], mscorlib,
-        Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-      connections: []
-      _direction: 1
-      _connectionType: 0
-      _typeConstraint: 0
-      _dynamic: 0
-    - _fieldName: input
-      _node: {fileID: -2928290155018576620}
+      _node: {fileID: -5726179105378063464}
       _typeQualifiedName: Dialogues.DialogueNode, Assembly-CSharp, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
       connections:
       - fieldName: answers 1
-        node: {fileID: 5675771077747614253}
+        node: {fileID: 3071523827260635736}
         reroutePoints: []
       _direction: 0
       _connectionType: 0
       _typeConstraint: 0
       _dynamic: 0
   input: {fileID: 0}
-  text: Dial1prime
+  text: answer to test1
   answers: []
+--- !u!114 &-3595495340288085226
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31cda0d1d52a4d9ebdf267ada68986df, type: 3}
+  m_Name: Friend Zone Shape Modification Event
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -312, y: -408}
+  ports:
+    keys:
+    - input
+    values:
+    - _fieldName: input
+      _node: {fileID: -3595495340288085226}
+      _typeQualifiedName: Dialogues.DialogueNode, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: answers 0
+        node: {fileID: 3071523827260635736}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  input: {fileID: 0}
+  friendZoneShapeModificationEvent:
+    friendZonesEnum: 0
+    friendZoneShapeConfig:
+      Radius: 0
+      Amplitude: 0
+      NumberOfPeriods: 0
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -101,11 +94,12 @@ MonoBehaviour:
   m_Name: New Dialogue Graph
   m_EditorClassIdentifier: 
   nodes:
-  - {fileID: -2928290155018576620}
-  - {fileID: -8777746976439780226}
-  - {fileID: 5675771077747614253}
+  - {fileID: 3071523827260635736}
+  - {fileID: 3661615002311679937}
+  - {fileID: -5726179105378063464}
+  - {fileID: -3595495340288085226}
   currentChatNode: {fileID: 0}
---- !u!114 &5675771077747614253
+--- !u!114 &3071523827260635736
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -118,29 +112,16 @@ MonoBehaviour:
   m_Name: Chat
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: -216, y: -184}
+  position: {x: -680, y: -72}
   ports:
     keys:
-    - answers 0
     - answers
-    - answers 1
     - input
+    - answers 0
+    - answers 1
     values:
-    - _fieldName: answers 0
-      _node: {fileID: 5675771077747614253}
-      _typeQualifiedName: System.Collections.Generic.List`1[[System.String, mscorlib,
-        Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]], mscorlib,
-        Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-      connections:
-      - fieldName: input
-        node: {fileID: -8777746976439780226}
-        reroutePoints: []
-      _direction: 1
-      _connectionType: 0
-      _typeConstraint: 0
-      _dynamic: 1
     - _fieldName: answers
-      _node: {fileID: 5675771077747614253}
+      _node: {fileID: 3071523827260635736}
       _typeQualifiedName: System.Collections.Generic.List`1[[System.String, mscorlib,
         Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]], mscorlib,
         Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
@@ -149,21 +130,8 @@ MonoBehaviour:
       _connectionType: 0
       _typeConstraint: 0
       _dynamic: 0
-    - _fieldName: answers 1
-      _node: {fileID: 5675771077747614253}
-      _typeQualifiedName: System.Collections.Generic.List`1[[System.String, mscorlib,
-        Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]], mscorlib,
-        Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-      connections:
-      - fieldName: input
-        node: {fileID: -2928290155018576620}
-        reroutePoints: []
-      _direction: 1
-      _connectionType: 0
-      _typeConstraint: 0
-      _dynamic: 1
     - _fieldName: input
-      _node: {fileID: 5675771077747614253}
+      _node: {fileID: 3071523827260635736}
       _typeQualifiedName: Dialogues.DialogueNode, Assembly-CSharp, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
       connections: []
@@ -171,8 +139,81 @@ MonoBehaviour:
       _connectionType: 0
       _typeConstraint: 0
       _dynamic: 0
+    - _fieldName: answers 0
+      _node: {fileID: 3071523827260635736}
+      _typeQualifiedName: System.Collections.Generic.List`1[[System.String, mscorlib,
+        Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]], mscorlib,
+        Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: input
+        node: {fileID: 3661615002311679937}
+        reroutePoints: []
+      - fieldName: input
+        node: {fileID: -3595495340288085226}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 1
+    - _fieldName: answers 1
+      _node: {fileID: 3071523827260635736}
+      _typeQualifiedName: System.Collections.Generic.List`1[[System.String, mscorlib,
+        Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]], mscorlib,
+        Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: input
+        node: {fileID: -5726179105378063464}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 1
   input: {fileID: 0}
-  text: Dial0
+  text: first line
   answers:
-  - todial1
-  - todial2
+  - test0
+  - test1
+--- !u!114 &3661615002311679937
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad1a3c87a51942ec802fe1f00f7956c0, type: 3}
+  m_Name: Chat
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -312, y: -216}
+  ports:
+    keys:
+    - answers
+    - input
+    values:
+    - _fieldName: answers
+      _node: {fileID: 3661615002311679937}
+      _typeQualifiedName: System.Collections.Generic.List`1[[System.String, mscorlib,
+        Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]], mscorlib,
+        Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: input
+      _node: {fileID: 3661615002311679937}
+      _typeQualifiedName: Dialogues.DialogueNode, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: answers 0
+        node: {fileID: 3071523827260635736}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  input: {fileID: 0}
+  text: answer to test0
+  answers: []

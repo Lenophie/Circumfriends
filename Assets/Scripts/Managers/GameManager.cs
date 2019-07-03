@@ -17,7 +17,7 @@ namespace Managers {
 
         private InputManager inputManager;
         [Header("Dialogue")]
-        [SerializeField] private DialogueGraph dialogueGraph;
+        [SerializeField] private DialogueGraph dialogueGraph = default;
 
         private void Start() {
             inputManager = new InputManager(meController);
@@ -40,8 +40,13 @@ namespace Managers {
                 4f, 0.05f, 20f));
         }
 
+        public void HandleDialogueEvent(DialogueEventsEnum dialogueEventsEnum, DialogueEvent dialogueEvent) {
+            Debug.Log(dialogueEventsEnum);
+            Debug.Log(((FriendZoneShapeModificationEvent) dialogueEvent).friendZoneShapeConfig.radius);
+        }
+        
         private void DialogueTester() { // TODO: remove this
-            dialogueGraph.Restart();
+            dialogueGraph.Restart(this);
             Debug.Log(dialogueGraph.currentChatNode.text);
             dialogueGraph.PickAnswerToCurrentChatNode(0);
             Debug.Log(dialogueGraph.currentChatNode.text);
