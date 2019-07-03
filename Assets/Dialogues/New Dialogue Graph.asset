@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Chat
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: -952, y: -24}
+  position: {x: -152, y: 120}
   ports:
     keys:
     - answers
@@ -57,7 +57,7 @@ MonoBehaviour:
   m_Name: Friend Zone Shape Modification Event
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: -648, y: -488}
+  position: {x: 152, y: -344}
   ports:
     keys:
     - input
@@ -94,7 +94,7 @@ MonoBehaviour:
   m_Name: Friend Zone Shape Modification Event
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: -632, y: -296}
+  position: {x: 168, y: -152}
   ports:
     keys:
     - input
@@ -131,7 +131,7 @@ MonoBehaviour:
   m_Name: Timer
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: -984, y: -360}
+  position: {x: -184, y: -216}
   ports:
     keys:
     - delays
@@ -239,7 +239,7 @@ MonoBehaviour:
   m_Name: Chat
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: -1240, y: -312}
+  position: {x: -440, y: -168}
   ports:
     keys:
     - answers
@@ -310,7 +310,7 @@ MonoBehaviour:
   m_Name: Friend Zone Shape Modification Event
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: -632, y: -88}
+  position: {x: 168, y: 56}
   ports:
     keys:
     - input
