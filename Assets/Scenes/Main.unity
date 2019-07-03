@@ -236,22 +236,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbe9e1a281232e0469937efa19525825, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  meController: {fileID: 680053966}
   noGoFriendZoneCollector:
     lineRenderer: {fileID: 529792790}
     collider: {fileID: 362187908}
     meshFilter: {fileID: 1613362500}
+    meshRenderer: {fileID: 1613362499}
   discomfortFriendZoneCollector:
     lineRenderer: {fileID: 662261289}
     collider: {fileID: 2034220881}
     meshFilter: {fileID: 685528552}
+    meshRenderer: {fileID: 685528551}
   comfortFriendZoneCollector:
     lineRenderer: {fileID: 2032829011}
     collider: {fileID: 1326252279}
     meshFilter: {fileID: 149445833}
+    meshRenderer: {fileID: 149445832}
   distantFriendZoneCollector:
     lineRenderer: {fileID: 0}
     collider: {fileID: 1374524291}
     meshFilter: {fileID: 1954489032}
+    meshRenderer: {fileID: 1954489031}
 --- !u!1 &149445830
 GameObject:
   m_ObjectHideFlags: 0

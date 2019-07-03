@@ -10,6 +10,7 @@ namespace Controllers {
     public class FriendZonesController : MonoBehaviour {
         public QuadZonesTuple<FriendZone> FriendZones { get; private set; }
 
+        [SerializeField] private MeController meController = default;
         [SerializeField] private FriendZoneCollector noGoFriendZoneCollector = default;
         [SerializeField] private FriendZoneCollector discomfortFriendZoneCollector = default;
         [SerializeField] private FriendZoneCollector comfortFriendZoneCollector = default;
@@ -50,6 +51,7 @@ namespace Controllers {
             BuildZone(FriendZones.Discomfort);
             BuildZone(FriendZones.Comfort);
             BuildZone(FriendZones.Distant);
+            if (meController) HandleCurrentMeFriendZone();
         }
 
         private void BuildZone(FriendZone friendZone) {
@@ -100,7 +102,34 @@ namespace Controllers {
                     triangles = Triangulator.TriangulateRing(FriendZonesConstants.NumberOfOuterVerticesPerFriendzone)
                 };
                 if (friendZone.MeshFilter) friendZone.MeshFilter.mesh = mesh;
+            }
+        }
 
+        private void HandleCurrentMeFriendZone() {
+            FriendZones.NoGo.UpdateColor(false);
+            FriendZones.Discomfort.UpdateColor(false);
+            FriendZones.Comfort.UpdateColor(false);
+            FriendZones.Distant.UpdateColor(false);
+
+            FriendZonesEnum? currentMeFriendZoneEnum = meController.MeFriendZonesHandler.CurrentFriendZoneEnum;
+            if (currentMeFriendZoneEnum != null) {
+                FriendZone currentMeFriendZone = EnumToFriendZone(currentMeFriendZoneEnum);
+                currentMeFriendZone.UpdateColor(true);
+            }
+        }
+
+        private FriendZone EnumToFriendZone(FriendZonesEnum? friendZonesEnum) {
+            switch (friendZonesEnum) {
+                case FriendZonesEnum.NoGo:
+                    return FriendZones.NoGo;
+                case FriendZonesEnum.Discomfort:
+                    return FriendZones.Discomfort;
+                case FriendZonesEnum.Comfort:
+                    return FriendZones.Comfort;
+                case FriendZonesEnum.Distant:
+                    return FriendZones.Distant;
+                default:
+                    return null;
             }
         }
     }
