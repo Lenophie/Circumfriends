@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "com.github.siccity.xnode": "https://github.com/siccity/xNode.git",
     "com.unity.ads": "2.0.8",
     "com.unity.analytics": "3.3.2",
     "com.unity.collab-proxy": "1.2.16",
@@ -37,5 +38,11 @@
     "com.unity.modules.vr": "1.0.0",
     "com.unity.modules.wind": "1.0.0",
     "com.unity.modules.xr": "1.0.0"
+  },
+  "lock": {
+    "com.github.siccity.xnode": {
+      "hash": "8e0bd964ad9664e9586f4ddb1f7d18dc10bb570a",
+      "revision": "HEAD"
+    }
   }
 }
