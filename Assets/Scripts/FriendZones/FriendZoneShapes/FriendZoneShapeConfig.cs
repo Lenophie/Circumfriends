@@ -1,13 +1,16 @@
+using System;
+
 namespace FriendZones.FriendZoneShapes {
+    [Serializable]
     public class FriendZoneShapeConfig {
-        public readonly float Radius;
-        public readonly float Amplitude;
-        public readonly float NumberOfPeriods;
+        public float radius;
+        public float amplitude;
+        public float numberOfPeriods;
 
         public FriendZoneShapeConfig(float radius, float amplitude, float numberOfPeriods) {
-            Radius = radius;
-            Amplitude = amplitude;
-            NumberOfPeriods = numberOfPeriods;
+            this.radius = radius;
+            this.amplitude = amplitude;
+            this.numberOfPeriods = numberOfPeriods;
         }
     }
 }

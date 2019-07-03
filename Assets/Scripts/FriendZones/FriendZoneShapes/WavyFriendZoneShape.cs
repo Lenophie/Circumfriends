@@ -90,9 +90,9 @@ namespace FriendZones.FriendZoneShapes {
 
         public void TransitionToNewCharacteristics(FriendZoneShapeConfig friendZoneShapeConfig) {
             isTransitioning = true;
-            radius = friendZoneShapeConfig.Radius;
-            amplitude = friendZoneShapeConfig.Amplitude;
-            numberOfPeriods = friendZoneShapeConfig.NumberOfPeriods;
+            radius = friendZoneShapeConfig.radius;
+            amplitude = friendZoneShapeConfig.amplitude;
+            numberOfPeriods = friendZoneShapeConfig.numberOfPeriods;
         }
     }
 }
