@@ -25,7 +25,7 @@ namespace Managers {
             FriendZonesConstants.SetConstants(friendZonesConstantsCollector);
             friendZonesController.InitializeFriendZones();
             dialogueGraph.Restart(this);
-            StartCoroutine(DialogueTester());
+            dialogueGraph.PickAnswerToCurrentChatNode(0);
         }
 
         public void HandleDialogueEvent(DialogueEventsEnum dialogueEventsEnum, DialogueEvent dialogueEvent) {
@@ -37,15 +37,6 @@ namespace Managers {
                 default:
                     return;
             }
-        }
-
-        private IEnumerator DialogueTester() { // TODO: remove this
-            yield return new WaitForSeconds(5f);
-            dialogueGraph.PickAnswerToCurrentChatNode(0);
-            yield return new WaitForSeconds(1f);
-            dialogueGraph.PickAnswerToCurrentChatNode(0);
-            yield return new WaitForSeconds(2f);
-            dialogueGraph.PickAnswerToCurrentChatNode(0);
         }
 
         private void Update() {
