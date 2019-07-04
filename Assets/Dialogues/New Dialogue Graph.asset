@@ -44,6 +44,64 @@ MonoBehaviour:
   input: {fileID: 0}
   text: answer to test1
   answers: []
+--- !u!114 &-5293409520485103686
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7625e57e1d046bcb0a1415e2d7bf6d7, type: 3}
+  m_Name: Timer
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 440, y: 24}
+  ports:
+    keys:
+    - delays
+    - input
+    - delays 0
+    values:
+    - _fieldName: delays
+      _node: {fileID: -5293409520485103686}
+      _typeQualifiedName: System.Collections.Generic.List`1[[System.Single, mscorlib,
+        Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]], mscorlib,
+        Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: input
+      _node: {fileID: -5293409520485103686}
+      _typeQualifiedName: Dialogues.DialogueNode, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: output
+        node: {fileID: 3290766107148829683}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: delays 0
+      _node: {fileID: -5293409520485103686}
+      _typeQualifiedName: System.Collections.Generic.List`1[[System.Single, mscorlib,
+        Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]], mscorlib,
+        Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: input
+        node: {fileID: -324776922999925639}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 1
+  input: {fileID: 0}
+  delays:
+  - 2
 --- !u!114 &-3595495340288085226
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -61,6 +119,7 @@ MonoBehaviour:
   ports:
     keys:
     - input
+    - output
     values:
     - _fieldName: input
       _node: {fileID: -3595495340288085226}
@@ -74,7 +133,17 @@ MonoBehaviour:
       _connectionType: 0
       _typeConstraint: 0
       _dynamic: 0
+    - _fieldName: output
+      _node: {fileID: -3595495340288085226}
+      _typeQualifiedName: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
   input: {fileID: 0}
+  output: 0
   friendZoneShapeModificationEvent:
     friendZonesEnum: 2
     friendZoneShapeConfig:
@@ -94,10 +163,11 @@ MonoBehaviour:
   m_Name: Friend Zone Shape Modification Event
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 168, y: -152}
+  position: {x: 152, y: -152}
   ports:
     keys:
     - input
+    - output
     values:
     - _fieldName: input
       _node: {fileID: -1474830415723262154}
@@ -111,7 +181,17 @@ MonoBehaviour:
       _connectionType: 0
       _typeConstraint: 0
       _dynamic: 0
+    - _fieldName: output
+      _node: {fileID: -1474830415723262154}
+      _typeQualifiedName: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
   input: {fileID: 0}
+  output: 0
   friendZoneShapeModificationEvent:
     friendZonesEnum: 1
     friendZoneShapeConfig:
@@ -206,6 +286,115 @@ MonoBehaviour:
   - 6
   - 8
   - 9
+--- !u!114 &-332116025108209729
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7625e57e1d046bcb0a1415e2d7bf6d7, type: 3}
+  m_Name: Timer
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 440, y: 184}
+  ports:
+    keys:
+    - delays
+    - input
+    - delays 0
+    values:
+    - _fieldName: delays
+      _node: {fileID: -332116025108209729}
+      _typeQualifiedName: System.Collections.Generic.List`1[[System.Single, mscorlib,
+        Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]], mscorlib,
+        Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: input
+      _node: {fileID: -332116025108209729}
+      _typeQualifiedName: Dialogues.DialogueNode, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: output
+        node: {fileID: -324776922999925639}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: delays 0
+      _node: {fileID: -332116025108209729}
+      _typeQualifiedName: System.Collections.Generic.List`1[[System.Single, mscorlib,
+        Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]], mscorlib,
+        Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: input
+        node: {fileID: 3290766107148829683}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 1
+  input: {fileID: 0}
+  delays:
+  - 2
+--- !u!114 &-324776922999925639
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31cda0d1d52a4d9ebdf267ada68986df, type: 3}
+  m_Name: Friend Zone Shape Modification Event
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 712, y: 56}
+  ports:
+    keys:
+    - input
+    - output
+    values:
+    - _fieldName: input
+      _node: {fileID: -324776922999925639}
+      _typeQualifiedName: Dialogues.DialogueNode, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: delays 0
+        node: {fileID: -5293409520485103686}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: output
+      _node: {fileID: -324776922999925639}
+      _typeQualifiedName: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: input
+        node: {fileID: -332116025108209729}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  input: {fileID: 0}
+  output: 0
+  friendZoneShapeModificationEvent:
+    friendZonesEnum: 2
+    friendZoneShapeConfig:
+      radius: 4
+      amplitude: 0.15
+      numberOfPeriods: 20
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -225,6 +414,9 @@ MonoBehaviour:
   - {fileID: -1474830415723262154}
   - {fileID: 3290766107148829683}
   - {fileID: -1033514266629466225}
+  - {fileID: -324776922999925639}
+  - {fileID: -5293409520485103686}
+  - {fileID: -332116025108209729}
   currentChatNode: {fileID: 3071523827260635736}
 --- !u!114 &3071523827260635736
 MonoBehaviour:
@@ -314,6 +506,7 @@ MonoBehaviour:
   ports:
     keys:
     - input
+    - output
     values:
     - _fieldName: input
       _node: {fileID: 3290766107148829683}
@@ -323,11 +516,27 @@ MonoBehaviour:
       - fieldName: delays 2
         node: {fileID: -1033514266629466225}
         reroutePoints: []
+      - fieldName: delays 0
+        node: {fileID: -332116025108209729}
+        reroutePoints: []
       _direction: 0
       _connectionType: 0
       _typeConstraint: 0
       _dynamic: 0
+    - _fieldName: output
+      _node: {fileID: 3290766107148829683}
+      _typeQualifiedName: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: input
+        node: {fileID: -5293409520485103686}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
   input: {fileID: 0}
+  output: 0
   friendZoneShapeModificationEvent:
     friendZonesEnum: 2
     friendZoneShapeConfig:

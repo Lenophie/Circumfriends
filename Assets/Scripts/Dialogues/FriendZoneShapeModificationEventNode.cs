@@ -7,6 +7,7 @@ namespace Dialogues {
         public override void Trigger() {
             ((DialogueGraph) graph).HandleEvent(DialogueEventsEnum.FriendZoneShapeModification,
                 friendZoneShapeModificationEvent);
+            base.Trigger();
         }
     }
 }
