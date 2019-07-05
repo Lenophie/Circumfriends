@@ -1,6 +1,7 @@
 using Constants;
 using Controllers;
 using Dialogues;
+using TMPro;
 using UnityEngine;
 
 namespace Managers {
@@ -15,12 +16,13 @@ namespace Managers {
 
         [Header("Dialogue")]
         [SerializeField] private DialogueGraph dialogueGraph = default;
+        [SerializeField] private TextMeshProUGUI dialogueTextMesh = default;
 
         private InputManager inputManager;
         private DialogueManager dialogueManager;
         private void Start() {
             inputManager = new InputManager(meController);
-            dialogueManager = new DialogueManager();
+            dialogueManager = new DialogueManager(dialogueTextMesh);
 
             Modifiers.SetConstants(modifiersCollector);
             FriendZonesConstants.SetConstants(friendZonesConstantsCollector);

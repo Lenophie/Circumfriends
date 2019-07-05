@@ -414,6 +414,7 @@ MonoBehaviour:
     meResistance: 800
     friendAttraction: 700
   dialogueGraph: {fileID: 11400000, guid: c69f29f8a25977543bf53d48472e2c88, type: 2}
+  dialogueTextMesh: {fileID: 1086942872}
 --- !u!4 &219227593
 Transform:
   m_ObjectHideFlags: 0
