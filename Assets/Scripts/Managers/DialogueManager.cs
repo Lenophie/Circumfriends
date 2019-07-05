@@ -19,8 +19,14 @@ namespace Managers {
 
         public void ChangeCurrentChatNode(ChatNode newChatNode) {
             currentChatNode = newChatNode;
-            dialogueTextMesh.SetText(currentChatNode.text);
+            string currentChatNodeContent = GetCurrentChatNodeContent();
+            dialogueTextMesh.SetText(currentChatNodeContent);
             dialogueHeadshotAnimator.runtimeAnimatorController = currentChatNode.character.animatorController;
+        }
+
+        private string GetCurrentChatNodeContent() {
+            return language == LanguagesEnum.English ? currentChatNode.content.englishText :
+                language == LanguagesEnum.French ? currentChatNode.content.frenchText : "";
         }
     }
 }
