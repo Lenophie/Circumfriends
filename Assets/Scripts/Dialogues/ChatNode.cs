@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Characters;
 using UnityEngine;
 using XNode;
 
@@ -6,6 +7,7 @@ namespace Dialogues {
     [NodeTint("#4d9599")]
     public class ChatNode : DialogueNode {
         [TextArea] public string text;
+        public Character character;
         [Output(dynamicPortList = true)] public List<string> answers = new List<string>();
 
         public void PickAnswer(int index) {
