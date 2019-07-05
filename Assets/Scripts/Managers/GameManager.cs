@@ -18,13 +18,14 @@ namespace Managers {
         [SerializeField] private DialogueGraph dialogueGraph = default;
         [SerializeField] private TextMeshProUGUI dialogueTextMesh = default;
         [SerializeField] private Animator dialogueHeadshotAnimator = default;
+        [SerializeField] private LanguagesEnum language = default;
 
         private InputManager inputManager;
         private DialogueManager dialogueManager;
 
         private void Start() {
             inputManager = new InputManager(meController);
-            dialogueManager = new DialogueManager(dialogueTextMesh, dialogueHeadshotAnimator);
+            dialogueManager = new DialogueManager(dialogueTextMesh, dialogueHeadshotAnimator, language);
 
             Modifiers.SetConstants(modifiersCollector);
             FriendZonesConstants.SetConstants(friendZonesConstantsCollector);
