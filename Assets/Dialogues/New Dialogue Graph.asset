@@ -103,8 +103,8 @@ MonoBehaviour:
       _typeConstraint: 0
       _dynamic: 0
   input: {fileID: 0}
-  text: answer to test1
-  character: {fileID: 11400000, guid: 5f195383dae1ad8418612192fef396f1, type: 2}
+  text: Bonjour gros ami vert ! <3
+  character: {fileID: 11400000, guid: f10831f13bbdb8b4b8616f058aae878f, type: 2}
   answers: []
 --- !u!114 &-5293409520485103686
 MonoBehaviour:
@@ -480,7 +480,7 @@ MonoBehaviour:
   - {fileID: -5293409520485103686}
   - {fileID: -332116025108209729}
   - {fileID: -9139224787213623720}
-  currentChatNode: {fileID: -5726179105378063464}
+  currentChatNode: {fileID: 3071523827260635736}
 --- !u!114 &3071523827260635736
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -551,8 +551,8 @@ MonoBehaviour:
       _typeConstraint: 0
       _dynamic: 1
   input: {fileID: 0}
-  text: first line
-  character: {fileID: 11400000, guid: f10831f13bbdb8b4b8616f058aae878f, type: 2}
+  text: Coucou petit ami bleu !
+  character: {fileID: 11400000, guid: 5f195383dae1ad8418612192fef396f1, type: 2}
   answers:
   - test0
   - test1
