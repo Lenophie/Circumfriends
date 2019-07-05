@@ -5,7 +5,7 @@ using UnityEngine;
 namespace Managers {
     public class DialogueManager {
         private ChatNode currentChatNode;
-        private TextMeshProUGUI dialogueTextMesh;
+        private readonly TextMeshProUGUI dialogueTextMesh;
 
         public DialogueManager(TextMeshProUGUI dialogueTextMesh) {
             this.dialogueTextMesh = dialogueTextMesh;
