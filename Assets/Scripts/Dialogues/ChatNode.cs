@@ -22,7 +22,7 @@ namespace Dialogues {
         }
 
         public override void Trigger() {
-            ((DialogueGraph) graph).currentChatNode = this;
+            ((DialogueGraph) graph).HandleChatNodeChange(this);
         }
     }
 }

@@ -13,16 +13,19 @@ namespace Managers {
         [SerializeField] private FriendZonesConstantsCollector friendZonesConstantsCollector = default;
         [SerializeField] private ModifiersCollector modifiersCollector = default;
 
-        private InputManager inputManager;
         [Header("Dialogue")]
         [SerializeField] private DialogueGraph dialogueGraph = default;
 
+        private InputManager inputManager;
+        private DialogueManager dialogueManager;
         private void Start() {
             inputManager = new InputManager(meController);
+            dialogueManager = new DialogueManager();
+
             Modifiers.SetConstants(modifiersCollector);
             FriendZonesConstants.SetConstants(friendZonesConstantsCollector);
             friendZonesController.InitializeFriendZones();
-            dialogueGraph.Restart(this);
+            dialogueGraph.Restart(this, dialogueManager);
             dialogueGraph.PickAnswerToCurrentChatNode(0);
         }
 
