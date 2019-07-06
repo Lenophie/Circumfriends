@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using Constants;
-using Dialogues;
+using Dialogues.Events;
 using FriendZones;
 using FriendZones.FriendZoneShapes;
 using Helpers;

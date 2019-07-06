@@ -1,6 +1,7 @@
 using Constants;
 
-namespace Dialogues {
+namespace Dialogues.Events {
+    [CreateNodeMenu("Events/FriendZoneShapeModificationNode")]
     public class FriendZoneShapeModificationEventNode : EventNode {
         public FriendZoneShapeModificationEvent friendZoneShapeModificationEvent;
 

@@ -4,6 +4,7 @@ using UnityEngine;
 using XNode;
 
 namespace Dialogues {
+    [CreateNodeMenu("TimerNode")]
     public class TimerNode : DialogueNode {
         [Output(dynamicPortList = true)] public List<float> delays;
 

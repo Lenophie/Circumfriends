@@ -1,6 +1,7 @@
 using Constants;
 using Controllers;
 using Dialogues;
+using Dialogues.Events;
 using TMPro;
 using UnityEngine;
 

@@ -3,7 +3,7 @@ using Characters;
 using XNode;
 
 namespace Dialogues {
-    [NodeTint("#4d9599")]
+    [NodeTint("#4d9599")] [CreateNodeMenu("ChatNode")]
     public class ChatNode : DialogueNode {
         public Character character;
         public ChatContent content;

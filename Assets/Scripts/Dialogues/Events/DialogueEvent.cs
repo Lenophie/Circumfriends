@@ -2,7 +2,7 @@ using System;
 using Constants;
 using FriendZones.FriendZoneShapes;
 
-namespace Dialogues {
+namespace Dialogues.Events {
     public abstract class DialogueEvent {}
 
     [Serializable]
