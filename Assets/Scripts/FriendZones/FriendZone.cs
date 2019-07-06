@@ -5,7 +5,7 @@ using UnityEngine;
 namespace FriendZones {
     public class FriendZone {
         public FriendZonesEnum FriendZoneEnum { get; }
-        public IFriendZoneShape FriendZoneShape { get; }
+        public FriendZoneShapeController FriendZoneShapeController { get; }
         public LineRenderer LineRenderer { get; }
         public MeshCollider MeshCollider { get; }
         public MeshFilter MeshFilter { get; }
@@ -19,7 +19,7 @@ namespace FriendZones {
         public FriendZone(FriendZonesEnum friendZoneEnum, IFriendZoneShape friendZoneShape,
             FriendZoneCollector friendZoneCollector) {
             FriendZoneEnum = friendZoneEnum;
-            FriendZoneShape = friendZoneShape;
+            FriendZoneShapeController = new FriendZoneShapeController(friendZoneShape);
             LineRenderer = friendZoneCollector.lineRenderer;
             MeshCollider = friendZoneCollector.meshCollider;
             MeshFilter = friendZoneCollector.meshFilter;

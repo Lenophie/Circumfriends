@@ -6,6 +6,6 @@ namespace Dialogues.Events {
     [Serializable]
     public class FriendZoneShapeModificationEvent : DialogueEvent {
         public FriendZonesEnum friendZonesEnum;
-        public FriendZoneShapeConfig friendZoneShapeConfig;
+        public FriendZoneShapeConfigForm friendZoneShapeConfigForm;
     }
 }

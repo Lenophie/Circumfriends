@@ -118,7 +118,7 @@ MonoBehaviour:
   m_Name: Chat
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 168, y: 296}
+  position: {x: -120, y: 312}
   ports:
     keys:
     - answers
@@ -254,10 +254,16 @@ MonoBehaviour:
   output: 0
   friendZoneShapeModificationEvent:
     friendZonesEnum: 2
-    friendZoneShapeConfig:
-      radius: 6
-      amplitude: 0.1
-      numberOfPeriods: 3
+    friendZoneShapeConfigForm:
+      friendZoneShapesEnum: 1
+      friendZoneShapeConfig:
+        radius: 8
+        amplitude: 0.05
+        numberOfPeriods: 3
+        startRad: 0
+        isRotating: 1
+        isClockwise: 1
+        rotationSpeed: 3
 --- !u!114 &-1681929538217802819
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -315,7 +321,7 @@ MonoBehaviour:
   m_Name: Friend Zone Shape Modification Event
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 152, y: -152}
+  position: {x: 152, y: -40}
   ports:
     keys:
     - input
@@ -346,10 +352,16 @@ MonoBehaviour:
   output: 0
   friendZoneShapeModificationEvent:
     friendZonesEnum: 1
-    friendZoneShapeConfig:
-      radius: 3
-      amplitude: 0.05
-      numberOfPeriods: 8
+    friendZoneShapeConfigForm:
+      friendZoneShapesEnum: 1
+      friendZoneShapeConfig:
+        radius: 5.5
+        amplitude: 0.15
+        numberOfPeriods: 20
+        startRad: 2
+        isRotating: 1
+        isClockwise: 0
+        rotationSpeed: 5
 --- !u!114 &-1033514266629466225
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -460,7 +472,7 @@ MonoBehaviour:
   m_Name: Timer
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 440, y: 184}
+  position: {x: 440, y: 360}
   ports:
     keys:
     - delays
@@ -552,10 +564,70 @@ MonoBehaviour:
   output: 0
   friendZoneShapeModificationEvent:
     friendZonesEnum: 2
-    friendZoneShapeConfig:
-      radius: 4
-      amplitude: 0.15
-      numberOfPeriods: 20
+    friendZoneShapeConfigForm:
+      friendZoneShapesEnum: 1
+      friendZoneShapeConfig:
+        radius: 8.5
+        amplitude: 0.1
+        numberOfPeriods: 10
+        startRad: 0
+        isRotating: 0
+        isClockwise: 0
+        rotationSpeed: 2
+--- !u!114 &-803433229684567
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31cda0d1d52a4d9ebdf267ada68986df, type: 3}
+  m_Name: Friend Zone Shape Modification Event
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -312, y: -536}
+  ports:
+    keys:
+    - output
+    - input
+    values:
+    - _fieldName: output
+      _node: {fileID: -803433229684567}
+      _typeQualifiedName: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: input
+      _node: {fileID: -803433229684567}
+      _typeQualifiedName: Dialogues.DialogueNode, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: answers 0
+        node: {fileID: 3071523827260635736}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  input: {fileID: 0}
+  output: 0
+  friendZoneShapeModificationEvent:
+    friendZonesEnum: 3
+    friendZoneShapeConfigForm:
+      friendZoneShapesEnum: 1
+      friendZoneShapeConfig:
+        radius: 10
+        amplitude: 0
+        numberOfPeriods: 0
+        startRad: 0
+        isRotating: 0
+        isClockwise: 1
+        rotationSpeed: 0
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -582,6 +654,7 @@ MonoBehaviour:
   - {fileID: -8140507834847603135}
   - {fileID: -1681929538217802819}
   - {fileID: 3836928424568720503}
+  - {fileID: -803433229684567}
   currentChatNode: {fileID: -5726179105378063464}
 --- !u!114 &3071523827260635736
 MonoBehaviour:
@@ -635,6 +708,9 @@ MonoBehaviour:
       - fieldName: input
         node: {fileID: -9139224787213623720}
         reroutePoints: []
+      - fieldName: input
+        node: {fileID: -803433229684567}
+        reroutePoints: []
       _direction: 1
       _connectionType: 0
       _typeConstraint: 0
@@ -673,7 +749,7 @@ MonoBehaviour:
   m_Name: Friend Zone Shape Modification Event
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 168, y: 56}
+  position: {x: 152, y: 328}
   ports:
     keys:
     - input
@@ -710,10 +786,16 @@ MonoBehaviour:
   output: 0
   friendZoneShapeModificationEvent:
     friendZonesEnum: 2
-    friendZoneShapeConfig:
-      radius: 4
-      amplitude: 0.05
-      numberOfPeriods: 20
+    friendZoneShapeConfigForm:
+      friendZoneShapesEnum: 1
+      friendZoneShapeConfig:
+        radius: 8.5
+        amplitude: 0.2
+        numberOfPeriods: 10
+        startRad: 0
+        isRotating: 1
+        isClockwise: 1
+        rotationSpeed: 2
 --- !u!114 &3836928424568720503
 MonoBehaviour:
   m_ObjectHideFlags: 0
