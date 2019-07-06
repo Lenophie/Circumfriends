@@ -1,3 +1,4 @@
+using Dialogues.Events;
 using Inputs;
 using UnityEngine;
 
@@ -24,6 +25,11 @@ namespace Controllers {
 
         public void SetPlayerInputs(PlayerInputs playerInputs) {
             this.playerInputs = playerInputs;
+        }
+
+        public void HandleMeResistanceModificationEvent(
+            MeResistanceModificationEvent meResistanceModificationEvent) {
+            meResistanceController.SetResistanceModifier(meResistanceModificationEvent.resistance);
         }
     }
 }

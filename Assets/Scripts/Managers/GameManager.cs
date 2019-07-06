@@ -46,6 +46,10 @@ namespace Managers {
                     friendController.HandleFriendAttractionModificationEvent(
                         (FriendAttractionModificationEvent) dialogueEvent);
                     break;
+                case DialogueEventsEnum.MeResistanceModification:
+                    meController.HandleMeResistanceModificationEvent(
+                        (MeResistanceModificationEvent) dialogueEvent);
+                    break;
                 default:
                     return;
             }

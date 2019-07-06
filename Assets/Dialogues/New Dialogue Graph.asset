@@ -74,7 +74,7 @@ MonoBehaviour:
   m_Name: Friend Attraction Modification Event
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 488, y: -344}
+  position: {x: 152, y: -472}
   ports:
     keys:
     - output
@@ -94,8 +94,8 @@ MonoBehaviour:
       _typeQualifiedName: Dialogues.DialogueNode, Assembly-CSharp, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
       connections:
-      - fieldName: output
-        node: {fileID: -3595495340288085226}
+      - fieldName: delays 0
+        node: {fileID: -1033514266629466225}
         reroutePoints: []
       _direction: 0
       _connectionType: 0
@@ -245,10 +245,7 @@ MonoBehaviour:
       _node: {fileID: -3595495340288085226}
       _typeQualifiedName: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
-      connections:
-      - fieldName: input
-        node: {fileID: -8140507834847603135}
-        reroutePoints: []
+      connections: []
       _direction: 1
       _connectionType: 0
       _typeConstraint: 0
@@ -261,6 +258,50 @@ MonoBehaviour:
       radius: 6
       amplitude: 0.1
       numberOfPeriods: 3
+--- !u!114 &-1681929538217802819
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66df4a6228ea4d3ebf3d6ec7b882edf1, type: 3}
+  m_Name: Me Resistance Modification Event
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 152, y: -600}
+  ports:
+    keys:
+    - output
+    - input
+    values:
+    - _fieldName: output
+      _node: {fileID: -1681929538217802819}
+      _typeQualifiedName: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: input
+      _node: {fileID: -1681929538217802819}
+      _typeQualifiedName: Dialogues.DialogueNode, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: delays 0
+        node: {fileID: -1033514266629466225}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  input: {fileID: 0}
+  output: 0
+  meResistanceModificationEvent:
+    resistance: 1000
 --- !u!114 &-1474830415723262154
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -361,6 +402,12 @@ MonoBehaviour:
       connections:
       - fieldName: input
         node: {fileID: -3595495340288085226}
+        reroutePoints: []
+      - fieldName: input
+        node: {fileID: -8140507834847603135}
+        reroutePoints: []
+      - fieldName: input
+        node: {fileID: -1681929538217802819}
         reroutePoints: []
       _direction: 1
       _connectionType: 0
@@ -530,6 +577,7 @@ MonoBehaviour:
   - {fileID: -332116025108209729}
   - {fileID: -9139224787213623720}
   - {fileID: -8140507834847603135}
+  - {fileID: -1681929538217802819}
   currentChatNode: {fileID: -5726179105378063464}
 --- !u!114 &3071523827260635736
 MonoBehaviour:
