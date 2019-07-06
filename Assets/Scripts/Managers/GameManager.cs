@@ -9,6 +9,7 @@ namespace Managers {
     public class GameManager : MonoBehaviour {
         [Header("Controllers")]
         [SerializeField] private MeController meController = default;
+        [SerializeField] private FriendController friendController = default;
         [SerializeField] private FriendZonesController friendZonesController = default;
 
         [Header("Collectors")]
@@ -42,7 +43,8 @@ namespace Managers {
                         (FriendZoneShapeModificationEvent) dialogueEvent);
                     break;
                 case DialogueEventsEnum.FriendAttractionModification:
-                    Debug.Log(((FriendAttractionModificationEvent) dialogueEvent).attraction);
+                    friendController.HandleFriendAttractionModificationEvent(
+                        (FriendAttractionModificationEvent) dialogueEvent);
                     break;
                 default:
                     return;

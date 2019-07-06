@@ -17,5 +17,9 @@ namespace Controllers {
             meRigidbody.AddForce(
                 attractionModifier * Time.deltaTime * (friendRigidbody.position - meRigidbody.position).normalized);
         }
+
+        public void SetAttractionModifier(float attractionModifier) {
+            this.attractionModifier = attractionModifier;
+        }
     }
 }

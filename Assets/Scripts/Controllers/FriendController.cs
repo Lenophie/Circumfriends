@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Dialogues.Events;
+using UnityEngine;
 
 namespace Controllers {
     public class FriendController : MonoBehaviour {
@@ -12,6 +13,11 @@ namespace Controllers {
 
         private void Update() {
             friendAttractionController.AttractMe();
+        }
+
+        public void HandleFriendAttractionModificationEvent(
+            FriendAttractionModificationEvent friendAttractionModificationEvent) {
+            friendAttractionController.SetAttractionModifier(friendAttractionModificationEvent.attraction);
         }
     }
 }
