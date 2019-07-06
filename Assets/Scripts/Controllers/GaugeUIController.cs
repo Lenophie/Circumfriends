@@ -2,10 +2,10 @@
 
 namespace Controllers {
     [ExecuteAlways]
-    public class GaugeController : MonoBehaviour {
-        [SerializeField] private RectTransform gaugeTransform;
-        [SerializeField] private RectTransform gaugeFillTransform;
-        [Range(0, 1)] public float gaugeFill;
+    public class GaugeUIController : MonoBehaviour {
+        [SerializeField] private RectTransform gaugeTransform = default;
+        [SerializeField] private RectTransform gaugeFillTransform = default;
+        [Range(0, 1)] public float gaugeFill = default;
 
         private void Update() {
             gaugeFillTransform.sizeDelta =
