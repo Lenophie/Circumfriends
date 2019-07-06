@@ -1,18 +1,19 @@
-using Constants;
-using Controllers;
 using UnityEngine;
 
 namespace FriendZones {
     public class FriendZoneListener : MonoBehaviour {
-        [SerializeField] private FriendZonesEnum zoneEnum = default;
-        [SerializeField] private MeController meController = default;
+        private FriendZone friendZone = null;
 
-        private void OnTriggerEnter2D(Collider2D collider) {
-            meController.MeFriendZonesHandler.NotifyMeEnteringZone(zoneEnum);
+        public void SetCorrespondingFriendZone(FriendZone friendZone) {
+            if (this.friendZone == null) this.friendZone = friendZone;
         }
 
-        private void OnTriggerExit2D(Collider2D collider) {
-            meController.MeFriendZonesHandler.NotifyMeExitingZone(zoneEnum);
+        public void NotifyMeEnteringZone() {
+            friendZone.NotifyMeEnteringZone();
+        }
+
+        public void NotifyMeExitingZone() {
+            friendZone.NotifyMeExitingZone();
         }
     }
 }

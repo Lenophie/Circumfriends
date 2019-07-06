@@ -15,10 +15,10 @@ TagManager:
   - 
   - Friend
   - Me
-  - NoGoZone
-  - DiscomfortZone
-  - ComfortZone
-  - DistantZone
+  - FriendZone
+  - MeTrigger
+  - 
+  - 
   - 
   - 
   - 

@@ -11,7 +11,6 @@ namespace Controllers {
     public class FriendZonesController : MonoBehaviour {
         public QuadZonesTuple<FriendZone> FriendZones { get; private set; }
 
-        [SerializeField] private MeController meController = default;
         [SerializeField] private FriendZoneCollector noGoFriendZoneCollector = default;
         [SerializeField] private FriendZoneCollector discomfortFriendZoneCollector = default;
         [SerializeField] private FriendZoneCollector comfortFriendZoneCollector = default;
@@ -52,7 +51,6 @@ namespace Controllers {
             BuildZone(FriendZones.Discomfort);
             BuildZone(FriendZones.Comfort);
             BuildZone(FriendZones.Distant);
-            if (meController) HandleCurrentMeFriendZone();
         }
 
         private void BuildZone(FriendZone friendZone) {
@@ -67,13 +65,13 @@ namespace Controllers {
             List<Vector2> zonePositions2D = new List<Vector2>();
             for (int i = 0; i < FriendZonesConstants.NumberOfOuterVerticesPerFriendzone; i++)
                 zonePositions2D.Add(friendZone.FriendZoneShape.OuterVertices[i]);
-            if (friendZone.Collider) friendZone.Collider.points = zonePositions2D.ToArray();
 
             if (friendZone.FriendZoneEnum == FriendZonesEnum.NoGo) {
                 Mesh mesh = new Mesh {vertices = friendZone.FriendZoneShape.OuterVertices};
                 int[] triangles = Triangulator.TriangulateConcave(zonePositions2D);
                 mesh.triangles = triangles;
                 if (friendZone.MeshFilter) friendZone.MeshFilter.mesh = mesh;
+                if (friendZone.MeshCollider) friendZone.MeshCollider.sharedMesh = mesh;
             } else {
                 Vector3[] previousZonePositions;
                 switch (friendZone.FriendZoneEnum) {
@@ -103,6 +101,7 @@ namespace Controllers {
                     triangles = Triangulator.TriangulateRing(FriendZonesConstants.NumberOfOuterVerticesPerFriendzone)
                 };
                 if (friendZone.MeshFilter) friendZone.MeshFilter.mesh = mesh;
+                if (friendZone.MeshCollider) friendZone.MeshCollider.sharedMesh = mesh;
             }
         }
 
@@ -111,19 +110,6 @@ namespace Controllers {
             FriendZone friendZoneToModify = EnumToFriendZone(friendZoneShapeModificationEvent.friendZonesEnum);
             friendZoneToModify.FriendZoneShape.TransitionToNewCharacteristics(friendZoneShapeModificationEvent
                 .friendZoneShapeConfig);
-        }
-
-        private void HandleCurrentMeFriendZone() {
-            FriendZones.NoGo.UpdateColor(false);
-            FriendZones.Discomfort.UpdateColor(false);
-            FriendZones.Comfort.UpdateColor(false);
-            FriendZones.Distant.UpdateColor(false);
-
-            FriendZonesEnum? currentMeFriendZoneEnum = meController.MeFriendZonesHandler.CurrentFriendZoneEnum;
-            if (currentMeFriendZoneEnum != null) {
-                FriendZone currentMeFriendZone = EnumToFriendZone(currentMeFriendZoneEnum);
-                currentMeFriendZone.UpdateColor(true);
-            }
         }
 
         private FriendZone EnumToFriendZone(FriendZonesEnum? friendZonesEnum) {

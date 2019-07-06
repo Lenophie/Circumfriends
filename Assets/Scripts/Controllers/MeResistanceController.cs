@@ -3,11 +3,11 @@ using UnityEngine;
 
 namespace Controllers {
     public class MeResistanceController {
-        private readonly Rigidbody2D friendRigidbody;
-        private readonly Rigidbody2D meRigidbody;
+        private readonly Rigidbody friendRigidbody;
+        private readonly Rigidbody meRigidbody;
         private float resistanceModifier;
 
-        public MeResistanceController(Rigidbody2D friendRigidbody, Rigidbody2D meRigidbody) {
+        public MeResistanceController(Rigidbody friendRigidbody, Rigidbody meRigidbody) {
             this.friendRigidbody = friendRigidbody;
             this.meRigidbody = meRigidbody;
             resistanceModifier = Modifiers.MeResistance;

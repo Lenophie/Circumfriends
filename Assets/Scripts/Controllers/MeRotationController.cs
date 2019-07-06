@@ -3,12 +3,12 @@ using UnityEngine;
 
 namespace Controllers {
     public class MeRotationController {
-        private readonly Rigidbody2D friendRigidbody;
-        private readonly Rigidbody2D meRigidbody;
+        private readonly Rigidbody friendRigidbody;
+        private readonly Rigidbody meRigidbody;
         private float rotationSpeed;
         private bool isRotationClockwise;
 
-        public MeRotationController(Rigidbody2D friendRigidbody, Rigidbody2D meRigidbody) {
+        public MeRotationController(Rigidbody friendRigidbody, Rigidbody meRigidbody) {
             this.friendRigidbody = friendRigidbody;
             this.meRigidbody = meRigidbody;
             rotationSpeed = Modifiers.MeRotation;

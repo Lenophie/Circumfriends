@@ -5,8 +5,9 @@ namespace FriendZones {
     [Serializable]
     public class FriendZoneCollector {
         public LineRenderer lineRenderer;
-        public PolygonCollider2D collider;
+        public MeshCollider meshCollider;
         public MeshFilter meshFilter;
         public MeshRenderer meshRenderer;
+        public FriendZoneListener friendZoneListener;
     }
 }

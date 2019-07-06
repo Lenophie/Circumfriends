@@ -3,8 +3,8 @@ using UnityEngine;
 
 namespace Controllers {
     public class FriendController : MonoBehaviour {
-        [SerializeField] private Rigidbody2D friendRigidbody = default;
-        [SerializeField] private Rigidbody2D meRigidbody = default;
+        [SerializeField] private Rigidbody friendRigidbody = default;
+        [SerializeField] private Rigidbody meRigidbody = default;
         private FriendAttractionController friendAttractionController;
 
         private void Start() {
