@@ -50,6 +50,10 @@ namespace Managers {
                     meController.HandleMeResistanceModificationEvent(
                         (MeResistanceModificationEvent) dialogueEvent);
                     break;
+                case DialogueEventsEnum.MeSpeedModification:
+                    meController.HandleMeSpeedModificationEvent(
+                        (MeSpeedModificationEvent) dialogueEvent);
+                    break;
                 default:
                     return;
             }

@@ -15,7 +15,7 @@ namespace Controllers {
             meRotationController = new MeRotationController(friendRigidbody, meRigidbody);
             meResistanceController = new MeResistanceController(friendRigidbody, meRigidbody);
             MeFriendZonesHandler = new MeFriendZonesHandler();
-            meRigidbody.velocity = meRotationController.GetInitialRotation();
+            UpdateRigidbodyVelocity();
         }
 
         private void Update() {
@@ -30,6 +30,17 @@ namespace Controllers {
         public void HandleMeResistanceModificationEvent(
             MeResistanceModificationEvent meResistanceModificationEvent) {
             meResistanceController.SetResistanceModifier(meResistanceModificationEvent.resistance);
+        }
+
+        public void HandleMeSpeedModificationEvent(
+            MeSpeedModificationEvent meSpeedModificationEvent) {
+            meRotationController.SetSpeedModifier(meSpeedModificationEvent.rotationSpeed,
+                meSpeedModificationEvent.isRotationClockwise);
+            UpdateRigidbodyVelocity();
+        }
+
+        private void UpdateRigidbodyVelocity() {
+            meRigidbody.velocity = meRotationController.GetInitialRotation();
         }
     }
 }

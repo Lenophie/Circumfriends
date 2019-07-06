@@ -21,5 +21,10 @@ namespace Controllers {
             if (!isRotationClockwise) rotationDirection = -rotationDirection;
             return rotationSpeed * rotationDirection;
         }
+
+        public void SetSpeedModifier(float rotationSpeed, bool isRotationClockwise) {
+            this.rotationSpeed = rotationSpeed;
+            this.isRotationClockwise = isRotationClockwise;
+        }
     }
 }
