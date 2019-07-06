@@ -41,6 +41,9 @@ namespace Managers {
                     friendZonesController.HandleFriendZoneShapeModificationEvent(
                         (FriendZoneShapeModificationEvent) dialogueEvent);
                     break;
+                case DialogueEventsEnum.FriendAttractionModification:
+                    Debug.Log(((FriendAttractionModificationEvent) dialogueEvent).attraction);
+                    break;
                 default:
                     return;
             }

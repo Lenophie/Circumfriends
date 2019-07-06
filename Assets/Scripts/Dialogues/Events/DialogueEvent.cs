@@ -10,4 +10,9 @@ namespace Dialogues.Events {
         public FriendZonesEnum friendZonesEnum;
         public FriendZoneShapeConfig friendZoneShapeConfig;
     }
+
+    [Serializable]
+    public class FriendAttractionModificationEvent : DialogueEvent {
+        public float attraction;
+    }
 }
