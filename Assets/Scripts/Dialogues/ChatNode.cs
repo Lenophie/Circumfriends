@@ -11,13 +11,13 @@ namespace Dialogues {
         public float totalDurationInSeconds;
 
         [Output(dynamicPortList = true)]
-        public List<ChatNodeConditionsList> answers = new List<ChatNodeConditionsList>();
+        public List<ChatNodeConditionsList> continuationConditions = new List<ChatNodeConditionsList>();
 
         public void PickAnswer(int index) {
             NodePort port = null;
 
-            if (answers.Count <= index) return;
-            port = GetOutputPort("answers " + index);
+            if (continuationConditions.Count <= index) return;
+            port = GetOutputPort(nameof(continuationConditions) + " " + index);
             if (port == null) return;
 
             for (int i = 0; i < port.ConnectionCount; i++) {

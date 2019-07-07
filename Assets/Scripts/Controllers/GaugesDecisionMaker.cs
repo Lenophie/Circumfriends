@@ -15,10 +15,10 @@ namespace Controllers {
 
         public int GetAnswerIndex() {
             ChatNode currentChatNode = dialogueGraph.currentChatNode;
-            int firstValidConditionsListIndex = GetFirstListMeetingItsConditions(currentChatNode.answers);
+            int firstValidConditionsListIndex = GetFirstListMeetingItsConditions(currentChatNode.continuationConditions);
             return firstValidConditionsListIndex > -1
                 ? firstValidConditionsListIndex
-                : currentChatNode.answers.Count - 1;
+                : currentChatNode.continuationConditions.Count - 1;
         }
 
 /*        public int CheckForInterruptions() {
