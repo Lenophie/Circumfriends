@@ -5,6 +5,7 @@ namespace Constants {
         MeResistanceModification,
         FriendAttractionModification,
         GaugesModification,
-        InputsEnabling
+        InputsEnabling,
+        Blink
     }
 }
