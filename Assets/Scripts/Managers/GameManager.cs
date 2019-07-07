@@ -27,7 +27,7 @@ namespace Managers {
 
         private void Start() {
             inputManager = new InputManager(meController);
-            dialogueManager = new DialogueManager(dialogueTextMesh, dialogueHeadshotAnimator, language);
+            dialogueManager = new DialogueManager(dialogueTextMesh, dialogueHeadshotAnimator, language, this);
 
             Modifiers.SetConstants(modifiersCollector);
             FriendZonesConstants.SetConstants(friendZonesConstantsCollector);
