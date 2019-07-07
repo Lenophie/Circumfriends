@@ -3,6 +3,7 @@ namespace Constants {
         FriendZoneShapeModification,
         MeSpeedModification,
         MeResistanceModification,
-        FriendAttractionModification
+        FriendAttractionModification,
+        GaugesModification
     }
 }
