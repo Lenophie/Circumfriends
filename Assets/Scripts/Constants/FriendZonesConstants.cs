@@ -13,6 +13,7 @@ namespace Constants {
         public static Color ComfortZoneInColor { get; private set; }
         public static Color DistantZoneOutColor { get; private set; }
         public static Color DistantZoneInColor { get; private set; }
+        public static Color BlinkColor { get; private set; }
 
         public static void SetConstants(FriendZonesConstantsCollector friendZonesConstantsCollector) {
             NumberOfOuterVerticesPerFriendzone = friendZonesConstantsCollector.numberOfOuterVerticesPerFriendzone;
@@ -25,6 +26,7 @@ namespace Constants {
             ComfortZoneInColor = friendZonesConstantsCollector.comfortZoneInColor;
             DistantZoneOutColor = friendZonesConstantsCollector.distantZoneOutColor;
             DistantZoneInColor = friendZonesConstantsCollector.distantZoneInColor;
+            BlinkColor = friendZonesConstantsCollector.blinkColor;
         }
     }
 }

@@ -1,3 +1,4 @@
+using System.Collections;
 using Constants;
 using FriendZones.FriendZoneShapes;
 using UnityEngine;
@@ -15,8 +16,6 @@ namespace FriendZones {
         private readonly Color outColor;
         private readonly Color inColor;
 
-        private bool isMeInZone;
-
         public FriendZone(FriendZonesEnum friendZoneEnum, IFriendZoneShape friendZoneShape,
             FriendZoneCollector friendZoneCollector) {
             FriendZoneEnum = friendZoneEnum;
@@ -28,7 +27,6 @@ namespace FriendZones {
             meshRenderer = friendZoneCollector.meshRenderer;
             FriendZoneListener friendZoneListener = friendZoneCollector.friendZoneListener;
             friendZoneListener.SetCorrespondingFriendZone(this);
-            isMeInZone = false;
 
             switch (friendZoneEnum) {
                 case FriendZonesEnum.NoGo:
@@ -49,22 +47,29 @@ namespace FriendZones {
                     break;
             }
 
-            UpdateColor();
+            UpdateColor(outColor);
         }
 
-        private void UpdateColor() {
-            if (meshRenderer) meshRenderer.material.color = isMeInZone ? inColor : outColor;
+        private void UpdateColor(Color newColor) {
+            if (meshRenderer) meshRenderer.material.color = newColor;
+        }
+
+        public IEnumerator Blink() {
+            for (int i = 0; i < 5; i++) {
+                UpdateColor(FriendZonesConstants.BlinkColor);
+                yield return new WaitForSeconds(0.2f);
+                UpdateColor(outColor);
+                yield return new WaitForSeconds(0.2f);
+            }
         }
 
         public void NotifyMeInZone() {
-            isMeInZone = true;
-            UpdateColor();
+            UpdateColor(inColor);
             Gauge?.IncrementFillRate();
         }
 
         public void NotifyMeExitingZone() {
-            isMeInZone = false;
-            UpdateColor();
+            UpdateColor(outColor);
         }
     }
 }

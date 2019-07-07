@@ -431,14 +431,15 @@ MonoBehaviour:
   friendZonesConstantsCollector:
     numberOfOuterVerticesPerFriendzone: 200
     maxLineNoiseAmplitude: 0.015
-    noGoZoneOut: {r: 0.99215686, g: 0.12093557, b: 0, a: 0.7058824}
-    noGoZoneIn: {r: 0.9716981, g: 0.38048333, b: 0.2979263, a: 0.7058824}
-    discomfortZoneOut: {r: 0.99215686, g: 0.8219667, b: 0, a: 0.7058824}
-    discomfortZoneIn: {r: 1, g: 0.8789432, b: 0.28773582, a: 0.7058824}
-    comfortZoneOut: {r: 0, g: 0.99215686, b: 0.5727987, a: 0.7058824}
-    comfortZoneIn: {r: 0.2688679, g: 1, b: 0.6907861, a: 0.7058824}
-    distantZoneOut: {r: 0, g: 0.77775145, b: 0.990566, a: 0.7058824}
-    distantZoneIn: {r: 0.25872195, g: 0.8093203, b: 0.9622642, a: 0.7058824}
+    noGoZoneOutColor: {r: 0.99215686, g: 0.12093557, b: 0, a: 0.7058824}
+    noGoZoneInColor: {r: 0.9716981, g: 0.38048333, b: 0.2979263, a: 0.7058824}
+    discomfortZoneOutColor: {r: 0.99215686, g: 0.8219667, b: 0, a: 0.7058824}
+    discomfortZoneInColor: {r: 1, g: 0.8789432, b: 0.28773582, a: 0.7058824}
+    comfortZoneOutColor: {r: 0, g: 0.99215686, b: 0.5727987, a: 0.7058824}
+    comfortZoneInColor: {r: 0.2688679, g: 1, b: 0.6907861, a: 0.7058824}
+    distantZoneOutColor: {r: 0, g: 0.77775145, b: 0.990566, a: 0.7058824}
+    distantZoneInColor: {r: 0.25872195, g: 0.8093203, b: 0.9622642, a: 0.7058824}
+    blinkColor: {r: 1, g: 0.6179246, b: 0.93606865, a: 0.7058824}
   modifiersCollector:
     meRotation: 8
     meResistance: 800

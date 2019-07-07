@@ -17,5 +17,6 @@ namespace Constants {
         public Color comfortZoneInColor;
         public Color distantZoneOutColor;
         public Color distantZoneInColor;
+        public Color blinkColor;
     }
 }
