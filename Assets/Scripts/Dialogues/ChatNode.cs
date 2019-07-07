@@ -9,7 +9,9 @@ namespace Dialogues {
         public ChatContent content;
         public float sentenceDurationInSeconds;
         public float totalDurationInSeconds;
-        [Output(dynamicPortList = true)] public List<string> answers = new List<string>();
+
+        [Output(dynamicPortList = true)]
+        public List<ChatNodeConditionsList> answers = new List<ChatNodeConditionsList>();
 
         public void PickAnswer(int index) {
             NodePort port = null;
