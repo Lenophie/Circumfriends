@@ -151,7 +151,8 @@ MonoBehaviour:
   content:
     frenchText: Bonjour gros ami vert <3
     englishText: Hello big green friend <3
-  durationInSeconds: 10
+  sentenceDurationInSeconds: 3
+  totalDurationInSeconds: 6
   answers: []
 --- !u!114 &-5293409520485103686
 MonoBehaviour:
@@ -657,7 +658,7 @@ MonoBehaviour:
   - {fileID: 3836928424568720503}
   - {fileID: -803433229684567}
   - {fileID: 2564298286933854610}
-  currentChatNode: {fileID: 3071523827260635736}
+  currentChatNode: {fileID: -5726179105378063464}
 --- !u!114 &2564298286933854610
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -790,7 +791,8 @@ MonoBehaviour:
   content:
     frenchText: Coucou petit ami bleu !
     englishText: Hi little blue friend !
-  durationInSeconds: 2
+  sentenceDurationInSeconds: 2
+  totalDurationInSeconds: 5
   answers:
   - test0
   - test1

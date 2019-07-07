@@ -7,7 +7,8 @@ namespace Dialogues {
     public class ChatNode : DialogueNode {
         public Character character;
         public ChatContent content;
-        public float durationInSeconds;
+        public float sentenceDurationInSeconds;
+        public float totalDurationInSeconds;
         [Output(dynamicPortList = true)] public List<string> answers = new List<string>();
 
         public void PickAnswer(int index) {

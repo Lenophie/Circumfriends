@@ -19,6 +19,7 @@ namespace Managers {
         [Header("Dialogue")]
         [SerializeField] private DialogueGraph dialogueGraph = default;
         [SerializeField] private TextMeshProUGUI dialogueTextMesh = default;
+        [SerializeField] private TextMeshProUGUI dialogueTimerTextMesh = default;
         [SerializeField] private Animator dialogueHeadshotAnimator = default;
         [SerializeField] private LanguagesEnum language = default;
 
@@ -27,7 +28,8 @@ namespace Managers {
 
         private void Start() {
             inputManager = new InputManager(meController);
-            dialogueManager = new DialogueManager(dialogueTextMesh, dialogueHeadshotAnimator, language, this);
+            dialogueManager = new DialogueManager(dialogueTextMesh, dialogueTimerTextMesh, dialogueHeadshotAnimator,
+                language, this);
 
             Modifiers.SetConstants(modifiersCollector);
             FriendZonesConstants.SetConstants(friendZonesConstantsCollector);
