@@ -1599,7 +1599,7 @@ MonoBehaviour:
   - {fileID: 6574031048092464724}
   - {fileID: -2490362496374238911}
   - {fileID: 3935232120250051360}
-  currentChatNode: {fileID: 6574031048092464724}
+  currentChatNode: {fileID: 6948880638825514220}
 --- !u!114 &6226395595552204
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2131,7 +2131,7 @@ MonoBehaviour:
     friendZoneShapeConfigForm:
       friendZoneShapesEnum: 1
       friendZoneShapeConfig:
-        radius: 5.5
+        radius: 4.5
         amplitude: 0.02
         numberOfPeriods: 3
         startRad: 0
