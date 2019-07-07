@@ -23,6 +23,10 @@ namespace FriendZones {
 
         public void ChangeMaxHeight(float newMaxHeight) {
             MaxHeight = newMaxHeight;
+            Defill();
+        }
+
+        public void Defill() {
             FillHeight = 0f;
         }
     }

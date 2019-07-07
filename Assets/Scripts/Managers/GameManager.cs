@@ -71,6 +71,9 @@ namespace Managers {
                     friendZonesController.HandleBlinkEvent(
                         (BlinkEvent) dialogueEvent);
                     break;
+                case DialogueEventsEnum.GaugesDefill:
+                    friendZonesController.HandleGaugesDefillEvent();
+                    break;
                 default:
                     return;
             }

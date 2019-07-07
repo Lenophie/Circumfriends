@@ -140,6 +140,13 @@ namespace Controllers {
             }
         }
 
+        public void HandleGaugesDefillEvent() {
+            FriendZones.NoGo.Gauge.Defill();
+            FriendZones.Discomfort.Gauge.Defill();
+            FriendZones.Comfort.Gauge.Defill();
+            FriendZones.Distant.Gauge.Defill();
+        }
+
         public void HandleBlinkEvent(BlinkEvent blinkEvent) {
             FriendZone friendZoneToBlink = EnumToFriendZone(blinkEvent.friendZonesEnum);
             StartCoroutine(friendZoneToBlink.Blink());

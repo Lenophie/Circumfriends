@@ -952,7 +952,8 @@ MonoBehaviour:
   - {fileID: -226444599160454967}
   - {fileID: -1467704796154508575}
   - {fileID: -1385215895230013387}
-  currentChatNode: {fileID: 1230996620321417124}
+  - {fileID: 7241498371010751721}
+  currentChatNode: {fileID: -243903087819960319}
 --- !u!114 &6226395595552204
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1296,6 +1297,9 @@ MonoBehaviour:
       - fieldName: input
         node: {fileID: 6581877559909233780}
         reroutePoints: []
+      - fieldName: input
+        node: {fileID: 7241498371010751721}
+        reroutePoints: []
       _direction: 1
       _connectionType: 0
       _typeConstraint: 0
@@ -1523,6 +1527,48 @@ MonoBehaviour:
   continuationConditions:
   - isInterrupting: 0
     chatNodeConditions: []
+--- !u!114 &7241498371010751721
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1800589245f9461b89ce0b9a11a91e63, type: 3}
+  m_Name: Gauges Defill Event
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 1464, y: -760}
+  ports:
+    keys:
+    - output
+    - input
+    values:
+    - _fieldName: output
+      _node: {fileID: 7241498371010751721}
+      _typeQualifiedName: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: input
+      _node: {fileID: 7241498371010751721}
+      _typeQualifiedName: Dialogues.DialogueNode, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: continuationConditions 0
+        node: {fileID: 4972301968949134187}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  input: {fileID: 0}
+  output: 0
 --- !u!114 &8242612150315976198
 MonoBehaviour:
   m_ObjectHideFlags: 0
