@@ -5,6 +5,6 @@ namespace Dialogues.Events {
     [Serializable]
     public class GaugeModificationEvent : DialogueEvent {
         public FriendZonesEnum friendZonesEnum;
-        public float size = 300f;
+        public float maxHeight = 300f;
     }
 }

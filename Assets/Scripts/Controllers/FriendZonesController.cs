@@ -114,7 +114,7 @@ namespace Controllers {
         public void HandleGaugesModificationEvent(GaugesModificationEvent gaugesModificationEvent) {
             foreach (GaugeModificationEvent gaugeModificationEvent in gaugesModificationEvent.gaugeModificationEvents) {
                 FriendZone friendZoneToModify = EnumToFriendZone(gaugeModificationEvent.friendZonesEnum);
-                friendZoneToModify.Gauge.ChangeSize(gaugeModificationEvent.size);
+                friendZoneToModify.Gauge.ChangeMaxHeight(gaugeModificationEvent.maxHeight);
             }
         }
 
