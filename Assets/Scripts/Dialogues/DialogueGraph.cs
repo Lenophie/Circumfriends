@@ -21,10 +21,6 @@ namespace Dialogues {
             else initialNode.Trigger();
         }
 
-        public void PickAnswerToCurrentChatNode(int index) {
-            if (currentChatNode) currentChatNode.PickAnswer(index);
-        }
-
         public void HandleEvent(DialogueEventsEnum dialogueEventsEnum, DialogueEvent dialogueEvent) {
             GameManager.HandleDialogueEvent(dialogueEventsEnum, dialogueEvent);
         }

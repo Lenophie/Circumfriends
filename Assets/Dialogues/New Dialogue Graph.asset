@@ -706,7 +706,7 @@ MonoBehaviour:
   m_Name: Gauges Modification Event
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: -952, y: 184}
+  position: {x: -1144, y: 232}
   ports:
     keys:
     - output
@@ -815,10 +815,10 @@ MonoBehaviour:
         node: {fileID: -5726179105378063464}
         reroutePoints: []
       - fieldName: input
-        node: {fileID: -803433229684567}
+        node: {fileID: -1033514266629466225}
         reroutePoints: []
       - fieldName: input
-        node: {fileID: -1033514266629466225}
+        node: {fileID: -803433229684567}
         reroutePoints: []
       _direction: 1
       _connectionType: 0
@@ -832,11 +832,13 @@ MonoBehaviour:
   sentenceDurationInSeconds: 2
   totalDurationInSeconds: 5
   continuationConditions:
-  - chatNodeConditions:
+  - isInterrupting: 1
+    chatNodeConditions:
     - friendZonesEnum: 0
       comparisonEnum: 0
-      gaugeHeight: 10
-  - chatNodeConditions: []
+      gaugeHeight: 0
+  - isInterrupting: 0
+    chatNodeConditions: []
 --- !u!114 &3290766107148829683
 MonoBehaviour:
   m_ObjectHideFlags: 0

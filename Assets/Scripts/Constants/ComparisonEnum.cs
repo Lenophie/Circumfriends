@@ -1,6 +1,8 @@
 namespace Constants {
     public enum ComparisonEnum {
         Superior,
-        Inferior
+        SuperiorOrEqual,
+        Inferior,
+        InferiorOrEqual,
     }
 }

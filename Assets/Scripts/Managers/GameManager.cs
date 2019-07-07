@@ -70,6 +70,7 @@ namespace Managers {
 
         private void Update() {
             inputManager.UpdateInputs();
+            GaugesDecisionMaker.CheckForInterruptions();
         }
     }
 }
