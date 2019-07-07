@@ -10,5 +10,9 @@ namespace Managers {
         public void HandleTwitterPress() {
             Application.OpenURL("https://twitter.com/lenophie");
         }
+
+        public void HandleGitHubPress() {
+            Application.OpenURL("https://github.com/Lenophie/Circumfriends");
+        }
     }
 }
