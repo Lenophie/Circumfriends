@@ -15,6 +15,7 @@ namespace FriendZones {
         private readonly MeshRenderer meshRenderer;
         private readonly Color outColor;
         private readonly Color inColor;
+        private bool isBlinking;
 
         public FriendZone(FriendZonesEnum friendZoneEnum, IFriendZoneShape friendZoneShape,
             FriendZoneCollector friendZoneCollector) {
@@ -55,21 +56,24 @@ namespace FriendZones {
         }
 
         public IEnumerator Blink() {
+            isBlinking = true;
             for (int i = 0; i < 5; i++) {
                 UpdateColor(FriendZonesConstants.BlinkColor);
                 yield return new WaitForSeconds(0.2f);
                 UpdateColor(outColor);
                 yield return new WaitForSeconds(0.2f);
             }
+
+            isBlinking = false;
         }
 
         public void NotifyMeInZone() {
-            UpdateColor(inColor);
+            if (!isBlinking) UpdateColor(inColor);
             Gauge?.IncrementFillRate();
         }
 
         public void NotifyMeExitingZone() {
-            UpdateColor(outColor);
+            if (!isBlinking) UpdateColor(outColor);
         }
     }
 }
