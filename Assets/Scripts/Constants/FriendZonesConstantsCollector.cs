@@ -9,13 +9,13 @@ namespace Constants {
         public float maxLineNoiseAmplitude;
 
         [Header("Colors")]
-        public Color noGoZoneOut;
-        public Color noGoZoneIn;
-        public Color discomfortZoneOut;
-        public Color discomfortZoneIn;
-        public Color comfortZoneOut;
-        public Color comfortZoneIn;
-        public Color distantZoneOut;
-        public Color distantZoneIn;
+        public Color noGoZoneOutColor;
+        public Color noGoZoneInColor;
+        public Color discomfortZoneOutColor;
+        public Color discomfortZoneInColor;
+        public Color comfortZoneOutColor;
+        public Color comfortZoneInColor;
+        public Color distantZoneOutColor;
+        public Color distantZoneInColor;
     }
 }

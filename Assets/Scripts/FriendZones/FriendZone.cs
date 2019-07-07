@@ -1,5 +1,4 @@
 using Constants;
-using Controllers;
 using FriendZones.FriendZoneShapes;
 using UnityEngine;
 
@@ -33,20 +32,20 @@ namespace FriendZones {
 
             switch (friendZoneEnum) {
                 case FriendZonesEnum.NoGo:
-                    outColor = FriendZonesConstants.NoGoZoneOut;
-                    inColor = FriendZonesConstants.NoGoZoneIn;
+                    outColor = FriendZonesConstants.NoGoZoneOutColor;
+                    inColor = FriendZonesConstants.NoGoZoneInColor;
                     break;
                 case FriendZonesEnum.Discomfort:
-                    outColor = FriendZonesConstants.DiscomfortZoneOut;
-                    inColor = FriendZonesConstants.DiscomfortZoneIn;
+                    outColor = FriendZonesConstants.DiscomfortZoneOutColor;
+                    inColor = FriendZonesConstants.DiscomfortZoneInColor;
                     break;
                 case FriendZonesEnum.Comfort:
-                    outColor = FriendZonesConstants.ComfortZoneOut;
-                    inColor = FriendZonesConstants.ComfortZoneIn;
+                    outColor = FriendZonesConstants.ComfortZoneOutColor;
+                    inColor = FriendZonesConstants.ComfortZoneInColor;
                     break;
                 case FriendZonesEnum.Distant:
-                    outColor = FriendZonesConstants.DistantZoneOut;
-                    inColor = FriendZonesConstants.DistantZoneIn;
+                    outColor = FriendZonesConstants.DistantZoneOutColor;
+                    inColor = FriendZonesConstants.DistantZoneInColor;
                     break;
             }
 

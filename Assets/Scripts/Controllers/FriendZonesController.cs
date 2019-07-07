@@ -48,22 +48,22 @@ namespace Controllers {
             // TODO: Generate UI elements instead of referencing them
             if (friendZonesCollectors.NoGo.gaugeUIController) {
                 friendZonesCollectors.NoGo.gaugeUIController.SetGauge(FriendZones.NoGo.Gauge,
-                    FriendZonesConstants.NoGoZoneIn);
+                    FriendZonesConstants.NoGoZoneInColor);
             }
 
             if (friendZonesCollectors.Discomfort.gaugeUIController) {
                 friendZonesCollectors.Discomfort.gaugeUIController.SetGauge(FriendZones.Discomfort.Gauge,
-                    FriendZonesConstants.DiscomfortZoneIn);
+                    FriendZonesConstants.DiscomfortZoneInColor);
             }
 
             if (friendZonesCollectors.Comfort.gaugeUIController) {
                 friendZonesCollectors.Comfort.gaugeUIController.SetGauge(FriendZones.Comfort.Gauge,
-                    FriendZonesConstants.ComfortZoneIn);
+                    FriendZonesConstants.ComfortZoneInColor);
             }
 
             if (friendZonesCollectors.Distant.gaugeUIController) {
                 friendZonesCollectors.Distant.gaugeUIController.SetGauge(FriendZones.Distant.Gauge,
-                    FriendZonesConstants.DistantZoneIn);
+                    FriendZonesConstants.DistantZoneInColor);
             }
         }
 
