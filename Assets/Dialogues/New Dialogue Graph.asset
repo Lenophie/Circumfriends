@@ -151,6 +151,7 @@ MonoBehaviour:
   content:
     frenchText: Bonjour gros ami vert <3
     englishText: Hello big green friend <3
+  durationInSeconds: 10
   answers: []
 --- !u!114 &-5293409520485103686
 MonoBehaviour:
@@ -165,7 +166,7 @@ MonoBehaviour:
   m_Name: Timer
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 440, y: 24}
+  position: {x: 440, y: 264}
   ports:
     keys:
     - delays
@@ -472,7 +473,7 @@ MonoBehaviour:
   m_Name: Timer
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 440, y: 360}
+  position: {x: 440, y: 472}
   ports:
     keys:
     - delays
@@ -530,7 +531,7 @@ MonoBehaviour:
   m_Name: Friend Zone Shape Modification Event
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 712, y: 56}
+  position: {x: 696, y: 296}
   ports:
     keys:
     - input
@@ -656,7 +657,7 @@ MonoBehaviour:
   - {fileID: 3836928424568720503}
   - {fileID: -803433229684567}
   - {fileID: 2564298286933854610}
-  currentChatNode: {fileID: -5726179105378063464}
+  currentChatNode: {fileID: 3071523827260635736}
 --- !u!114 &2564298286933854610
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -789,6 +790,7 @@ MonoBehaviour:
   content:
     frenchText: Coucou petit ami bleu !
     englishText: Hi little blue friend !
+  durationInSeconds: 2
   answers:
   - test0
   - test1

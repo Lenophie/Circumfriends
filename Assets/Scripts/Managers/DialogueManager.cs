@@ -24,7 +24,7 @@ namespace Managers {
             currentChatNode = newChatNode;
             string currentChatNodeContent = GetCurrentChatNodeContent();
             gameManager.StopAllCoroutines();
-            gameManager.StartCoroutine(TypeText(currentChatNodeContent));
+            gameManager.StartCoroutine(TypeText(currentChatNodeContent, currentChatNode.durationInSeconds));
             dialogueHeadshotAnimator.runtimeAnimatorController = currentChatNode.character.animatorController;
         }
 
@@ -33,13 +33,14 @@ namespace Managers {
                 language == LanguagesEnum.French ? currentChatNode.content.frenchText : "";
         }
 
-        private IEnumerator TypeText(string text) {
+        private IEnumerator TypeText(string text, float totalDuration) {
             string typedText = "";
+            float durationByLetter = totalDuration / text.Length;
             dialogueTextMesh.SetText(typedText);
             foreach (char letter in text.ToCharArray()) {
                 typedText += letter;
                 dialogueTextMesh.SetText(typedText);
-                yield return null;
+                yield return new WaitForSeconds(durationByLetter);
             }
         }
     }
