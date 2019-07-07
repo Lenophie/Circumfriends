@@ -25,6 +25,7 @@ namespace Managers {
 
         private InputManager inputManager;
         private DialogueManager dialogueManager;
+        private GaugesDecisionMaker gaugesDecisionMaker;
 
         private void Start() {
             inputManager = new InputManager(meController);
@@ -36,6 +37,7 @@ namespace Managers {
             friendZonesController.InitializeFriendZones();
             dialogueGraph.Restart(this, dialogueManager);
             dialogueGraph.PickAnswerToCurrentChatNode(0);
+            gaugesDecisionMaker = new GaugesDecisionMaker(friendZonesController, dialogueGraph);
         }
 
         public void HandleDialogueEvent(DialogueEventsEnum dialogueEventsEnum, DialogueEvent dialogueEvent) {
@@ -67,6 +69,7 @@ namespace Managers {
 
         private void Update() {
             inputManager.UpdateInputs();
+            Debug.Log(gaugesDecisionMaker.GetAnswerIndex());
         }
     }
 }

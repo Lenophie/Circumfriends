@@ -139,7 +139,7 @@ namespace Controllers {
             }
         }
 
-        private FriendZone EnumToFriendZone(FriendZonesEnum? friendZonesEnum) {
+        public FriendZone EnumToFriendZone(FriendZonesEnum? friendZonesEnum) {
             switch (friendZonesEnum) {
                 case FriendZonesEnum.NoGo:
                     return FriendZones.NoGo;
