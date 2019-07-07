@@ -8,8 +8,8 @@ namespace FriendZones {
             if (this.friendZone == null) this.friendZone = friendZone;
         }
 
-        public void NotifyMeEnteringZone() {
-            friendZone.NotifyMeEnteringZone();
+        public void NotifyMeInZone() {
+            friendZone.NotifyMeInZone();
         }
 
         public void NotifyMeExitingZone() {

@@ -14,7 +14,7 @@ namespace FriendZones {
         private readonly Color outColor;
         private readonly Color inColor;
 
-        public bool IsMeInZone { get; private set; }
+        private bool isMeInZone;
 
         public FriendZone(FriendZonesEnum friendZoneEnum, IFriendZoneShape friendZoneShape,
             FriendZoneCollector friendZoneCollector) {
@@ -26,7 +26,7 @@ namespace FriendZones {
             meshRenderer = friendZoneCollector.meshRenderer;
             FriendZoneListener friendZoneListener = friendZoneCollector.friendZoneListener;
             friendZoneListener.SetCorrespondingFriendZone(this);
-            IsMeInZone = false;
+            isMeInZone = false;
 
             switch (friendZoneEnum) {
                 case FriendZonesEnum.NoGo:
@@ -51,16 +51,16 @@ namespace FriendZones {
         }
 
         private void UpdateColor() {
-            if (meshRenderer) meshRenderer.material.color = IsMeInZone ? inColor : outColor;
+            if (meshRenderer) meshRenderer.material.color = isMeInZone ? inColor : outColor;
         }
 
-        public void NotifyMeEnteringZone() {
-            IsMeInZone = true;
+        public void NotifyMeInZone() {
+            isMeInZone = true;
             UpdateColor();
         }
 
         public void NotifyMeExitingZone() {
-            IsMeInZone = false;
+            isMeInZone = false;
             UpdateColor();
         }
     }
