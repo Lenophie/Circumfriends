@@ -140,6 +140,11 @@ namespace Controllers {
             }
         }
 
+        public void HandleBlinkEvent(BlinkEvent blinkEvent) {
+            FriendZone friendZoneToBlink = EnumToFriendZone(blinkEvent.friendZonesEnum);
+            StartCoroutine(friendZoneToBlink.Blink());
+        }
+
         public FriendZone EnumToFriendZone(FriendZonesEnum? friendZonesEnum) {
             switch (friendZonesEnum) {
                 case FriendZonesEnum.NoGo:

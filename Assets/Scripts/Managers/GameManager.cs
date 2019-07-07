@@ -67,6 +67,10 @@ namespace Managers {
                     inputManager.HandleInputsEnablingEvent(
                         (InputsEnablingEvent) dialogueEvent);
                     break;
+                case DialogueEventsEnum.Blink:
+                    friendZonesController.HandleBlinkEvent(
+                        (BlinkEvent) dialogueEvent);
+                    break;
                 default:
                     return;
             }
