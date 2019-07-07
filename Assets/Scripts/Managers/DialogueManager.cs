@@ -26,7 +26,6 @@ namespace Managers {
         public void ChangeCurrentChatNode(ChatNode newChatNode) {
             currentChatNode = newChatNode;
             string currentChatNodeContent = GetCurrentChatNodeContent();
-            chatNodeCoroutinesManager.StopAllCoroutines();
             chatNodeCoroutinesManager.StartCoroutine(TypeText(currentChatNodeContent, currentChatNode.sentenceDurationInSeconds,
                 currentChatNode.totalDurationInSeconds));
             dialogueHeadshotAnimator.runtimeAnimatorController = currentChatNode.character.animatorController;

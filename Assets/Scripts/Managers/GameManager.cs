@@ -25,7 +25,7 @@ namespace Managers {
 
         private InputManager inputManager;
         private DialogueManager dialogueManager;
-        private GaugesDecisionMaker gaugesDecisionMaker;
+        public GaugesDecisionMaker GaugesDecisionMaker { get; private set; }
         public ChatNodeCoroutinesManager ChatNodeCoroutinesManager { get; private set; }
 
         private void Start() {
@@ -38,7 +38,7 @@ namespace Managers {
             FriendZonesConstants.SetConstants(friendZonesConstantsCollector);
             friendZonesController.InitializeFriendZones();
             dialogueGraph.Restart(this, dialogueManager);
-            gaugesDecisionMaker = new GaugesDecisionMaker(friendZonesController, dialogueGraph);
+            GaugesDecisionMaker = new GaugesDecisionMaker(friendZonesController, dialogueGraph);
         }
 
         public void HandleDialogueEvent(DialogueEventsEnum dialogueEventsEnum, DialogueEvent dialogueEvent) {
@@ -70,7 +70,6 @@ namespace Managers {
 
         private void Update() {
             inputManager.UpdateInputs();
-            Debug.Log(gaugesDecisionMaker.GetAnswerIndex());
         }
     }
 }
