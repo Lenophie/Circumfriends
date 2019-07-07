@@ -4,6 +4,7 @@ namespace Constants {
         MeSpeedModification,
         MeResistanceModification,
         FriendAttractionModification,
-        GaugesModification
+        GaugesModification,
+        InputsEnabling
     }
 }
