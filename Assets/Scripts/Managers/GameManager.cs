@@ -26,17 +26,18 @@ namespace Managers {
         private InputManager inputManager;
         private DialogueManager dialogueManager;
         private GaugesDecisionMaker gaugesDecisionMaker;
+        public ChatNodeCoroutinesManager ChatNodeCoroutinesManager { get; private set; }
 
         private void Start() {
             inputManager = new InputManager(meController);
+            ChatNodeCoroutinesManager = gameObject.AddComponent<ChatNodeCoroutinesManager>();
             dialogueManager = new DialogueManager(dialogueTextMesh, dialogueTimerTextMesh, dialogueHeadshotAnimator,
-                language, this);
+                language, ChatNodeCoroutinesManager);
 
             Modifiers.SetConstants(modifiersCollector);
             FriendZonesConstants.SetConstants(friendZonesConstantsCollector);
             friendZonesController.InitializeFriendZones();
             dialogueGraph.Restart(this, dialogueManager);
-            dialogueGraph.PickAnswerToCurrentChatNode(0);
             gaugesDecisionMaker = new GaugesDecisionMaker(friendZonesController, dialogueGraph);
         }
 

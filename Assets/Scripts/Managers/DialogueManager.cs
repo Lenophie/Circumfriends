@@ -7,26 +7,27 @@ using UnityEngine;
 namespace Managers {
     public class DialogueManager {
         private ChatNode currentChatNode;
-        private readonly GameManager gameManager;
+        private readonly ChatNodeCoroutinesManager chatNodeCoroutinesManager;
         private readonly LanguagesEnum language;
         private readonly TextMeshProUGUI dialogueTextMesh;
         private readonly TextMeshProUGUI dialogueTimerTextMesh;
         private readonly Animator dialogueHeadshotAnimator;
 
         public DialogueManager(TextMeshProUGUI dialogueTextMesh, TextMeshProUGUI dialogueTimerTextMesh,
-            Animator dialogueHeadshotAnimator, LanguagesEnum language, GameManager gameManager) {
+            Animator dialogueHeadshotAnimator, LanguagesEnum language,
+            ChatNodeCoroutinesManager chatNodeCoroutinesManager) {
             this.dialogueTextMesh = dialogueTextMesh;
             this.dialogueTimerTextMesh = dialogueTimerTextMesh;
             this.dialogueHeadshotAnimator = dialogueHeadshotAnimator;
             this.language = language;
-            this.gameManager = gameManager;
+            this.chatNodeCoroutinesManager = chatNodeCoroutinesManager;
         }
 
         public void ChangeCurrentChatNode(ChatNode newChatNode) {
             currentChatNode = newChatNode;
             string currentChatNodeContent = GetCurrentChatNodeContent();
-            gameManager.StopAllCoroutines();
-            gameManager.StartCoroutine(TypeText(currentChatNodeContent, currentChatNode.sentenceDurationInSeconds,
+            chatNodeCoroutinesManager.StopAllCoroutines();
+            chatNodeCoroutinesManager.StartCoroutine(TypeText(currentChatNodeContent, currentChatNode.sentenceDurationInSeconds,
                 currentChatNode.totalDurationInSeconds));
             dialogueHeadshotAnimator.runtimeAnimatorController = currentChatNode.character.animatorController;
         }
