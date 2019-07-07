@@ -440,7 +440,7 @@ MonoBehaviour:
     distantZoneOut: {r: 0, g: 0.77775145, b: 0.990566, a: 0.7058824}
     distantZoneIn: {r: 0.25872195, g: 0.8093203, b: 0.9622642, a: 0.7058824}
   modifiersCollector:
-    meRotation: 3
+    meRotation: 8
     meResistance: 800
     friendAttraction: 700
   dialogueGraph: {fileID: 11400000, guid: c69f29f8a25977543bf53d48472e2c88, type: 2}
