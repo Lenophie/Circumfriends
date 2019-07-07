@@ -702,9 +702,9 @@ MonoBehaviour:
   gaugesModificationEvent:
     gaugeModificationEvents:
     - friendZonesEnum: 0
-      size: 5
-    - friendZonesEnum: 1
-      size: 30
+      maxHeight: 150
+    - friendZonesEnum: 2
+      maxHeight: 450
 --- !u!114 &3071523827260635736
 MonoBehaviour:
   m_ObjectHideFlags: 0

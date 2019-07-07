@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Constants;
 using Dialogues.Events;
 using FriendZones;
@@ -44,6 +44,16 @@ namespace Controllers {
                     new WavyFriendZoneShape(new CircleFriendZoneShapeConfig(8f)),
                     friendZonesCollectors.Distant)
             );
+
+            // TODO: Generate UI elements instead of referencing them
+            if (friendZonesCollectors.NoGo.gaugeUIController)
+                friendZonesCollectors.NoGo.gaugeUIController.SetGauge(FriendZones.NoGo.Gauge);
+            if (friendZonesCollectors.Discomfort.gaugeUIController)
+                friendZonesCollectors.Discomfort.gaugeUIController.SetGauge(FriendZones.Discomfort.Gauge);
+            if (friendZonesCollectors.Comfort.gaugeUIController)
+                friendZonesCollectors.Comfort.gaugeUIController.SetGauge(FriendZones.Comfort.Gauge);
+            if (friendZonesCollectors.Distant.gaugeUIController)
+                friendZonesCollectors.Distant.gaugeUIController.SetGauge(FriendZones.Distant.Gauge);
         }
 
         private void Update() {

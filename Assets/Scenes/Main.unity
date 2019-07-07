@@ -235,24 +235,28 @@ MonoBehaviour:
     meshCollider: {fileID: 1613362502}
     meshFilter: {fileID: 1613362500}
     meshRenderer: {fileID: 1613362499}
+    gaugeUIController: {fileID: 1088464431}
     friendZoneListener: {fileID: 1613362501}
   discomfortFriendZoneCollector:
     lineRenderer: {fileID: 662261289}
     meshCollider: {fileID: 685528554}
     meshFilter: {fileID: 685528552}
     meshRenderer: {fileID: 685528551}
+    gaugeUIController: {fileID: 0}
     friendZoneListener: {fileID: 685528553}
   comfortFriendZoneCollector:
     lineRenderer: {fileID: 2032829011}
     meshCollider: {fileID: 149445835}
     meshFilter: {fileID: 149445833}
     meshRenderer: {fileID: 149445832}
+    gaugeUIController: {fileID: 0}
     friendZoneListener: {fileID: 149445834}
   distantFriendZoneCollector:
     lineRenderer: {fileID: 0}
     meshCollider: {fileID: 1954489034}
     meshFilter: {fileID: 1954489032}
     meshRenderer: {fileID: 1954489031}
+    gaugeUIController: {fileID: 0}
     friendZoneListener: {fileID: 1954489033}
 --- !u!1 &149445830
 GameObject:
@@ -1368,6 +1372,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1086942870}
   m_CullTransparentMesh: 0
+--- !u!114 &1088464431 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2509743177746996585, guid: 144416cd605be054baea0c59aa3579ca,
+    type: 3}
+  m_PrefabInstance: {fileID: 2036082113056079310}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 640fefe89217f4e438b0a1f3a0bd5532, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1147622704
 GameObject:
   m_ObjectHideFlags: 0
@@ -2379,6 +2395,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 376215121}
     m_Modifications:
+    - target: {fileID: 2509743177746996585, guid: 144416cd605be054baea0c59aa3579ca,
+        type: 3}
+      propertyPath: gaugeFill
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 9131092884461697880, guid: 144416cd605be054baea0c59aa3579ca,
         type: 3}
       propertyPath: m_Name
@@ -2457,7 +2478,7 @@ PrefabInstance:
     - target: {fileID: 7452109523006863323, guid: 144416cd605be054baea0c59aa3579ca,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 552.9
+      value: 377.54
       objectReference: {fileID: 0}
     - target: {fileID: 7452109523006863323, guid: 144416cd605be054baea0c59aa3579ca,
         type: 3}
@@ -2488,6 +2509,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8708132791865560318, guid: 144416cd605be054baea0c59aa3579ca,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 188.77
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 144416cd605be054baea0c59aa3579ca, type: 3}

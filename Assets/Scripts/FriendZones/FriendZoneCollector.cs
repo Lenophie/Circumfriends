@@ -1,4 +1,5 @@
 using System;
+using Controllers;
 using UnityEngine;
 
 namespace FriendZones {
@@ -8,6 +9,7 @@ namespace FriendZones {
         public MeshCollider meshCollider;
         public MeshFilter meshFilter;
         public MeshRenderer meshRenderer;
+        public GaugeUIController gaugeUIController;
         public FriendZoneListener friendZoneListener;
     }
 }

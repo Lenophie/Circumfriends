@@ -1,19 +1,19 @@
-﻿using UnityEngine;
+﻿using FriendZones;
+using UnityEngine;
 
 namespace Controllers {
-    [ExecuteAlways]
     public class GaugeUIController : MonoBehaviour {
+        private Gauge gauge;
         [SerializeField] private RectTransform gaugeTransform = default;
         [SerializeField] private RectTransform gaugeFillTransform = default;
-        [Range(0, 1)] public float gaugeFill = default;
 
-        private void Update() {
-            gaugeFillTransform.sizeDelta =
-                new Vector2(gaugeFillTransform.sizeDelta.x, gaugeTransform.rect.height * gaugeFill);
+        public void SetGauge(Gauge gauge) {
+            this.gauge = gauge;
         }
 
-        public void SetGaugeHeight(float newHeight) {
-            gaugeTransform.sizeDelta = new Vector2(gaugeTransform.sizeDelta.x, newHeight);
+        private void LateUpdate() {
+            gaugeFillTransform.sizeDelta = new Vector2(gaugeFillTransform.sizeDelta.x, gauge.FillHeight);
+            gaugeTransform.sizeDelta = new Vector2(gaugeTransform.sizeDelta.x, gauge.MaxHeight);
         }
     }
 }
