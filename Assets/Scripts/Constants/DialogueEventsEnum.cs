@@ -6,6 +6,7 @@ namespace Constants {
         FriendAttractionModification,
         GaugesModification,
         InputsEnabling,
-        Blink
+        Blink,
+        GaugesDefill,
     }
 }
