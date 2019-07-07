@@ -136,6 +136,7 @@ namespace Controllers {
             foreach (GaugeModificationEvent gaugeModificationEvent in gaugesModificationEvent.gaugeModificationEvents) {
                 FriendZone friendZoneToModify = EnumToFriendZone(gaugeModificationEvent.friendZonesEnum);
                 friendZoneToModify.Gauge.ChangeMaxHeight(gaugeModificationEvent.maxHeight);
+                friendZoneToModify.Gauge.ChangeFillRateSpeed(gaugeModificationEvent.fillRateSpeed);
             }
         }
 

@@ -661,7 +661,7 @@ MonoBehaviour:
   m_Name: Initial
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: -1112, y: 40}
+  position: {x: -1320, y: 40}
   ports:
     keys:
     - output
@@ -706,7 +706,7 @@ MonoBehaviour:
   m_Name: Gauges Modification Event
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: -824, y: 264}
+  position: {x: -952, y: 184}
   ports:
     keys:
     - output
@@ -739,12 +739,16 @@ MonoBehaviour:
     gaugeModificationEvents:
     - friendZonesEnum: 0
       maxHeight: 120
+      fillRateSpeed: 100
     - friendZonesEnum: 2
       maxHeight: 450
+      fillRateSpeed: 10
     - friendZonesEnum: 1
       maxHeight: 200
+      fillRateSpeed: 20
     - friendZonesEnum: 3
       maxHeight: 220
+      fillRateSpeed: 25
 --- !u!114 &3071523827260635736
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -758,7 +762,7 @@ MonoBehaviour:
   m_Name: Chat
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: -824, y: -296}
+  position: {x: -936, y: -296}
   ports:
     keys:
     - continuationConditions
