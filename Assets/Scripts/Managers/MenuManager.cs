@@ -6,5 +6,9 @@ namespace Managers {
         public void HandleStartPress() {
             SceneManager.LoadScene("Main");
         }
+
+        public void HandleTwitterPress() {
+            Application.OpenURL("https://twitter.com/lenophie");
+        }
     }
 }
