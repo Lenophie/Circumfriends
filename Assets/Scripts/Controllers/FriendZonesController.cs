@@ -46,14 +46,25 @@ namespace Controllers {
             );
 
             // TODO: Generate UI elements instead of referencing them
-            if (friendZonesCollectors.NoGo.gaugeUIController)
-                friendZonesCollectors.NoGo.gaugeUIController.SetGauge(FriendZones.NoGo.Gauge);
-            if (friendZonesCollectors.Discomfort.gaugeUIController)
-                friendZonesCollectors.Discomfort.gaugeUIController.SetGauge(FriendZones.Discomfort.Gauge);
-            if (friendZonesCollectors.Comfort.gaugeUIController)
-                friendZonesCollectors.Comfort.gaugeUIController.SetGauge(FriendZones.Comfort.Gauge);
-            if (friendZonesCollectors.Distant.gaugeUIController)
-                friendZonesCollectors.Distant.gaugeUIController.SetGauge(FriendZones.Distant.Gauge);
+            if (friendZonesCollectors.NoGo.gaugeUIController) {
+                friendZonesCollectors.NoGo.gaugeUIController.SetGauge(FriendZones.NoGo.Gauge,
+                    FriendZonesConstants.NoGoZoneIn);
+            }
+
+            if (friendZonesCollectors.Discomfort.gaugeUIController) {
+                friendZonesCollectors.Discomfort.gaugeUIController.SetGauge(FriendZones.Discomfort.Gauge,
+                    FriendZonesConstants.DiscomfortZoneIn);
+            }
+
+            if (friendZonesCollectors.Comfort.gaugeUIController) {
+                friendZonesCollectors.Comfort.gaugeUIController.SetGauge(FriendZones.Comfort.Gauge,
+                    FriendZonesConstants.ComfortZoneIn);
+            }
+
+            if (friendZonesCollectors.Distant.gaugeUIController) {
+                friendZonesCollectors.Distant.gaugeUIController.SetGauge(FriendZones.Distant.Gauge,
+                    FriendZonesConstants.DistantZoneIn);
+            }
         }
 
         private void Update() {
