@@ -1,4 +1,5 @@
 using Constants;
+using Controllers;
 using FriendZones.FriendZoneShapes;
 using UnityEngine;
 
@@ -10,6 +11,7 @@ namespace FriendZones {
         public MeshCollider MeshCollider { get; }
         public MeshFilter MeshFilter { get; }
 
+        public readonly Gauge Gauge;
         private readonly MeshRenderer meshRenderer;
         private readonly Color outColor;
         private readonly Color inColor;
@@ -20,6 +22,7 @@ namespace FriendZones {
             FriendZoneCollector friendZoneCollector) {
             FriendZoneEnum = friendZoneEnum;
             FriendZoneShapeController = new FriendZoneShapeController(friendZoneShape);
+            Gauge = new Gauge();
             LineRenderer = friendZoneCollector.lineRenderer;
             MeshCollider = friendZoneCollector.meshCollider;
             MeshFilter = friendZoneCollector.meshFilter;
@@ -57,6 +60,7 @@ namespace FriendZones {
         public void NotifyMeInZone() {
             isMeInZone = true;
             UpdateColor();
+            Gauge?.IncrementFillRate();
         }
 
         public void NotifyMeExitingZone() {

@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using Constants;
 using Dialogues.Events;
 using FriendZones;
@@ -113,8 +113,8 @@ namespace Controllers {
 
         public void HandleGaugesModificationEvent(GaugesModificationEvent gaugesModificationEvent) {
             foreach (GaugeModificationEvent gaugeModificationEvent in gaugesModificationEvent.gaugeModificationEvents) {
-                Debug.Log(gaugeModificationEvent.friendZonesEnum);
-                Debug.Log(gaugeModificationEvent.size);
+                FriendZone friendZoneToModify = EnumToFriendZone(gaugeModificationEvent.friendZonesEnum);
+                friendZoneToModify.Gauge.ChangeSize(gaugeModificationEvent.size);
             }
         }
 
