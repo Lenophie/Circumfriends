@@ -15,10 +15,10 @@ namespace Dialogues {
         public void Restart(GameManager gameManager, DialogueManager dialogueManager) {
             GameManager = gameManager;
             this.dialogueManager = dialogueManager;
-
-            // Find the first DialogueNode without any inputs
-            ChatNode initialChatNode = nodes.Find(x => x is ChatNode && x.Inputs.All(y => !y.IsConnected)) as ChatNode;
-            HandleChatNodeChange(initialChatNode);
+            InitialNode initialNode =
+                nodes.Find(x => x is InitialNode && x.Inputs.All(y => !y.IsConnected)) as InitialNode;
+            if (initialNode == null) Debug.LogError("Graph has no initial node");
+            else initialNode.Trigger();
         }
 
         public void PickAnswerToCurrentChatNode(int index) {
