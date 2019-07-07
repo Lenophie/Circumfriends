@@ -731,7 +731,7 @@ MonoBehaviour:
   - {fileID: 4004129052343269531}
   - {fileID: -6973066991983304357}
   - {fileID: 897856303807876245}
-  currentChatNode: {fileID: 897856303807876245}
+  currentChatNode: {fileID: 4004129052343269531}
 --- !u!114 &6226395595552204
 MonoBehaviour:
   m_ObjectHideFlags: 0

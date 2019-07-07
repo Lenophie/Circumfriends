@@ -10,5 +10,13 @@ namespace Inputs {
         public PlayerInputs() {
             Resist = Input.GetAxisRaw("Resist");
         }
+
+        private PlayerInputs(float resist) {
+            Resist = resist;
+        }
+
+        public static PlayerInputs GetDisabledInputs() {
+            return new PlayerInputs(0f);
+        }
     }
 }

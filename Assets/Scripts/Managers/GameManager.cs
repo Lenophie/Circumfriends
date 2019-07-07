@@ -63,6 +63,10 @@ namespace Managers {
                     friendZonesController.HandleGaugesModificationEvent(
                         (GaugesModificationEvent) dialogueEvent);
                     break;
+                case DialogueEventsEnum.InputsEnabling:
+                    inputManager.HandleInputsEnablingEvent(
+                        (InputsEnablingEvent) dialogueEvent);
+                    break;
                 default:
                     return;
             }
