@@ -54,6 +54,10 @@ namespace Managers {
                     meController.HandleMeSpeedModificationEvent(
                         (MeSpeedModificationEvent) dialogueEvent);
                     break;
+                case DialogueEventsEnum.GaugesModification:
+                    friendZonesController.HandleGaugesModificationEvent(
+                        (GaugesModificationEvent) dialogueEvent);
+                    break;
                 default:
                     return;
             }

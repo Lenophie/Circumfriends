@@ -111,6 +111,13 @@ namespace Controllers {
                 .friendZoneShapeConfigForm);
         }
 
+        public void HandleGaugesModificationEvent(GaugesModificationEvent gaugesModificationEvent) {
+            foreach (GaugeModificationEvent gaugeModificationEvent in gaugesModificationEvent.gaugeModificationEvents) {
+                Debug.Log(gaugeModificationEvent.friendZonesEnum);
+                Debug.Log(gaugeModificationEvent.size);
+            }
+        }
+
         private FriendZone EnumToFriendZone(FriendZonesEnum? friendZonesEnum) {
             switch (friendZonesEnum) {
                 case FriendZonesEnum.NoGo:
