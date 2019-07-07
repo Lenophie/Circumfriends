@@ -41,7 +41,7 @@ namespace Controllers {
                     friendZonesCollectors.Comfort),
                 new FriendZone(
                     FriendZonesEnum.Distant,
-                    new WavyFriendZoneShape(new CircleFriendZoneShapeConfig(8f)),
+                    new WavyFriendZoneShape(new CircleFriendZoneShapeConfig(100f)),
                     friendZonesCollectors.Distant)
             );
 
