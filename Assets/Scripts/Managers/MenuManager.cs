@@ -1,10 +1,11 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 namespace Managers {
     public class MenuManager : MonoBehaviour {
+        public GameObject loadingGameObject;
         public void HandleStartPress() {
-            SceneManager.LoadScene("Main");
+            loadingGameObject.SetActive(true);
+            StartCoroutine(ScenesManager.LoadScene("Main"));
         }
 
         public void HandleTwitterPress() {
