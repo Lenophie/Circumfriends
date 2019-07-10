@@ -74,6 +74,10 @@ namespace Managers {
                 case DialogueEventsEnum.GaugesDefill:
                     friendZonesController.HandleGaugesDefillEvent();
                     break;
+                case DialogueEventsEnum.DialogueEnd:
+                    ScenesManager.LoadScene(
+                        ((FinalEvent) dialogueEvent).nextSceneName);
+                    break;
                 default:
                     return;
             }
