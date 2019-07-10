@@ -1,0 +1,1506 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8897654920835981333
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1800589245f9461b89ce0b9a11a91e63, type: 3}
+  m_Name: Gauges Defill Event
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 1352, y: 856}
+  ports:
+    keys:
+    - output
+    - input
+    values:
+    - _fieldName: output
+      _node: {fileID: -8897654920835981333}
+      _typeQualifiedName: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: input
+        node: {fileID: -7027855825166090899}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: input
+      _node: {fileID: -8897654920835981333}
+      _typeQualifiedName: Dialogues.DialogueNode, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: continuationConditions 3
+        node: {fileID: -3775193102045915103}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  input: {fileID: 0}
+  output: 0
+--- !u!114 &-8392875110139064418
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31cda0d1d52a4d9ebdf267ada68986df, type: 3}
+  m_Name: Friend Zone Shape Modification Event
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -536, y: -856}
+  ports:
+    keys:
+    - output
+    - input
+    values:
+    - _fieldName: output
+      _node: {fileID: -8392875110139064418}
+      _typeQualifiedName: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: input
+        node: {fileID: 2077023949003599435}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: input
+      _node: {fileID: -8392875110139064418}
+      _typeQualifiedName: Dialogues.DialogueNode, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: output
+        node: {fileID: -1380737866223033089}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  input: {fileID: 0}
+  output: 0
+  friendZoneShapeModificationEvent:
+    friendZonesEnum: 2
+    friendZoneShapeConfigForm:
+      friendZoneShapesEnum: 1
+      friendZoneShapeConfig:
+        radius: 6
+        amplitude: 0.15
+        numberOfPeriods: 20
+        startRad: 0
+        isRotating: 1
+        isClockwise: 0
+        rotationSpeed: 2
+--- !u!114 &-8246971608343040572
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1800589245f9461b89ce0b9a11a91e63, type: 3}
+  m_Name: Gauges Defill Event
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -776, y: 168}
+  ports:
+    keys:
+    - output
+    - input
+    values:
+    - _fieldName: output
+      _node: {fileID: -8246971608343040572}
+      _typeQualifiedName: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: input
+        node: {fileID: -8100820207692840780}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: input
+      _node: {fileID: -8246971608343040572}
+      _typeQualifiedName: Dialogues.DialogueNode, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: continuationConditions 0
+        node: {fileID: 7625964911253468782}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  input: {fileID: 0}
+  output: 0
+--- !u!114 &-8100820207692840780
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad1a3c87a51942ec802fe1f00f7956c0, type: 3}
+  m_Name: Chat
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -776, y: -248}
+  ports:
+    keys:
+    - continuationConditions
+    - input
+    - continuationConditions 0
+    values:
+    - _fieldName: continuationConditions
+      _node: {fileID: -8100820207692840780}
+      _typeQualifiedName: System.Collections.Generic.List`1[[Dialogues.ChatNodeConditionsList,
+        Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]],
+        mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: input
+      _node: {fileID: -8100820207692840780}
+      _typeQualifiedName: Dialogues.DialogueNode, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: output
+        node: {fileID: -8246971608343040572}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: continuationConditions 0
+      _node: {fileID: -8100820207692840780}
+      _typeQualifiedName: System.Collections.Generic.List`1[[Dialogues.ChatNodeConditionsList,
+        Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]],
+        mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: input
+        node: {fileID: -1380737866223033089}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 1
+  input: {fileID: 0}
+  character: {fileID: 11400000, guid: f10831f13bbdb8b4b8616f058aae878f, type: 2}
+  content:
+    frenchText: 
+    englishText: '...'
+  sentenceDurationInSeconds: 1
+  totalDurationInSeconds: 3
+  continuationConditions:
+  - isInterrupting: 0
+    chatNodeConditions: []
+--- !u!114 &-7598628124634420277
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1800589245f9461b89ce0b9a11a91e63, type: 3}
+  m_Name: Gauges Defill Event
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 392, y: -376}
+  ports:
+    keys:
+    - output
+    - input
+    values:
+    - _fieldName: output
+      _node: {fileID: -7598628124634420277}
+      _typeQualifiedName: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: input
+        node: {fileID: 2114055544569804475}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: input
+      _node: {fileID: -7598628124634420277}
+      _typeQualifiedName: Dialogues.DialogueNode, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: continuationConditions 0
+        node: {fileID: -2859799410542647192}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  input: {fileID: 0}
+  output: 0
+--- !u!114 &-7027855825166090899
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad1a3c87a51942ec802fe1f00f7956c0, type: 3}
+  m_Name: Chat
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 1720, y: 840}
+  ports:
+    keys:
+    - continuationConditions
+    - input
+    values:
+    - _fieldName: continuationConditions
+      _node: {fileID: -7027855825166090899}
+      _typeQualifiedName: System.Collections.Generic.List`1[[Dialogues.ChatNodeConditionsList,
+        Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]],
+        mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: input
+      _node: {fileID: -7027855825166090899}
+      _typeQualifiedName: Dialogues.DialogueNode, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: output
+        node: {fileID: -8897654920835981333}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  input: {fileID: 0}
+  character: {fileID: 11400000, guid: f10831f13bbdb8b4b8616f058aae878f, type: 2}
+  content:
+    frenchText: 
+    englishText: Quite a lot actually, I'm moving out of my parents', started selling
+      my paintings...
+  sentenceDurationInSeconds: 7
+  totalDurationInSeconds: 10
+  continuationConditions: []
+--- !u!114 &-5987876951525834919
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f9cf5548e044af6a14401cb98771533, type: 3}
+  m_Name: Inputs Enabling Event
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -1464, y: 72}
+  ports:
+    keys:
+    - output
+    - input
+    values:
+    - _fieldName: output
+      _node: {fileID: -5987876951525834919}
+      _typeQualifiedName: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: input
+      _node: {fileID: -5987876951525834919}
+      _typeQualifiedName: Dialogues.DialogueNode, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: output
+        node: {fileID: 6884220291448723455}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  input: {fileID: 0}
+  output: 0
+  inputsEnablingEvent:
+    enableInputs: 1
+--- !u!114 &-5373215063724034089
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1800589245f9461b89ce0b9a11a91e63, type: 3}
+  m_Name: Gauges Defill Event
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 1368, y: 536}
+  ports:
+    keys:
+    - output
+    - input
+    values:
+    - _fieldName: output
+      _node: {fileID: -5373215063724034089}
+      _typeQualifiedName: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: input
+        node: {fileID: 7619221524192969504}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: input
+      _node: {fileID: -5373215063724034089}
+      _typeQualifiedName: Dialogues.DialogueNode, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: continuationConditions 1
+        node: {fileID: -3775193102045915103}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  input: {fileID: 0}
+  output: 0
+--- !u!114 &-3775193102045915103
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad1a3c87a51942ec802fe1f00f7956c0, type: 3}
+  m_Name: Chat
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 968, y: 280}
+  ports:
+    keys:
+    - continuationConditions
+    - input
+    - continuationConditions 0
+    - continuationConditions 1
+    - continuationConditions 2
+    - continuationConditions 3
+    values:
+    - _fieldName: continuationConditions
+      _node: {fileID: -3775193102045915103}
+      _typeQualifiedName: System.Collections.Generic.List`1[[Dialogues.ChatNodeConditionsList,
+        Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]],
+        mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: input
+      _node: {fileID: -3775193102045915103}
+      _typeQualifiedName: Dialogues.DialogueNode, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: output
+        node: {fileID: -935265847715929860}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: continuationConditions 0
+      _node: {fileID: -3775193102045915103}
+      _typeQualifiedName: System.Collections.Generic.List`1[[Dialogues.ChatNodeConditionsList,
+        Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]],
+        mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: input
+        node: {fileID: -2832963508436107695}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 1
+    - _fieldName: continuationConditions 1
+      _node: {fileID: -3775193102045915103}
+      _typeQualifiedName: System.Collections.Generic.List`1[[Dialogues.ChatNodeConditionsList,
+        Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]],
+        mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: input
+        node: {fileID: -5373215063724034089}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 1
+    - _fieldName: continuationConditions 2
+      _node: {fileID: -3775193102045915103}
+      _typeQualifiedName: System.Collections.Generic.List`1[[Dialogues.ChatNodeConditionsList,
+        Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]],
+        mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: input
+        node: {fileID: 2108906147614394864}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 1
+    - _fieldName: continuationConditions 3
+      _node: {fileID: -3775193102045915103}
+      _typeQualifiedName: System.Collections.Generic.List`1[[Dialogues.ChatNodeConditionsList,
+        Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]],
+        mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: input
+        node: {fileID: -8897654920835981333}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 1
+  input: {fileID: 0}
+  character: {fileID: 11400000, guid: 5f195383dae1ad8418612192fef396f1, type: 2}
+  content:
+    frenchText: 
+    englishText: Years ? Too long anyway ! What have you been up to ?
+  sentenceDurationInSeconds: 2.5
+  totalDurationInSeconds: 12
+  continuationConditions:
+  - isInterrupting: 1
+    chatNodeConditions:
+    - friendZonesEnum: 0
+      comparisonEnum: 1
+      gaugeHeight: 100
+  - isInterrupting: 0
+    chatNodeConditions:
+    - friendZonesEnum: 3
+      comparisonEnum: 1
+      gaugeHeight: 60
+  - isInterrupting: 0
+    chatNodeConditions:
+    - friendZonesEnum: 1
+      comparisonEnum: 1
+      gaugeHeight: 100
+  - isInterrupting: 0
+    chatNodeConditions: []
+--- !u!114 &-3625272445483851348
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad1a3c87a51942ec802fe1f00f7956c0, type: 3}
+  m_Name: Chat
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 1816, y: 488}
+  ports:
+    keys:
+    - continuationConditions
+    - input
+    values:
+    - _fieldName: continuationConditions
+      _node: {fileID: -3625272445483851348}
+      _typeQualifiedName: System.Collections.Generic.List`1[[Dialogues.ChatNodeConditionsList,
+        Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]],
+        mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: input
+      _node: {fileID: -3625272445483851348}
+      _typeQualifiedName: Dialogues.DialogueNode, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: output
+        node: {fileID: 2108906147614394864}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  input: {fileID: 0}
+  character: {fileID: 11400000, guid: f10831f13bbdb8b4b8616f058aae878f, type: 2}
+  content:
+    frenchText: 
+    englishText: Heh not much, by the way, last time we met you were still around
+      that Benny, did something happen in the end ?
+  sentenceDurationInSeconds: 10
+  totalDurationInSeconds: 15
+  continuationConditions: []
+--- !u!114 &-3387471996171019580
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad1a3c87a51942ec802fe1f00f7956c0, type: 3}
+  m_Name: Chat
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -72, y: 776}
+  ports:
+    keys:
+    - continuationConditions
+    - input
+    values:
+    - _fieldName: continuationConditions
+      _node: {fileID: -3387471996171019580}
+      _typeQualifiedName: System.Collections.Generic.List`1[[Dialogues.ChatNodeConditionsList,
+        Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]],
+        mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: input
+      _node: {fileID: -3387471996171019580}
+      _typeQualifiedName: Dialogues.DialogueNode, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: continuationConditions 0
+        node: {fileID: -2832963508436107695}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  input: {fileID: 0}
+  character: {fileID: 11400000, guid: 5f195383dae1ad8418612192fef396f1, type: 2}
+  content:
+    frenchText: 
+    englishText: What's wrong with you ??
+  sentenceDurationInSeconds: 1.5
+  totalDurationInSeconds: 2
+  continuationConditions: []
+--- !u!114 &-2859799410542647192
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad1a3c87a51942ec802fe1f00f7956c0, type: 3}
+  m_Name: Chat
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 120, y: -488}
+  ports:
+    keys:
+    - continuationConditions
+    - input
+    - continuationConditions 0
+    values:
+    - _fieldName: continuationConditions
+      _node: {fileID: -2859799410542647192}
+      _typeQualifiedName: System.Collections.Generic.List`1[[Dialogues.ChatNodeConditionsList,
+        Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]],
+        mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: input
+      _node: {fileID: -2859799410542647192}
+      _typeQualifiedName: Dialogues.DialogueNode, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: output
+        node: {fileID: 5997214888953873847}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: continuationConditions 0
+      _node: {fileID: -2859799410542647192}
+      _typeQualifiedName: System.Collections.Generic.List`1[[Dialogues.ChatNodeConditionsList,
+        Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]],
+        mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: input
+        node: {fileID: -7598628124634420277}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 1
+  input: {fileID: 0}
+  character: {fileID: 11400000, guid: f10831f13bbdb8b4b8616f058aae878f, type: 2}
+  content:
+    frenchText: 
+    englishText: Of course I do ! I was just pulling your leg :)
+  sentenceDurationInSeconds: 2
+  totalDurationInSeconds: 7
+  continuationConditions:
+  - isInterrupting: 0
+    chatNodeConditions: []
+--- !u!114 &-2832963508436107695
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad1a3c87a51942ec802fe1f00f7956c0, type: 3}
+  m_Name: Chat
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -440, y: 744}
+  ports:
+    keys:
+    - continuationConditions
+    - input
+    - continuationConditions 0
+    values:
+    - _fieldName: continuationConditions
+      _node: {fileID: -2832963508436107695}
+      _typeQualifiedName: System.Collections.Generic.List`1[[Dialogues.ChatNodeConditionsList,
+        Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]],
+        mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: input
+      _node: {fileID: -2832963508436107695}
+      _typeQualifiedName: Dialogues.DialogueNode, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: continuationConditions 2
+        node: {fileID: 7625964911253468782}
+        reroutePoints: []
+      - fieldName: continuationConditions 1
+        node: {fileID: 2077023949003599435}
+        reroutePoints: []
+      - fieldName: continuationConditions 0
+        node: {fileID: -3775193102045915103}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: continuationConditions 0
+      _node: {fileID: -2832963508436107695}
+      _typeQualifiedName: System.Collections.Generic.List`1[[Dialogues.ChatNodeConditionsList,
+        Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]],
+        mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: input
+        node: {fileID: -3387471996171019580}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 1
+  input: {fileID: 0}
+  character: {fileID: 11400000, guid: f10831f13bbdb8b4b8616f058aae878f, type: 2}
+  content:
+    frenchText: 
+    englishText: I SWEAR I MISSED YOU SO MUCH; HUG ME HAAAAAAAAAAAAAAAAAAA-
+  sentenceDurationInSeconds: 1
+  totalDurationInSeconds: 1.5
+  continuationConditions:
+  - isInterrupting: 0
+    chatNodeConditions: []
+--- !u!114 &-1582373781735742792
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6def9cc20a2e49f18043847eff9c30cf, type: 3}
+  m_Name: Gauges Modification Event
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -1336, y: 696}
+  ports:
+    keys:
+    - output
+    - input
+    values:
+    - _fieldName: output
+      _node: {fileID: -1582373781735742792}
+      _typeQualifiedName: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: input
+      _node: {fileID: -1582373781735742792}
+      _typeQualifiedName: Dialogues.DialogueNode, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: output
+        node: {fileID: 6884220291448723455}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  input: {fileID: 0}
+  output: 0
+  gaugesModificationEvent:
+    gaugeModificationEvents:
+    - friendZonesEnum: 0
+      maxHeight: 100
+      fillRateSpeed: 50
+    - friendZonesEnum: 1
+      maxHeight: 200
+      fillRateSpeed: 35
+    - friendZonesEnum: 2
+      maxHeight: 300
+      fillRateSpeed: 10
+    - friendZonesEnum: 3
+      maxHeight: 100
+      fillRateSpeed: 30
+--- !u!114 &-1380737866223033089
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca267e6709d946a59c19d9c70cefa722, type: 3}
+  m_Name: Friend Attraction Modification Event
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -536, y: -472}
+  ports:
+    keys:
+    - output
+    - input
+    values:
+    - _fieldName: output
+      _node: {fileID: -1380737866223033089}
+      _typeQualifiedName: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: input
+        node: {fileID: -8392875110139064418}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: input
+      _node: {fileID: -1380737866223033089}
+      _typeQualifiedName: Dialogues.DialogueNode, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: continuationConditions 0
+        node: {fileID: -8100820207692840780}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  input: {fileID: 0}
+  output: 0
+  friendAttractionModificationEvent:
+    attraction: 1000
+--- !u!114 &-935265847715929860
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31cda0d1d52a4d9ebdf267ada68986df, type: 3}
+  m_Name: Friend Zone Shape Modification Event
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 968, y: -184}
+  ports:
+    keys:
+    - output
+    - input
+    values:
+    - _fieldName: output
+      _node: {fileID: -935265847715929860}
+      _typeQualifiedName: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: input
+        node: {fileID: -3775193102045915103}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: input
+      _node: {fileID: -935265847715929860}
+      _typeQualifiedName: Dialogues.DialogueNode, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: continuationConditions 0
+        node: {fileID: 4655652675410428138}
+        reroutePoints: []
+      - fieldName: continuationConditions 0
+        node: {fileID: 2114055544569804475}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  input: {fileID: 0}
+  output: 0
+  friendZoneShapeModificationEvent:
+    friendZonesEnum: 1
+    friendZoneShapeConfigForm:
+      friendZoneShapesEnum: 1
+      friendZoneShapeConfig:
+        radius: 4.5
+        amplitude: 0.02
+        numberOfPeriods: 3
+        startRad: 0
+        isRotating: 1
+        isClockwise: 1
+        rotationSpeed: 1
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 378ea1ee56b54b0ea485264b81967392, type: 3}
+  m_Name: BugDialogue
+  m_EditorClassIdentifier: 
+  nodes:
+  - {fileID: 7625964911253468782}
+  - {fileID: -1582373781735742792}
+  - {fileID: -8100820207692840780}
+  - {fileID: 2077023949003599435}
+  - {fileID: 4655652675410428138}
+  - {fileID: -2859799410542647192}
+  - {fileID: -2832963508436107695}
+  - {fileID: -3387471996171019580}
+  - {fileID: -8246971608343040572}
+  - {fileID: 7507214448897277114}
+  - {fileID: 5997214888953873847}
+  - {fileID: 2114055544569804475}
+  - {fileID: -7598628124634420277}
+  - {fileID: -3775193102045915103}
+  - {fileID: -1380737866223033089}
+  - {fileID: -8392875110139064418}
+  - {fileID: 7619221524192969504}
+  - {fileID: -5373215063724034089}
+  - {fileID: 2108906147614394864}
+  - {fileID: -8897654920835981333}
+  - {fileID: -7027855825166090899}
+  - {fileID: -3625272445483851348}
+  - {fileID: -935265847715929860}
+  - {fileID: 6884220291448723455}
+  - {fileID: -5987876951525834919}
+  currentChatNode: {fileID: 4655652675410428138}
+--- !u!114 &2077023949003599435
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad1a3c87a51942ec802fe1f00f7956c0, type: 3}
+  m_Name: Chat
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -280, y: -712}
+  ports:
+    keys:
+    - continuationConditions
+    - input
+    - continuationConditions 0
+    - continuationConditions 1
+    values:
+    - _fieldName: continuationConditions
+      _node: {fileID: 2077023949003599435}
+      _typeQualifiedName: System.Collections.Generic.List`1[[Dialogues.ChatNodeConditionsList,
+        Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]],
+        mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: input
+      _node: {fileID: 2077023949003599435}
+      _typeQualifiedName: Dialogues.DialogueNode, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: output
+        node: {fileID: -8392875110139064418}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: continuationConditions 0
+      _node: {fileID: 2077023949003599435}
+      _typeQualifiedName: System.Collections.Generic.List`1[[Dialogues.ChatNodeConditionsList,
+        Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]],
+        mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: input
+        node: {fileID: 5997214888953873847}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 1
+    - _fieldName: continuationConditions 1
+      _node: {fileID: 2077023949003599435}
+      _typeQualifiedName: System.Collections.Generic.List`1[[Dialogues.ChatNodeConditionsList,
+        Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]],
+        mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: input
+        node: {fileID: -2832963508436107695}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 1
+  input: {fileID: 0}
+  character: {fileID: 11400000, guid: 5f195383dae1ad8418612192fef396f1, type: 2}
+  content:
+    frenchText: 
+    englishText: Don't you recognize me ?
+  sentenceDurationInSeconds: 1.5
+  totalDurationInSeconds: 8
+  continuationConditions:
+  - isInterrupting: 0
+    chatNodeConditions: []
+  - isInterrupting: 1
+    chatNodeConditions:
+    - friendZonesEnum: 0
+      comparisonEnum: 1
+      gaugeHeight: 100
+--- !u!114 &2108906147614394864
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1800589245f9461b89ce0b9a11a91e63, type: 3}
+  m_Name: Gauges Defill Event
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 1352, y: 680}
+  ports:
+    keys:
+    - output
+    - input
+    values:
+    - _fieldName: output
+      _node: {fileID: 2108906147614394864}
+      _typeQualifiedName: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: input
+        node: {fileID: -3625272445483851348}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: input
+      _node: {fileID: 2108906147614394864}
+      _typeQualifiedName: Dialogues.DialogueNode, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: continuationConditions 2
+        node: {fileID: -3775193102045915103}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  input: {fileID: 0}
+  output: 0
+--- !u!114 &2114055544569804475
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad1a3c87a51942ec802fe1f00f7956c0, type: 3}
+  m_Name: Chat
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 392, y: -152}
+  ports:
+    keys:
+    - continuationConditions
+    - input
+    - continuationConditions 0
+    values:
+    - _fieldName: continuationConditions
+      _node: {fileID: 2114055544569804475}
+      _typeQualifiedName: System.Collections.Generic.List`1[[Dialogues.ChatNodeConditionsList,
+        Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]],
+        mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: input
+      _node: {fileID: 2114055544569804475}
+      _typeQualifiedName: Dialogues.DialogueNode, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: output
+        node: {fileID: -7598628124634420277}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: continuationConditions 0
+      _node: {fileID: 2114055544569804475}
+      _typeQualifiedName: System.Collections.Generic.List`1[[Dialogues.ChatNodeConditionsList,
+        Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]],
+        mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: input
+        node: {fileID: -935265847715929860}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 1
+  input: {fileID: 0}
+  character: {fileID: 11400000, guid: f10831f13bbdb8b4b8616f058aae878f, type: 2}
+  content:
+    frenchText: 
+    englishText: How long has it been ?
+  sentenceDurationInSeconds: 2
+  totalDurationInSeconds: 5
+  continuationConditions:
+  - isInterrupting: 0
+    chatNodeConditions: []
+--- !u!114 &4655652675410428138
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad1a3c87a51942ec802fe1f00f7956c0, type: 3}
+  m_Name: Chat
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 392, y: 232}
+  ports:
+    keys:
+    - continuationConditions
+    - input
+    - continuationConditions 0
+    values:
+    - _fieldName: continuationConditions
+      _node: {fileID: 4655652675410428138}
+      _typeQualifiedName: System.Collections.Generic.List`1[[Dialogues.ChatNodeConditionsList,
+        Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]],
+        mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: input
+      _node: {fileID: 4655652675410428138}
+      _typeQualifiedName: Dialogues.DialogueNode, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: output
+        node: {fileID: 7507214448897277114}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: continuationConditions 0
+      _node: {fileID: 4655652675410428138}
+      _typeQualifiedName: System.Collections.Generic.List`1[[Dialogues.ChatNodeConditionsList,
+        Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]],
+        mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: input
+        node: {fileID: -935265847715929860}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 1
+  input: {fileID: 0}
+  character: {fileID: 11400000, guid: f10831f13bbdb8b4b8616f058aae878f, type: 2}
+  content:
+    frenchText: 
+    englishText: Bug ! How long has it been ?
+  sentenceDurationInSeconds: 1.5
+  totalDurationInSeconds: 5
+  continuationConditions:
+  - isInterrupting: 0
+    chatNodeConditions: []
+--- !u!114 &5997214888953873847
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1800589245f9461b89ce0b9a11a91e63, type: 3}
+  m_Name: Gauges Defill Event
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -24, y: -616}
+  ports:
+    keys:
+    - output
+    - input
+    values:
+    - _fieldName: output
+      _node: {fileID: 5997214888953873847}
+      _typeQualifiedName: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: input
+        node: {fileID: -2859799410542647192}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: input
+      _node: {fileID: 5997214888953873847}
+      _typeQualifiedName: Dialogues.DialogueNode, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: continuationConditions 0
+        node: {fileID: 2077023949003599435}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  input: {fileID: 0}
+  output: 0
+--- !u!114 &6884220291448723455
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dec26d799431407f8c9269f01c56adf5, type: 3}
+  m_Name: Initial
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -1736, y: 424}
+  ports:
+    keys:
+    - output
+    - input
+    values:
+    - _fieldName: output
+      _node: {fileID: 6884220291448723455}
+      _typeQualifiedName: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: input
+        node: {fileID: 7625964911253468782}
+        reroutePoints: []
+      - fieldName: input
+        node: {fileID: -1582373781735742792}
+        reroutePoints: []
+      - fieldName: input
+        node: {fileID: -5987876951525834919}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: input
+      _node: {fileID: 6884220291448723455}
+      _typeQualifiedName: Dialogues.DialogueNode, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  input: {fileID: 0}
+  output: 0
+--- !u!114 &7507214448897277114
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1800589245f9461b89ce0b9a11a91e63, type: 3}
+  m_Name: Gauges Defill Event
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -728, y: 328}
+  ports:
+    keys:
+    - output
+    - input
+    values:
+    - _fieldName: output
+      _node: {fileID: 7507214448897277114}
+      _typeQualifiedName: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: input
+        node: {fileID: 4655652675410428138}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: input
+      _node: {fileID: 7507214448897277114}
+      _typeQualifiedName: Dialogues.DialogueNode, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: continuationConditions 1
+        node: {fileID: 7625964911253468782}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  input: {fileID: 0}
+  output: 0
+--- !u!114 &7619221524192969504
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad1a3c87a51942ec802fe1f00f7956c0, type: 3}
+  m_Name: Chat
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 1768, y: 72}
+  ports:
+    keys:
+    - continuationConditions
+    - input
+    values:
+    - _fieldName: continuationConditions
+      _node: {fileID: 7619221524192969504}
+      _typeQualifiedName: System.Collections.Generic.List`1[[Dialogues.ChatNodeConditionsList,
+        Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]],
+        mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: input
+      _node: {fileID: 7619221524192969504}
+      _typeQualifiedName: Dialogues.DialogueNode, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: output
+        node: {fileID: -5373215063724034089}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  input: {fileID: 0}
+  character: {fileID: 11400000, guid: f10831f13bbdb8b4b8616f058aae878f, type: 2}
+  content:
+    frenchText: 
+    englishText: Hah not much, what about you ?
+  sentenceDurationInSeconds: 2
+  totalDurationInSeconds: 7
+  continuationConditions: []
+--- !u!114 &7625964911253468782
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad1a3c87a51942ec802fe1f00f7956c0, type: 3}
+  m_Name: Chat
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -1064, y: 88}
+  ports:
+    keys:
+    - continuationConditions
+    - input
+    - continuationConditions 0
+    - continuationConditions 1
+    - continuationConditions 2
+    values:
+    - _fieldName: continuationConditions
+      _node: {fileID: 7625964911253468782}
+      _typeQualifiedName: System.Collections.Generic.List`1[[Dialogues.ChatNodeConditionsList,
+        Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]],
+        mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: input
+      _node: {fileID: 7625964911253468782}
+      _typeQualifiedName: Dialogues.DialogueNode, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: output
+        node: {fileID: 6884220291448723455}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: continuationConditions 0
+      _node: {fileID: 7625964911253468782}
+      _typeQualifiedName: System.Collections.Generic.List`1[[Dialogues.ChatNodeConditionsList,
+        Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]],
+        mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: input
+        node: {fileID: -8246971608343040572}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 1
+    - _fieldName: continuationConditions 1
+      _node: {fileID: 7625964911253468782}
+      _typeQualifiedName: System.Collections.Generic.List`1[[Dialogues.ChatNodeConditionsList,
+        Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]],
+        mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: input
+        node: {fileID: 7507214448897277114}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 1
+    - _fieldName: continuationConditions 2
+      _node: {fileID: 7625964911253468782}
+      _typeQualifiedName: System.Collections.Generic.List`1[[Dialogues.ChatNodeConditionsList,
+        Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]],
+        mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: input
+        node: {fileID: -2832963508436107695}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 1
+  input: {fileID: 0}
+  character: {fileID: 11400000, guid: 5f195383dae1ad8418612192fef396f1, type: 2}
+  content:
+    frenchText: 
+    englishText: Me, it's been so long !
+  sentenceDurationInSeconds: 2
+  totalDurationInSeconds: 6
+  continuationConditions:
+  - isInterrupting: 0
+    chatNodeConditions:
+    - friendZonesEnum: 3
+      comparisonEnum: 1
+      gaugeHeight: 100
+  - isInterrupting: 0
+    chatNodeConditions: []
+  - isInterrupting: 1
+    chatNodeConditions:
+    - friendZonesEnum: 0
+      comparisonEnum: 1
+      gaugeHeight: 100
