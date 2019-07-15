@@ -1,6 +1,6 @@
 using System.Collections;
 using Constants;
-using Dialogues;
+using Dialogues.Chat;
 using TMPro;
 using UnityEngine;
 

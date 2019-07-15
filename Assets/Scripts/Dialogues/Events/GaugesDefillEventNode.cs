@@ -1,5 +1,4 @@
 using Constants;
-using UnityEngine;
 
 namespace Dialogues.Events {
     [CreateNodeMenu("Events/GaugesDefillEventNode")]

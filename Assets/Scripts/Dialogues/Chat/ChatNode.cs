@@ -4,7 +4,7 @@ using Characters;
 using UnityEngine;
 using XNode;
 
-namespace Dialogues {
+namespace Dialogues.Chat {
     /**
      * This node is used to hold a dialogue line, its respective character and the branching conditions
      */

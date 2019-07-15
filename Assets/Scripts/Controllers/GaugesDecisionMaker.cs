@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using Constants;
 using Dialogues;
+using Dialogues.Chat;
 using FriendZones;
 
 namespace Controllers {

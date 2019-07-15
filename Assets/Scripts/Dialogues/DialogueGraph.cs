@@ -1,5 +1,6 @@
 using System.Linq;
 using Constants;
+using Dialogues.Chat;
 using Dialogues.Events;
 using Managers;
 using UnityEngine;

@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace Dialogues {
+namespace Dialogues.Chat {
     /**
      * This class is used to serialize the content of a ChatNode
      */
