@@ -4,6 +4,7 @@ namespace Constants {
         MeSpeedModification,
         MeResistanceModification,
         FriendAttractionModification,
+        FriendAnimatorModification,
         GaugesModification,
         InputsEnabling,
         Blink,
