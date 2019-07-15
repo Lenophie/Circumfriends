@@ -6,6 +6,9 @@ using TMPro;
 using UnityEngine;
 
 namespace Managers {
+    /**
+     * This class handles the Main scene setup and serves as a router for events
+     */
     public class GameManager : MonoBehaviour {
         [Header("Controllers")]
         [SerializeField] private MeController meController = default;

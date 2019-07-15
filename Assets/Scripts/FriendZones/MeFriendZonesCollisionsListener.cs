@@ -1,6 +1,9 @@
 ﻿using UnityEngine;
 
 namespace FriendZones {
+    /*
+     * This class is used to handle player's collisions with FriendZones
+     */
     public class MeFriendZonesCollisionsListener : MonoBehaviour
     {
         private void OnTriggerEnter(Collider collider) {

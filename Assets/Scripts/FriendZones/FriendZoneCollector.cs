@@ -3,6 +3,9 @@ using Controllers;
 using UnityEngine;
 
 namespace FriendZones {
+    /**
+     * This class is used to serialize data for FriendZones
+     */
     [Serializable]
     public class FriendZoneCollector {
         public LineRenderer lineRenderer;

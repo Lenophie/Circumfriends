@@ -15,6 +15,9 @@ namespace Inputs {
             Resist = resist;
         }
 
+        /**
+         * This method returns dummy inputs, simulating the absence of player inputs
+         */
         public static PlayerInputs GetDisabledInputs() {
             return new PlayerInputs(0f);
         }
