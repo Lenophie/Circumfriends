@@ -1,6 +1,9 @@
 using Constants;
 
 namespace Dialogues.Events {
+    /**
+     * This Node is used to change the shape of a FriendZone
+     */
     [CreateNodeMenu("Events/FriendZoneShapeModificationNode")]
     public class FriendZoneShapeModificationEventNode : EventNode {
         public FriendZoneShapeModificationEvent friendZoneShapeModificationEvent;

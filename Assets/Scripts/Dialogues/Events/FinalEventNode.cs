@@ -1,6 +1,9 @@
 using Constants;
 
 namespace Dialogues.Events {
+    /**
+     * This Node is used to end a dialogue graph
+     */
     [CreateNodeMenu("FinalNode")]
     public class FinalEventNode : EventNode {
         public FinalEvent finalEvent;

@@ -1,6 +1,9 @@
 using Constants;
 
 namespace Dialogues.Events {
+    /**
+     * This Node is used to modify the gauges
+     */
     [CreateNodeMenu("Events/GaugesModificationEventNode")]
     public class GaugesModificationEventNode : EventNode {
         public GaugesModificationEvent gaugesModificationEvent;
