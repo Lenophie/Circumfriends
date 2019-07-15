@@ -5,12 +5,16 @@ using UnityEngine;
 using XNode;
 
 namespace Dialogues {
+    /**
+     * This node is used to hold a dialogue line, its respective character and the branching conditions
+     */
     [NodeTint("#4d9599")] [CreateNodeMenu("ChatNode")]
     public class ChatNode : DialogueNode {
-        public Character character;
-        public ChatContent content;
-        public float sentenceDurationInSeconds;
-        public float totalDurationInSeconds;
+        public Character character; // The character speaking
+        public ChatContent content; // The dialogue line
+        public float sentenceDurationInSeconds; // The time the sentence takes to be fully displayed on screen
+        public float totalDurationInSeconds; // The time before the Nodes connected to the conditions are triggered
+        // sentenceDurationInSeconds - totalDurationInSeconds is the time during which the full sentence is displayed before moving on the next
 
         [Output(dynamicPortList = true)]
         public List<ChatNodeConditionsList> continuationConditions = new List<ChatNodeConditionsList>();
@@ -72,6 +76,9 @@ namespace Dialogues {
             PickContinuation(continuationIndex);
         }*/
 
+        /**
+         * The coroutine used to trigger the outputs after a delay
+         */
         private IEnumerator ContinueConversation() {
             yield return new WaitForSeconds(totalDurationInSeconds);
             int? continuationIndex = ((DialogueGraph) graph).GameManager.GaugesDecisionMaker.GetContinuationIndex();

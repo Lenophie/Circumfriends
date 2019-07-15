@@ -1,6 +1,11 @@
 using XNode;
 
 namespace Dialogues {
+    /**
+     * This abstract class determines the basic functions of an event Node :
+     * * Possession of an output port
+     * * Implementation of the Trigger method to chain triggers through EventNodes
+     */
     [NodeTint("#ad74b0")]
     public abstract class EventNode : DialogueNode {
         [Output] public float output;
