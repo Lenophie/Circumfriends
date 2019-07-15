@@ -168,6 +168,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   friendRigidbody: {fileID: 78836351}
   meRigidbody: {fileID: 680053965}
+  friendAnimator: {fileID: 1489544548}
 --- !u!4 &78836353
 Transform:
   m_ObjectHideFlags: 0

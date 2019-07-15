@@ -5,6 +5,7 @@ namespace Controllers {
     public class FriendController : MonoBehaviour {
         [SerializeField] private Rigidbody friendRigidbody = default;
         [SerializeField] private Rigidbody meRigidbody = default;
+        [SerializeField] private Animator friendAnimator = default;
         private FriendAttractionController friendAttractionController;
 
         private void Start() {
@@ -18,6 +19,11 @@ namespace Controllers {
         public void HandleFriendAttractionModificationEvent(
             FriendAttractionModificationEvent friendAttractionModificationEvent) {
             friendAttractionController.SetAttractionModifier(friendAttractionModificationEvent.attraction);
+        }
+
+        public void HandleFriendAnimatorModificationEvent(
+            FriendAnimatorModificationEvent friendAnimatorModificationEvent) {
+            friendAnimator.runtimeAnimatorController = friendAnimatorModificationEvent.friendAnimator;
         }
     }
 }
