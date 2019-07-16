@@ -97,7 +97,7 @@ LightmapSettings:
     m_ShowResolutionOverlay: 1
     m_ExportTrainingData: 0
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -442,10 +442,9 @@ MonoBehaviour:
     distantZoneInColor: {r: 0.25872195, g: 0.8093203, b: 0.9622642, a: 0.7058824}
     blinkColor: {r: 1, g: 0.6179246, b: 0.93606865, a: 0.7058824}
   modifiersCollector:
-    meRotation: 8.5
+    meRotation: 10
     meResistance: 800
-    friendAttraction: 900
-  initialDialogueGraph: {fileID: 0}
+    friendAttraction: 1000
   dialogueTextMesh: {fileID: 1086942872}
   dialogueTimerTextMesh: {fileID: 2095055178}
   dialogueHeadshotAnimator: {fileID: 1147622706}

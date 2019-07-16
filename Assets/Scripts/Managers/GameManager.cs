@@ -1,5 +1,6 @@
 using Constants;
 using Controllers;
+using DebugTools;
 using Dialogues;
 using Dialogues.Events;
 using TMPro;
@@ -20,7 +21,6 @@ namespace Managers {
         [SerializeField] private ModifiersCollector modifiersCollector = default;
 
         [Header("Dialogue")]
-        [SerializeField] private DialogueGraph initialDialogueGraph = default;
         [SerializeField] private TextMeshProUGUI dialogueTextMesh = default;
         [SerializeField] private TextMeshProUGUI dialogueTimerTextMesh = default;
         [SerializeField] private Animator dialogueHeadshotAnimator = default;
@@ -43,8 +43,7 @@ namespace Managers {
             FriendZonesConstants.SetConstants(friendZonesConstantsCollector);
             friendZonesController.InitializeFriendZones();
 
-            if (ScenesManager.InitialDialogueGraph) SetDialogueGraph(ScenesManager.InitialDialogueGraph);
-            else if (initialDialogueGraph) SetDialogueGraph(initialDialogueGraph); // Set an initial dialogue graph from the inspector for easy access
+            HandleInitialDialogueGraph();
         }
 
         public void HandleDialogueEvent(DialogueEventsEnum dialogueEventsEnum, DialogueEvent dialogueEvent) {
@@ -103,8 +102,17 @@ namespace Managers {
             if (currentDialogueGraph) GaugesDecisionMaker.CheckForInterruptions();
         }
 
+        private void HandleInitialDialogueGraph() {
+            if (ScenesManager.InitialDialogueGraph) SetDialogueGraph(ScenesManager.InitialDialogueGraph);
+            else {
+                InitialDialogueGraphSetter initialDialogueGraphSetter = GetComponent<InitialDialogueGraphSetter>();
+                if (initialDialogueGraphSetter && initialDialogueGraphSetter.dialogueGraph)
+                    SetDialogueGraph(initialDialogueGraphSetter.dialogueGraph);
+            }
+        }
+
         private void SetDialogueGraph(DialogueGraph dialogueGraph) {
-            currentDialogueGraph = initialDialogueGraph;
+            currentDialogueGraph = dialogueGraph;
             dialogueGraph.Restart(this, dialogueManager);
             GaugesDecisionMaker = new GaugesDecisionMaker(friendZonesController, dialogueGraph);
         }
