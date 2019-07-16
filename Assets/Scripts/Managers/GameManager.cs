@@ -43,7 +43,8 @@ namespace Managers {
             FriendZonesConstants.SetConstants(friendZonesConstantsCollector);
             friendZonesController.InitializeFriendZones();
 
-            if (initialDialogueGraph) SetDialogueGraph(initialDialogueGraph); // Set an initial dialogue graph from the inspector for easy access
+            if (ScenesManager.InitialDialogueGraph) SetDialogueGraph(ScenesManager.InitialDialogueGraph);
+            else if (initialDialogueGraph) SetDialogueGraph(initialDialogueGraph); // Set an initial dialogue graph from the inspector for easy access
         }
 
         public void HandleDialogueEvent(DialogueEventsEnum dialogueEventsEnum, DialogueEvent dialogueEvent) {

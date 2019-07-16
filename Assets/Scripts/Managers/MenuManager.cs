@@ -1,3 +1,4 @@
+using Dialogues;
 using UnityEngine;
 
 namespace Managers {
@@ -5,15 +6,18 @@ namespace Managers {
      * This class handles the Menu buttons presses
      */
     public class MenuManager : MonoBehaviour {
-        public GameObject tutorialLoadingGameObject;
-        public GameObject startLoadingGameObject;
+        [SerializeField] private GameObject tutorialLoadingGameObject;
+        [SerializeField] private GameObject startLoadingGameObject;
+        [SerializeField] private DialogueGraph tutorialDialogueGraph;
+        [SerializeField] private DialogueGraph startDialogueGraph;
 
         /**
          * Handles a press on the Tutorial button
          */
         public void HandleTutorialPress() {
             tutorialLoadingGameObject.SetActive(true);
-            StartCoroutine(ScenesManager.LoadScene("Main"));
+            ScenesManager.SetInitialDialogueGraph(tutorialDialogueGraph);
+            LoadMainScene();
         }
 
         /**
@@ -21,6 +25,11 @@ namespace Managers {
          */
         public void HandleStartPress() {
             startLoadingGameObject.SetActive(true);
+            ScenesManager.SetInitialDialogueGraph(startDialogueGraph);
+            LoadMainScene();
+        }
+
+        private void LoadMainScene() {
             StartCoroutine(ScenesManager.LoadScene("Main"));
         }
 
