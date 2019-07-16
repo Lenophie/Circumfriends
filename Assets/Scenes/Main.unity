@@ -445,7 +445,8 @@ MonoBehaviour:
     meRotation: 8.5
     meResistance: 800
     friendAttraction: 900
-  dialogueGraph: {fileID: 11400000, guid: c69f29f8a25977543bf53d48472e2c88, type: 2}
+  initialDialogueGraph: {fileID: 11400000, guid: c69f29f8a25977543bf53d48472e2c88,
+    type: 2}
   dialogueTextMesh: {fileID: 1086942872}
   dialogueTimerTextMesh: {fileID: 2095055178}
   dialogueHeadshotAnimator: {fileID: 1147622706}

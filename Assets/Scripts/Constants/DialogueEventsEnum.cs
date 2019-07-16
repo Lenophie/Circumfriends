@@ -9,6 +9,7 @@ namespace Constants {
         InputsEnabling,
         Blink,
         GaugesDefill,
-        DialogueEnd,
+        DialogueChange,
+        SceneChange,
     }
 }

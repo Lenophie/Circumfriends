@@ -20,7 +20,7 @@ namespace Managers {
         [SerializeField] private ModifiersCollector modifiersCollector = default;
 
         [Header("Dialogue")]
-        [SerializeField] private DialogueGraph dialogueGraph = default;
+        [SerializeField] private DialogueGraph initialDialogueGraph = default;
         [SerializeField] private TextMeshProUGUI dialogueTextMesh = default;
         [SerializeField] private TextMeshProUGUI dialogueTimerTextMesh = default;
         [SerializeField] private Animator dialogueHeadshotAnimator = default;
@@ -28,6 +28,7 @@ namespace Managers {
 
         private InputManager inputManager;
         private DialogueManager dialogueManager;
+        private DialogueGraph currentDialogueGraph;
         public GaugesDecisionMaker GaugesDecisionMaker { get; private set; }
         public ChatNodeCoroutinesManager ChatNodeCoroutinesManager { get; private set; }
 
@@ -36,14 +37,13 @@ namespace Managers {
             ChatNodeCoroutinesManager = gameObject.AddComponent<ChatNodeCoroutinesManager>();
             dialogueManager = new DialogueManager(dialogueTextMesh, dialogueTimerTextMesh, dialogueHeadshotAnimator,
                 language, ChatNodeCoroutinesManager);
+            currentDialogueGraph = null;
 
             Modifiers.SetConstants(modifiersCollector);
             FriendZonesConstants.SetConstants(friendZonesConstantsCollector);
             friendZonesController.InitializeFriendZones();
-            if (dialogueGraph) {
-                dialogueGraph.Restart(this, dialogueManager);
-                GaugesDecisionMaker = new GaugesDecisionMaker(friendZonesController, dialogueGraph);
-            }
+
+            if (initialDialogueGraph) SetDialogueGraph(initialDialogueGraph); // Set an initial dialogue graph from the inspector for easy access
         }
 
         public void HandleDialogueEvent(DialogueEventsEnum dialogueEventsEnum, DialogueEvent dialogueEvent) {
@@ -83,9 +83,14 @@ namespace Managers {
                 case DialogueEventsEnum.GaugesDefill:
                     friendZonesController.HandleGaugesDefillEvent();
                     break;
-                case DialogueEventsEnum.DialogueEnd:
+                case DialogueEventsEnum.SceneChange:
+                    HandleDialogueGraphEnd();
                     StartCoroutine(
-                        ScenesManager.LoadScene(((FinalEvent) dialogueEvent).nextSceneName));
+                        ScenesManager.LoadScene(((SceneChangeEvent) dialogueEvent).nextSceneName));
+                    break;
+                case DialogueEventsEnum.DialogueChange:
+                    HandleDialogueGraphEnd();
+                    SetDialogueGraph(((DialogueChangeEvent) dialogueEvent).nextDialogue);
                     break;
                 default:
                     return;
@@ -94,7 +99,20 @@ namespace Managers {
 
         private void Update() {
             inputManager.UpdateInputs();
-            GaugesDecisionMaker?.CheckForInterruptions(); // TODO: properly handle dialogue graph-less scenes
+            if (currentDialogueGraph) GaugesDecisionMaker.CheckForInterruptions();
+        }
+
+        private void SetDialogueGraph(DialogueGraph dialogueGraph) {
+            currentDialogueGraph = initialDialogueGraph;
+            dialogueGraph.Restart(this, dialogueManager);
+            GaugesDecisionMaker = new GaugesDecisionMaker(friendZonesController, dialogueGraph);
+        }
+
+        private void HandleDialogueGraphEnd() {
+            currentDialogueGraph.Stop();
+            currentDialogueGraph = null;
+            GaugesDecisionMaker = null;
+            ChatNodeCoroutinesManager.StopAllCoroutines();
         }
     }
 }

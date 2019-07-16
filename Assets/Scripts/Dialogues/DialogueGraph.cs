@@ -15,6 +15,7 @@ namespace Dialogues {
         [HideInInspector] public ChatNode currentChatNode;
         public GameManager GameManager { get; private set; } // Getter is public in order to start coroutines
         private DialogueManager dialogueManager;
+        private bool isActive;
 
         /*
          * Initializes the runtime graph
@@ -22,6 +23,7 @@ namespace Dialogues {
         public void Restart(GameManager gameManager, DialogueManager dialogueManager) {
             GameManager = gameManager;
             this.dialogueManager = dialogueManager;
+            isActive = true;
 
             InitialNode initialNode =
                 nodes.Find(x => x is InitialNode && x.Inputs.All(y => !y.IsConnected)) as InitialNode;
@@ -29,19 +31,25 @@ namespace Dialogues {
             else initialNode.Trigger();
         }
 
+        public void Stop() {
+            isActive = false;
+        }
+
         /**
          * Handles events brought up by EventNodes triggers
          */
         public void HandleEvent(DialogueEventsEnum dialogueEventsEnum, DialogueEvent dialogueEvent) {
-            GameManager.HandleDialogueEvent(dialogueEventsEnum, dialogueEvent);
+            if (isActive) GameManager.HandleDialogueEvent(dialogueEventsEnum, dialogueEvent);
         }
 
         /**
          * Handles ChatNode changes
          */
         public void HandleChatNodeChange(ChatNode newChatNode) {
-            currentChatNode = newChatNode;
-            dialogueManager.ChangeCurrentChatNode(currentChatNode);
+            if (isActive) {
+                currentChatNode = newChatNode;
+                dialogueManager.ChangeCurrentChatNode(currentChatNode);
+            }
         }
     }
 }

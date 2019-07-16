@@ -194,7 +194,7 @@ MonoBehaviour:
     values:
     - _fieldName: continuationConditions
       _node: {fileID: -6973066991983304357}
-      _typeQualifiedName: System.Collections.Generic.List`1[[Dialogues.ChatNodeConditionsList,
+      _typeQualifiedName: System.Collections.Generic.List`1[[Dialogues.Chat.ChatNodeConditionsList,
         Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]],
         mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
       connections: []
@@ -307,7 +307,7 @@ MonoBehaviour:
     values:
     - _fieldName: continuationConditions
       _node: {fileID: -5720980222410204387}
-      _typeQualifiedName: System.Collections.Generic.List`1[[Dialogues.ChatNodeConditionsList,
+      _typeQualifiedName: System.Collections.Generic.List`1[[Dialogues.Chat.ChatNodeConditionsList,
         Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]],
         mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
       connections: []
@@ -610,7 +610,7 @@ MonoBehaviour:
     values:
     - _fieldName: continuationConditions
       _node: {fileID: -1876038210351690622}
-      _typeQualifiedName: System.Collections.Generic.List`1[[Dialogues.ChatNodeConditionsList,
+      _typeQualifiedName: System.Collections.Generic.List`1[[Dialogues.Chat.ChatNodeConditionsList,
         Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]],
         mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
       connections: []
@@ -686,7 +686,10 @@ MonoBehaviour:
       _node: {fileID: -1385215895230013387}
       _typeQualifiedName: Dialogues.DialogueNode, Assembly-CSharp, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
-      connections: []
+      connections:
+      - fieldName: output
+        node: {fileID: 6226395595552204}
+        reroutePoints: []
       _direction: 0
       _connectionType: 0
       _typeConstraint: 0
@@ -870,8 +873,8 @@ MonoBehaviour:
   - {fileID: -312923455087304117}
   - {fileID: -4598790396570885104}
   - {fileID: -7268606065881868582}
-  - {fileID: 2683768962314041868}
   - {fileID: -6603756577652324687}
+  - {fileID: 2683768962314041868}
   currentChatNode: {fileID: -1876038210351690622}
 --- !u!114 &6226395595552204
 MonoBehaviour:
@@ -901,10 +904,13 @@ MonoBehaviour:
         node: {fileID: -7268606065881868582}
         reroutePoints: []
       - fieldName: input
-        node: {fileID: -1876038210351690622}
+        node: {fileID: -6603756577652324687}
         reroutePoints: []
       - fieldName: input
-        node: {fileID: -6603756577652324687}
+        node: {fileID: -1385215895230013387}
+        reroutePoints: []
+      - fieldName: input
+        node: {fileID: -1876038210351690622}
         reroutePoints: []
       _direction: 1
       _connectionType: 0
@@ -1000,7 +1006,7 @@ MonoBehaviour:
     values:
     - _fieldName: continuationConditions
       _node: {fileID: 897856303807876245}
-      _typeQualifiedName: System.Collections.Generic.List`1[[Dialogues.ChatNodeConditionsList,
+      _typeQualifiedName: System.Collections.Generic.List`1[[Dialogues.Chat.ChatNodeConditionsList,
         Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]],
         mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
       connections: []
@@ -1147,7 +1153,7 @@ MonoBehaviour:
       _dynamic: 0
   input: {fileID: 0}
   output: 0
-  finalEvent:
+  sceneChangeEvent:
     nextSceneName: Menu
 --- !u!114 &3459527353955266859
 MonoBehaviour:
@@ -1218,7 +1224,7 @@ MonoBehaviour:
     values:
     - _fieldName: continuationConditions
       _node: {fileID: 4004129052343269531}
-      _typeQualifiedName: System.Collections.Generic.List`1[[Dialogues.ChatNodeConditionsList,
+      _typeQualifiedName: System.Collections.Generic.List`1[[Dialogues.Chat.ChatNodeConditionsList,
         Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]],
         mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
       connections: []
@@ -1401,7 +1407,7 @@ MonoBehaviour:
     values:
     - _fieldName: continuationConditions
       _node: {fileID: 6948880638825514220}
-      _typeQualifiedName: System.Collections.Generic.List`1[[Dialogues.ChatNodeConditionsList,
+      _typeQualifiedName: System.Collections.Generic.List`1[[Dialogues.Chat.ChatNodeConditionsList,
         Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]],
         mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
       connections: []
@@ -1469,7 +1475,7 @@ MonoBehaviour:
     values:
     - _fieldName: continuationConditions
       _node: {fileID: 8242612150315976198}
-      _typeQualifiedName: System.Collections.Generic.List`1[[Dialogues.ChatNodeConditionsList,
+      _typeQualifiedName: System.Collections.Generic.List`1[[Dialogues.Chat.ChatNodeConditionsList,
         Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]],
         mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
       connections: []
@@ -1537,7 +1543,7 @@ MonoBehaviour:
     values:
     - _fieldName: continuationConditions
       _node: {fileID: 8313576654901901813}
-      _typeQualifiedName: System.Collections.Generic.List`1[[Dialogues.ChatNodeConditionsList,
+      _typeQualifiedName: System.Collections.Generic.List`1[[Dialogues.Chat.ChatNodeConditionsList,
         Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]],
         mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
       connections: []
