@@ -40,8 +40,10 @@ namespace Managers {
             Modifiers.SetConstants(modifiersCollector);
             FriendZonesConstants.SetConstants(friendZonesConstantsCollector);
             friendZonesController.InitializeFriendZones();
-            dialogueGraph.Restart(this, dialogueManager);
-            GaugesDecisionMaker = new GaugesDecisionMaker(friendZonesController, dialogueGraph);
+            if (dialogueGraph) {
+                dialogueGraph.Restart(this, dialogueManager);
+                GaugesDecisionMaker = new GaugesDecisionMaker(friendZonesController, dialogueGraph);
+            }
         }
 
         public void HandleDialogueEvent(DialogueEventsEnum dialogueEventsEnum, DialogueEvent dialogueEvent) {
@@ -92,7 +94,7 @@ namespace Managers {
 
         private void Update() {
             inputManager.UpdateInputs();
-            GaugesDecisionMaker.CheckForInterruptions();
+            GaugesDecisionMaker?.CheckForInterruptions(); // TODO: properly handle dialogue graph-less scenes
         }
     }
 }

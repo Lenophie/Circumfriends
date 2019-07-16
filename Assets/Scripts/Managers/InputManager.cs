@@ -12,7 +12,7 @@ namespace Managers {
 
         public InputManager(MeController meController) {
             this.meController = meController;
-            areInputsEnabled = false;
+            areInputsEnabled = true;
         }
 
         /*
