@@ -20,6 +20,10 @@ namespace Controllers {
             meResistanceController.UpdateResistance(playerInputs.Resist);
         }
 
+        private void FixedUpdate() {
+            UpdateRigidbodyVelocity();
+        }
+
         public void SetPlayerInputs(PlayerInputs playerInputs) {
             this.playerInputs = playerInputs;
         }
@@ -33,11 +37,13 @@ namespace Controllers {
             MeSpeedModificationEvent meSpeedModificationEvent) {
             meRotationController.SetSpeedModifier(meSpeedModificationEvent.rotationSpeed,
                 meSpeedModificationEvent.isRotationClockwise);
-            UpdateRigidbodyVelocity();
         }
 
         private void UpdateRigidbodyVelocity() {
-            meRigidbody.velocity = meRotationController.GetInitialRotation();
+            Vector2 tangentVelocity = meRotationController.GetTargetTangentialVelocity(); // Force the tangential velocity to match the speed set by the current dialogue
+            Vector2 normalVelocity = meResistanceController.GetCurrentNormalVelocity(); // Don't meddle with attraction/resistance physics
+
+            meRigidbody.velocity = tangentVelocity + normalVelocity;
         }
     }
 }

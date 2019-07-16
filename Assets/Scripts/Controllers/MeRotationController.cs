@@ -15,7 +15,7 @@ namespace Controllers {
             isRotationClockwise = true;
         }
 
-        public Vector2 GetInitialRotation() {
+        public Vector2 GetTargetTangentialVelocity() {
             Vector2 rotationDirection =
                 Vector2.Perpendicular(friendRigidbody.position - meRigidbody.position).normalized;
             if (!isRotationClockwise) rotationDirection = -rotationDirection;

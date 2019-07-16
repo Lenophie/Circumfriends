@@ -21,5 +21,11 @@ namespace Controllers {
         public void SetResistanceModifier(float resistanceModifier) {
             this.resistanceModifier = resistanceModifier;
         }
+
+        public Vector2 GetCurrentNormalVelocity() {
+            return Vector3.Project(meRigidbody.velocity,
+                (friendRigidbody.position - meRigidbody.position).normalized);
+            ;
+        }
     }
 }
