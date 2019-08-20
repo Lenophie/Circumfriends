@@ -697,7 +697,7 @@ MonoBehaviour:
   input: {fileID: 0}
   output: 0
   inputsEnablingEvent:
-    enableInputs: 1
+    enableInputs: 0
 --- !u!114 &-800902365221957180
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -875,7 +875,7 @@ MonoBehaviour:
   - {fileID: -7268606065881868582}
   - {fileID: -6603756577652324687}
   - {fileID: 2683768962314041868}
-  currentChatNode: {fileID: -1876038210351690622}
+  currentChatNode: {fileID: -6973066991983304357}
 --- !u!114 &6226395595552204
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1379,8 +1379,8 @@ MonoBehaviour:
       friendZoneShapesEnum: 1
       friendZoneShapeConfig:
         radius: 6
-        amplitude: 0
-        numberOfPeriods: 0
+        amplitude: 0.05
+        numberOfPeriods: 15
         startRad: 0
         isRotating: 0
         isClockwise: 1
