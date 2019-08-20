@@ -166,10 +166,11 @@ MonoBehaviour:
     - continuationConditions
     - input
     - continuationConditions 0
+    - interruptionConditions
     values:
     - _fieldName: continuationConditions
       _node: {fileID: -8100820207692840780}
-      _typeQualifiedName: System.Collections.Generic.List`1[[Dialogues.ChatNodeConditionsList,
+      _typeQualifiedName: System.Collections.Generic.List`1[[Dialogues.Chat.ChatNodeConditionsList,
         Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]],
         mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
       connections: []
@@ -202,6 +203,16 @@ MonoBehaviour:
       _connectionType: 0
       _typeConstraint: 0
       _dynamic: 1
+    - _fieldName: interruptionConditions
+      _node: {fileID: -8100820207692840780}
+      _typeQualifiedName: System.Collections.Generic.List`1[[Dialogues.Chat.ChatNodeConditionsList,
+        Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]],
+        mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
   input: {fileID: 0}
   character: {fileID: 11400000, guid: f10831f13bbdb8b4b8616f058aae878f, type: 2}
   content:
@@ -210,8 +221,8 @@ MonoBehaviour:
   sentenceDurationInSeconds: 1
   totalDurationInSeconds: 3
   continuationConditions:
-  - isInterrupting: 0
-    chatNodeConditions: []
+  - chatNodeConditions: []
+  interruptionConditions: []
 --- !u!114 &-7598628124634420277
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -275,10 +286,11 @@ MonoBehaviour:
     keys:
     - continuationConditions
     - input
+    - interruptionConditions
     values:
     - _fieldName: continuationConditions
       _node: {fileID: -7027855825166090899}
-      _typeQualifiedName: System.Collections.Generic.List`1[[Dialogues.ChatNodeConditionsList,
+      _typeQualifiedName: System.Collections.Generic.List`1[[Dialogues.Chat.ChatNodeConditionsList,
         Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]],
         mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
       connections: []
@@ -298,6 +310,16 @@ MonoBehaviour:
       _connectionType: 0
       _typeConstraint: 0
       _dynamic: 0
+    - _fieldName: interruptionConditions
+      _node: {fileID: -7027855825166090899}
+      _typeQualifiedName: System.Collections.Generic.List`1[[Dialogues.Chat.ChatNodeConditionsList,
+        Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]],
+        mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
   input: {fileID: 0}
   character: {fileID: 11400000, guid: f10831f13bbdb8b4b8616f058aae878f, type: 2}
   content:
@@ -307,6 +329,7 @@ MonoBehaviour:
   sentenceDurationInSeconds: 7
   totalDurationInSeconds: 10
   continuationConditions: []
+  interruptionConditions: []
 --- !u!114 &-5987876951525834919
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -418,10 +441,11 @@ MonoBehaviour:
     - continuationConditions 1
     - continuationConditions 2
     - continuationConditions 3
+    - interruptionConditions
     values:
     - _fieldName: continuationConditions
       _node: {fileID: -3775193102045915103}
-      _typeQualifiedName: System.Collections.Generic.List`1[[Dialogues.ChatNodeConditionsList,
+      _typeQualifiedName: System.Collections.Generic.List`1[[Dialogues.Chat.ChatNodeConditionsList,
         Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]],
         mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
       connections: []
@@ -493,6 +517,16 @@ MonoBehaviour:
       _connectionType: 0
       _typeConstraint: 0
       _dynamic: 1
+    - _fieldName: interruptionConditions
+      _node: {fileID: -3775193102045915103}
+      _typeQualifiedName: System.Collections.Generic.List`1[[Dialogues.Chat.ChatNodeConditionsList,
+        Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]],
+        mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
   input: {fileID: 0}
   character: {fileID: 11400000, guid: 5f195383dae1ad8418612192fef396f1, type: 2}
   content:
@@ -501,23 +535,20 @@ MonoBehaviour:
   sentenceDurationInSeconds: 2.5
   totalDurationInSeconds: 12
   continuationConditions:
-  - isInterrupting: 1
-    chatNodeConditions:
+  - chatNodeConditions:
     - friendZonesEnum: 0
       comparisonEnum: 1
       gaugeHeight: 100
-  - isInterrupting: 0
-    chatNodeConditions:
+  - chatNodeConditions:
     - friendZonesEnum: 3
       comparisonEnum: 1
       gaugeHeight: 60
-  - isInterrupting: 0
-    chatNodeConditions:
+  - chatNodeConditions:
     - friendZonesEnum: 1
       comparisonEnum: 1
       gaugeHeight: 100
-  - isInterrupting: 0
-    chatNodeConditions: []
+  - chatNodeConditions: []
+  interruptionConditions: []
 --- !u!114 &-3625272445483851348
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -536,10 +567,11 @@ MonoBehaviour:
     keys:
     - continuationConditions
     - input
+    - interruptionConditions
     values:
     - _fieldName: continuationConditions
       _node: {fileID: -3625272445483851348}
-      _typeQualifiedName: System.Collections.Generic.List`1[[Dialogues.ChatNodeConditionsList,
+      _typeQualifiedName: System.Collections.Generic.List`1[[Dialogues.Chat.ChatNodeConditionsList,
         Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]],
         mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
       connections: []
@@ -559,6 +591,16 @@ MonoBehaviour:
       _connectionType: 0
       _typeConstraint: 0
       _dynamic: 0
+    - _fieldName: interruptionConditions
+      _node: {fileID: -3625272445483851348}
+      _typeQualifiedName: System.Collections.Generic.List`1[[Dialogues.Chat.ChatNodeConditionsList,
+        Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]],
+        mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
   input: {fileID: 0}
   character: {fileID: 11400000, guid: f10831f13bbdb8b4b8616f058aae878f, type: 2}
   content:
@@ -568,6 +610,7 @@ MonoBehaviour:
   sentenceDurationInSeconds: 10
   totalDurationInSeconds: 15
   continuationConditions: []
+  interruptionConditions: []
 --- !u!114 &-3387471996171019580
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -586,10 +629,11 @@ MonoBehaviour:
     keys:
     - continuationConditions
     - input
+    - interruptionConditions
     values:
     - _fieldName: continuationConditions
       _node: {fileID: -3387471996171019580}
-      _typeQualifiedName: System.Collections.Generic.List`1[[Dialogues.ChatNodeConditionsList,
+      _typeQualifiedName: System.Collections.Generic.List`1[[Dialogues.Chat.ChatNodeConditionsList,
         Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]],
         mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
       connections: []
@@ -609,6 +653,16 @@ MonoBehaviour:
       _connectionType: 0
       _typeConstraint: 0
       _dynamic: 0
+    - _fieldName: interruptionConditions
+      _node: {fileID: -3387471996171019580}
+      _typeQualifiedName: System.Collections.Generic.List`1[[Dialogues.Chat.ChatNodeConditionsList,
+        Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]],
+        mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
   input: {fileID: 0}
   character: {fileID: 11400000, guid: 5f195383dae1ad8418612192fef396f1, type: 2}
   content:
@@ -617,6 +671,7 @@ MonoBehaviour:
   sentenceDurationInSeconds: 1.5
   totalDurationInSeconds: 2
   continuationConditions: []
+  interruptionConditions: []
 --- !u!114 &-2859799410542647192
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -636,10 +691,11 @@ MonoBehaviour:
     - continuationConditions
     - input
     - continuationConditions 0
+    - interruptionConditions
     values:
     - _fieldName: continuationConditions
       _node: {fileID: -2859799410542647192}
-      _typeQualifiedName: System.Collections.Generic.List`1[[Dialogues.ChatNodeConditionsList,
+      _typeQualifiedName: System.Collections.Generic.List`1[[Dialogues.Chat.ChatNodeConditionsList,
         Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]],
         mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
       connections: []
@@ -672,6 +728,16 @@ MonoBehaviour:
       _connectionType: 0
       _typeConstraint: 0
       _dynamic: 1
+    - _fieldName: interruptionConditions
+      _node: {fileID: -2859799410542647192}
+      _typeQualifiedName: System.Collections.Generic.List`1[[Dialogues.Chat.ChatNodeConditionsList,
+        Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]],
+        mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
   input: {fileID: 0}
   character: {fileID: 11400000, guid: f10831f13bbdb8b4b8616f058aae878f, type: 2}
   content:
@@ -680,8 +746,8 @@ MonoBehaviour:
   sentenceDurationInSeconds: 2
   totalDurationInSeconds: 7
   continuationConditions:
-  - isInterrupting: 0
-    chatNodeConditions: []
+  - chatNodeConditions: []
+  interruptionConditions: []
 --- !u!114 &-2832963508436107695
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -701,10 +767,11 @@ MonoBehaviour:
     - continuationConditions
     - input
     - continuationConditions 0
+    - interruptionConditions
     values:
     - _fieldName: continuationConditions
       _node: {fileID: -2832963508436107695}
-      _typeQualifiedName: System.Collections.Generic.List`1[[Dialogues.ChatNodeConditionsList,
+      _typeQualifiedName: System.Collections.Generic.List`1[[Dialogues.Chat.ChatNodeConditionsList,
         Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]],
         mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
       connections: []
@@ -717,14 +784,14 @@ MonoBehaviour:
       _typeQualifiedName: Dialogues.DialogueNode, Assembly-CSharp, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
       connections:
-      - fieldName: continuationConditions 2
-        node: {fileID: 7625964911253468782}
-        reroutePoints: []
       - fieldName: continuationConditions 1
         node: {fileID: 2077023949003599435}
         reroutePoints: []
       - fieldName: continuationConditions 0
         node: {fileID: -3775193102045915103}
+        reroutePoints: []
+      - fieldName: interruptionConditions 0
+        node: {fileID: 7625964911253468782}
         reroutePoints: []
       _direction: 0
       _connectionType: 0
@@ -743,6 +810,16 @@ MonoBehaviour:
       _connectionType: 0
       _typeConstraint: 0
       _dynamic: 1
+    - _fieldName: interruptionConditions
+      _node: {fileID: -2832963508436107695}
+      _typeQualifiedName: System.Collections.Generic.List`1[[Dialogues.Chat.ChatNodeConditionsList,
+        Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]],
+        mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
   input: {fileID: 0}
   character: {fileID: 11400000, guid: f10831f13bbdb8b4b8616f058aae878f, type: 2}
   content:
@@ -751,8 +828,8 @@ MonoBehaviour:
   sentenceDurationInSeconds: 1
   totalDurationInSeconds: 1.5
   continuationConditions:
-  - isInterrupting: 0
-    chatNodeConditions: []
+  - chatNodeConditions: []
+  interruptionConditions: []
 --- !u!114 &-1582373781735742792
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -954,7 +1031,7 @@ MonoBehaviour:
   - {fileID: -935265847715929860}
   - {fileID: 6884220291448723455}
   - {fileID: -5987876951525834919}
-  currentChatNode: {fileID: 4655652675410428138}
+  currentChatNode: {fileID: -3387471996171019580}
 --- !u!114 &2077023949003599435
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -975,10 +1052,11 @@ MonoBehaviour:
     - input
     - continuationConditions 0
     - continuationConditions 1
+    - interruptionConditions
     values:
     - _fieldName: continuationConditions
       _node: {fileID: 2077023949003599435}
-      _typeQualifiedName: System.Collections.Generic.List`1[[Dialogues.ChatNodeConditionsList,
+      _typeQualifiedName: System.Collections.Generic.List`1[[Dialogues.Chat.ChatNodeConditionsList,
         Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]],
         mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
       connections: []
@@ -1024,6 +1102,16 @@ MonoBehaviour:
       _connectionType: 0
       _typeConstraint: 0
       _dynamic: 1
+    - _fieldName: interruptionConditions
+      _node: {fileID: 2077023949003599435}
+      _typeQualifiedName: System.Collections.Generic.List`1[[Dialogues.Chat.ChatNodeConditionsList,
+        Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]],
+        mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
   input: {fileID: 0}
   character: {fileID: 11400000, guid: 5f195383dae1ad8418612192fef396f1, type: 2}
   content:
@@ -1032,13 +1120,12 @@ MonoBehaviour:
   sentenceDurationInSeconds: 1.5
   totalDurationInSeconds: 8
   continuationConditions:
-  - isInterrupting: 0
-    chatNodeConditions: []
-  - isInterrupting: 1
-    chatNodeConditions:
+  - chatNodeConditions: []
+  - chatNodeConditions:
     - friendZonesEnum: 0
       comparisonEnum: 1
       gaugeHeight: 100
+  interruptionConditions: []
 --- !u!114 &2108906147614394864
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1097,16 +1184,17 @@ MonoBehaviour:
   m_Name: Chat
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 392, y: -152}
+  position: {x: 408, y: -184}
   ports:
     keys:
     - continuationConditions
     - input
     - continuationConditions 0
+    - interruptionConditions
     values:
     - _fieldName: continuationConditions
       _node: {fileID: 2114055544569804475}
-      _typeQualifiedName: System.Collections.Generic.List`1[[Dialogues.ChatNodeConditionsList,
+      _typeQualifiedName: System.Collections.Generic.List`1[[Dialogues.Chat.ChatNodeConditionsList,
         Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]],
         mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
       connections: []
@@ -1139,6 +1227,16 @@ MonoBehaviour:
       _connectionType: 0
       _typeConstraint: 0
       _dynamic: 1
+    - _fieldName: interruptionConditions
+      _node: {fileID: 2114055544569804475}
+      _typeQualifiedName: System.Collections.Generic.List`1[[Dialogues.Chat.ChatNodeConditionsList,
+        Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]],
+        mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
   input: {fileID: 0}
   character: {fileID: 11400000, guid: f10831f13bbdb8b4b8616f058aae878f, type: 2}
   content:
@@ -1147,8 +1245,8 @@ MonoBehaviour:
   sentenceDurationInSeconds: 2
   totalDurationInSeconds: 5
   continuationConditions:
-  - isInterrupting: 0
-    chatNodeConditions: []
+  - chatNodeConditions: []
+  interruptionConditions: []
 --- !u!114 &4655652675410428138
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1168,10 +1266,11 @@ MonoBehaviour:
     - continuationConditions
     - input
     - continuationConditions 0
+    - interruptionConditions
     values:
     - _fieldName: continuationConditions
       _node: {fileID: 4655652675410428138}
-      _typeQualifiedName: System.Collections.Generic.List`1[[Dialogues.ChatNodeConditionsList,
+      _typeQualifiedName: System.Collections.Generic.List`1[[Dialogues.Chat.ChatNodeConditionsList,
         Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]],
         mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
       connections: []
@@ -1204,6 +1303,16 @@ MonoBehaviour:
       _connectionType: 0
       _typeConstraint: 0
       _dynamic: 1
+    - _fieldName: interruptionConditions
+      _node: {fileID: 4655652675410428138}
+      _typeQualifiedName: System.Collections.Generic.List`1[[Dialogues.Chat.ChatNodeConditionsList,
+        Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]],
+        mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
   input: {fileID: 0}
   character: {fileID: 11400000, guid: f10831f13bbdb8b4b8616f058aae878f, type: 2}
   content:
@@ -1212,8 +1321,8 @@ MonoBehaviour:
   sentenceDurationInSeconds: 1.5
   totalDurationInSeconds: 5
   continuationConditions:
-  - isInterrupting: 0
-    chatNodeConditions: []
+  - chatNodeConditions: []
+  interruptionConditions: []
 --- !u!114 &5997214888953873847
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1370,10 +1479,11 @@ MonoBehaviour:
     keys:
     - continuationConditions
     - input
+    - interruptionConditions
     values:
     - _fieldName: continuationConditions
       _node: {fileID: 7619221524192969504}
-      _typeQualifiedName: System.Collections.Generic.List`1[[Dialogues.ChatNodeConditionsList,
+      _typeQualifiedName: System.Collections.Generic.List`1[[Dialogues.Chat.ChatNodeConditionsList,
         Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]],
         mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
       connections: []
@@ -1393,6 +1503,16 @@ MonoBehaviour:
       _connectionType: 0
       _typeConstraint: 0
       _dynamic: 0
+    - _fieldName: interruptionConditions
+      _node: {fileID: 7619221524192969504}
+      _typeQualifiedName: System.Collections.Generic.List`1[[Dialogues.Chat.ChatNodeConditionsList,
+        Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]],
+        mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
   input: {fileID: 0}
   character: {fileID: 11400000, guid: f10831f13bbdb8b4b8616f058aae878f, type: 2}
   content:
@@ -1401,6 +1521,7 @@ MonoBehaviour:
   sentenceDurationInSeconds: 2
   totalDurationInSeconds: 7
   continuationConditions: []
+  interruptionConditions: []
 --- !u!114 &7625964911253468782
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1421,11 +1542,12 @@ MonoBehaviour:
     - input
     - continuationConditions 0
     - continuationConditions 1
-    - continuationConditions 2
+    - interruptionConditions
+    - interruptionConditions 0
     values:
     - _fieldName: continuationConditions
       _node: {fileID: 7625964911253468782}
-      _typeQualifiedName: System.Collections.Generic.List`1[[Dialogues.ChatNodeConditionsList,
+      _typeQualifiedName: System.Collections.Generic.List`1[[Dialogues.Chat.ChatNodeConditionsList,
         Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]],
         mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
       connections: []
@@ -1471,9 +1593,19 @@ MonoBehaviour:
       _connectionType: 0
       _typeConstraint: 0
       _dynamic: 1
-    - _fieldName: continuationConditions 2
+    - _fieldName: interruptionConditions
       _node: {fileID: 7625964911253468782}
-      _typeQualifiedName: System.Collections.Generic.List`1[[Dialogues.ChatNodeConditionsList,
+      _typeQualifiedName: System.Collections.Generic.List`1[[Dialogues.Chat.ChatNodeConditionsList,
+        Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]],
+        mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: interruptionConditions 0
+      _node: {fileID: 7625964911253468782}
+      _typeQualifiedName: System.Collections.Generic.List`1[[Dialogues.Chat.ChatNodeConditionsList,
         Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]],
         mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
       connections:
@@ -1492,15 +1624,13 @@ MonoBehaviour:
   sentenceDurationInSeconds: 2
   totalDurationInSeconds: 6
   continuationConditions:
-  - isInterrupting: 0
-    chatNodeConditions:
+  - chatNodeConditions:
     - friendZonesEnum: 3
       comparisonEnum: 1
       gaugeHeight: 100
-  - isInterrupting: 0
-    chatNodeConditions: []
-  - isInterrupting: 1
-    chatNodeConditions:
+  - chatNodeConditions: []
+  interruptionConditions:
+  - chatNodeConditions:
     - friendZonesEnum: 0
       comparisonEnum: 1
       gaugeHeight: 100

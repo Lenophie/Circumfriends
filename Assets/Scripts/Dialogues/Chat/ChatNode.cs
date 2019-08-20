@@ -19,26 +19,12 @@ namespace Dialogues.Chat {
         [Output(dynamicPortList = true)]
         public List<ChatNodeConditionsList> continuationConditions = new List<ChatNodeConditionsList>();
 
-/*        [Output(dynamicPortList = true)]
-        public List<ChatNodeCondition> interruptionConditions = new List<ChatNodeCondition>();*/
-        // TODO: Use this second list when the following xNode issue gets solved : https://github.com/Siccity/xNode/issues/169
+        [Output(dynamicPortList = true)]
+        public List<ChatNodeConditionsList> interruptionConditions = new List<ChatNodeConditionsList>();
 
-/*        public void PickContinuation(int index) {
+        private void PickContinuation(int index) {
             NodePort port = null;
 
-            if (continuationConditions.Count <= index) return;
-            port = GetOutputPort(nameof(continuationConditions) + " " + index);
-            if (port == null) return;
-
-            for (int i = 0; i < port.ConnectionCount; i++) {
-                NodePort connection = port.GetConnection(i);
-                ((DialogueNode) connection.node).Trigger();
-            }
-        }*/
-
-        public void PickContinuation(int? index) {
-            NodePort port = null;
-            if (index == null) return;
             if (continuationConditions.Count <= index) return;
             port = GetOutputPort(nameof(continuationConditions) + " " + index);
             if (port == null) return;
@@ -49,9 +35,10 @@ namespace Dialogues.Chat {
             }
         }
 
-/*        public void PickInterruption(int index) {
+        public void PickInterruption(int index) {
             NodePort port = null;
 
+            if (interruptionConditions.Count <= index) return;
             port = GetOutputPort(nameof(interruptionConditions) + " " + index);
             if (port == null) return;
 
@@ -59,7 +46,7 @@ namespace Dialogues.Chat {
                 NodePort connection = port.GetConnection(i);
                 ((DialogueNode) connection.node).Trigger();
             }
-        }*/
+        }
 
 
         public override void Trigger() {
@@ -70,18 +57,12 @@ namespace Dialogues.Chat {
                 ContinueConversation());
         }
 
-/*        private IEnumerator ContinueConversation() {
-            yield return new WaitForSeconds(totalDurationInSeconds);
-            int continuationIndex = ((DialogueGraph) graph).GameManager.GaugesDecisionMaker.GetContinuationIndex();
-            PickContinuation(continuationIndex);
-        }*/
-
         /**
          * The coroutine used to trigger the outputs after a delay
          */
         private IEnumerator ContinueConversation() {
             yield return new WaitForSeconds(totalDurationInSeconds);
-            int? continuationIndex = ((DialogueGraph) graph).GameManager.GaugesDecisionMaker.GetContinuationIndex();
+            int continuationIndex = ((DialogueGraph) graph).GameManager.GaugesDecisionMaker.GetContinuationIndex();
             PickContinuation(continuationIndex);
         }
     }

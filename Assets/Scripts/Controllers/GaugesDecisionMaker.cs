@@ -14,43 +14,24 @@ namespace Controllers {
             this.dialogueGraph = dialogueGraph;
         }
 
-        //TODO: Use commented versions when issue discussed in ChatNode is solved
-
-/*        public int GetContinuationIndex() {
+        public int GetContinuationIndex() {
             ChatNode currentChatNode = dialogueGraph.currentChatNode;
             int firstValidConditionsListIndex =
                 GetFirstListMeetingItsConditions(currentChatNode.continuationConditions);
             return firstValidConditionsListIndex > -1
                 ? firstValidConditionsListIndex
                 : currentChatNode.continuationConditions.Count - 1;
-        }*/
-
-        public int? GetContinuationIndex() {
-            ChatNode currentChatNode = dialogueGraph.currentChatNode;
-            int? firstValidConditionsListIndex =
-                GetFirstListMeetingItsConditions(currentChatNode.continuationConditions, false);
-            return firstValidConditionsListIndex > -1
-                ? firstValidConditionsListIndex
-                : currentChatNode.continuationConditions.Count - 1;
         }
 
-/*        public void CheckForInterruptions() {
+        public void CheckForInterruptions() {
             ChatNode currentChatNode = dialogueGraph.currentChatNode;
             int firstValidConditionsListIndex =
                 GetFirstListMeetingItsConditions(currentChatNode.interruptionConditions);
             if (firstValidConditionsListIndex > -1)
-                dialogueGraph.currentChatNode.PickInterruptions(firstValidConditionsListIndex);
-        }*/
-
-        public void CheckForInterruptions() {
-            ChatNode currentChatNode = dialogueGraph.currentChatNode;
-            int? firstValidConditionsListIndex =
-                GetFirstListMeetingItsConditions(currentChatNode.continuationConditions, true);
-            if (firstValidConditionsListIndex != null)
-                dialogueGraph.currentChatNode.PickContinuation(firstValidConditionsListIndex);
+                dialogueGraph.currentChatNode.PickInterruption(firstValidConditionsListIndex);
         }
 
-/*        private int GetFirstListMeetingItsConditions(
+        private int GetFirstListMeetingItsConditions(
             IReadOnlyList<ChatNodeConditionsList> chatNodeConditionsListList) {
             for (int i = 0; i < chatNodeConditionsListList.Count; i++) {
                 ChatNodeConditionsList chatNodeConditionsList = chatNodeConditionsListList[i];
@@ -75,38 +56,6 @@ namespace Controllers {
             }
 
             return -1;
-        }*/
-
-        private int? GetFirstListMeetingItsConditions(
-            IReadOnlyList<ChatNodeConditionsList> chatNodeConditionsListList,
-            bool isInterrupting) {
-            int? lastListMeetingsItsConditions = null; //TODO: Necessary until issue discussed in ChatNode gets solved
-
-            for (int i = 0; i < chatNodeConditionsListList.Count; i++) {
-                ChatNodeConditionsList chatNodeConditionsList = chatNodeConditionsListList[i];
-                if (chatNodeConditionsList.isInterrupting != isInterrupting) continue;
-                lastListMeetingsItsConditions = i;
-                bool areCurrentListConditionsMet = true;
-                foreach (ChatNodeCondition chatNodeCondition in chatNodeConditionsList.chatNodeConditions) {
-                    FriendZone friendZoneUnderCondition =
-                        friendZonesController.EnumToFriendZone(chatNodeCondition.friendZonesEnum);
-                    if ((chatNodeCondition.comparisonEnum == ComparisonEnum.Superior &&
-                         friendZoneUnderCondition.Gauge.FillHeight <= chatNodeCondition.gaugeHeight)
-                        || (chatNodeCondition.comparisonEnum == ComparisonEnum.Inferior &&
-                            friendZoneUnderCondition.Gauge.FillHeight >= chatNodeCondition.gaugeHeight)
-                        || (chatNodeCondition.comparisonEnum == ComparisonEnum.InferiorOrEqual &&
-                            friendZoneUnderCondition.Gauge.FillHeight > chatNodeCondition.gaugeHeight)
-                        || (chatNodeCondition.comparisonEnum == ComparisonEnum.SuperiorOrEqual &&
-                            friendZoneUnderCondition.Gauge.FillHeight < chatNodeCondition.gaugeHeight)) {
-                        areCurrentListConditionsMet = false;
-                        break;
-                    }
-                }
-
-                if (areCurrentListConditionsMet) return i;
-            }
-
-            return isInterrupting ? null : lastListMeetingsItsConditions;
         }
     }
 }
